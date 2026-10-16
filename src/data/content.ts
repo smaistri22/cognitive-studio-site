@@ -20,11 +20,10 @@ export const COMPANY_INFO = {
   googleReviewCount: 6,
   hourlyRatePro: '125 €',
   // Lien vers une page de réservation en ligne (ex. Google Agenda). Vide = les boutons « Réserver » mènent au formulaire de contact.
-  bookingUrl: '',
+  bookingUrl: 'https://calendar.app.google/cH4wxPYQGEBx1XRU8',
   hours: [
-    { days: 'Lundi & vendredi', time: '8h – 19h' },
-    { days: 'Mardi au jeudi', time: '19h30 – 21h' },
-    { days: 'Samedi & dimanche', time: 'Sur demande (urgences)' },
+    { days: 'Lundi au vendredi', time: '9h – 18h' },
+    { days: 'Samedi & dimanche', time: 'Urgences uniquement' },
   ],
   socials: {
     linkedin: 'https://linkedin.com/company/cogntive-studio/',
