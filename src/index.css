@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Outfit", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Palette principale officielle : #e0e0db (Pierre/Sable) ; #325249 (Vert Cognitif) ; #333333 (Anthracite) */
+  --color-pine: #325249;
+  --color-pine-deep: #325249;
+  --color-pine-dark: #243c35;
+  --color-pine-hover: #29443c;
+  --color-pine-soft: #b8cec7;
+  --color-pine-tint: #d8e6e1;
+
+  --color-charcoal: #333333;
+  --color-charcoal-dark: #333333;
+  --color-charcoal-nav: #333333;
+  --color-charcoal-body: #333333;
+  --color-charcoal-muted: #555555;
+  --color-charcoal-border: #444444;
+
+  --color-stone: #e0e0db;
+  --color-stone-canvas: #e0e0db;
+  --color-stone-surface: #eaeae5;
+  --color-stone-card: #ffffff;
+  --color-stone-border: #cfcfc7;
+  --color-stone-accent: #e0e0db;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  color: #333333;
+  background-color: #e0e0db;
+}
+
+body {
+  background-color: #e0e0db;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, .font-display {
+  font-family: var(--font-display);
+  color: #333333;
+}
+
+
