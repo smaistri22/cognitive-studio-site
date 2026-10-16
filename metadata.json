@@ -1,0 +1,7 @@
+{
+  "name": "Cognitive Studio - Stratégie Cognitive & Incubateur",
+  "description": "Cabinet de conseil en stratégie cognitive, organisation et méthodologie à Bruxelles. Incubation d'indépendants, accélération opérationnelle et coaching académique d'excellence par Simon Maistriau.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
