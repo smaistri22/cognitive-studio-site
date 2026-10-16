@@ -168,7 +168,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
                 </div>
                 <div>
                   <span className="text-[11px] font-mono text-[#656563] uppercase tracking-wider block">Horaires de Consultation</span>
-                  <span className="text-[#222222]">Lun & Ven : 8h-19h • Mar au Jeu : 19h30-21h • Sam-Dim sur urgence</span>
+                  <span className="text-[#222222]">Lun au Ven : 9h-18h • Week-end : urgences uniquement</span>
                 </div>
               </div>
 
@@ -286,6 +286,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
                 <p className="text-xs text-[#505a55]">
                   • <strong>Formulaire de contact :</strong> il ne transmet rien à un serveur. Il ouvre votre propre messagerie avec un e-mail pré-rempli (nom, téléphone, e-mail, profil, message) que vous choisissez d'envoyer ou non à info@cognitive-studio.be. Ces informations servent uniquement à répondre à votre demande et à préparer un éventuel accompagnement.<br />
                   • <strong>WhatsApp :</strong> si vous nous écrivez via WhatsApp, vos messages sont traités par WhatsApp (Meta) selon ses propres conditions ; nous les utilisons uniquement pour vous répondre.<br />
+                  • <strong>Prise de rendez-vous :</strong> les réservations se font via la page de réservation Google Agenda, qui collecte vos nom, adresse e-mail et créneau choisi selon les conditions de Google ; nous les utilisons uniquement pour organiser la consultation.<br />
                   • <strong>Navigation :</strong> le site n'utilise ni cookies publicitaires, ni outil de mesure d'audience. L'hébergeur (GitHub Pages) et Google Fonts reçoivent, comme tout serveur web, l'adresse IP des visiteurs pour afficher les pages ; nous n'y avons pas accès.<br />
                   • <strong>Conservation :</strong> les demandes de contact sans suite sont supprimées au plus tard 12 mois après le dernier échange.
                 </p>

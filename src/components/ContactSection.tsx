@@ -377,31 +377,23 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   {language === 'fr' ? (
                     <>
                       <div className="py-2 flex items-center justify-between">
-                        <span className="text-[#333333] font-medium">Lundi & vendredi</span>
-                        <span className="font-mono text-[#325249] font-bold">08:00 - 19:00</span>
-                      </div>
-                      <div className="py-2 flex items-center justify-between">
-                        <span className="text-[#333333] font-medium">Mardi au jeudi</span>
-                        <span className="font-mono text-[#325249] font-bold">19:30 - 21:00</span>
+                        <span className="text-[#333333] font-medium">Lundi au vendredi</span>
+                        <span className="font-mono text-[#325249] font-bold">09:00 - 18:00</span>
                       </div>
                       <div className="py-2 flex items-center justify-between">
                         <span className="text-[#333333] font-medium">Week-end</span>
-                        <span className="font-mono text-[#325249] font-bold">Sur demande (urgences)</span>
+                        <span className="font-mono text-[#325249] font-bold">Urgences uniquement</span>
                       </div>
                     </>
                   ) : (
                     <>
                       <div className="py-2 flex items-center justify-between">
-                        <span className="text-[#333333] font-medium">Monday & Friday</span>
-                        <span className="font-mono text-[#325249] font-bold">08:00 - 19:00</span>
-                      </div>
-                      <div className="py-2 flex items-center justify-between">
-                        <span className="text-[#333333] font-medium">Tuesday to Thursday</span>
-                        <span className="font-mono text-[#325249] font-bold">19:30 - 21:00</span>
+                        <span className="text-[#333333] font-medium">Monday to Friday</span>
+                        <span className="font-mono text-[#325249] font-bold">09:00 - 18:00</span>
                       </div>
                       <div className="py-2 flex items-center justify-between">
                         <span className="text-[#333333] font-medium">Weekends</span>
-                        <span className="font-mono text-[#325249] font-bold">On request (emergencies)</span>
+                        <span className="font-mono text-[#325249] font-bold">Emergencies only</span>
                       </div>
                     </>
                   )}

@@ -165,15 +165,13 @@ export const Footer: React.FC = () => {
             <p className="text-[#b1b0ac] text-xs leading-relaxed">
               {language === 'fr' ? (
                 <>
-                  Lundi & vendredi : 8h - 19h <br />
-                  Mardi au jeudi : 19h30 - 21h <br />
-                  Week-end : sur demande (urgences)
+                  Lundi au vendredi : 9h - 18h <br />
+                  Week-end : urgences uniquement
                 </>
               ) : (
                 <>
-                  Monday & Friday: 08:00 - 19:00 <br />
-                  Tuesday to Thursday: 19:30 - 21:00 <br />
-                  Weekends: on request (emergencies)
+                  Monday to Friday: 09:00 - 18:00 <br />
+                  Weekends: emergencies only
                 </>
               )}
             </p>

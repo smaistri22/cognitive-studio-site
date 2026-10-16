@@ -184,8 +184,8 @@ export const FounderSection: React.FC = () => {
                   </span>
                   <span className="text-xs text-[#333333]">
                     {language === 'fr' 
-                      ? 'Lundi & vendredi (8h-19h) • Mardi au jeudi (19h30-21h) • Week-end sur demande (urgences)' 
-                      : 'Mon & Fri (08:00-19:00) • Tue to Thu (19:30-21:00) • Weekends on request (emergencies)'}
+                      ? 'Lundi au vendredi (9h-18h) • Week-end : urgences uniquement' 
+                      : 'Monday to Friday (09:00-18:00) • Weekends: emergencies only'}
                   </span>
                 </div>
                 <a
