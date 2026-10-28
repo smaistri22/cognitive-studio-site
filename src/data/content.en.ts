@@ -324,7 +324,7 @@ export const TESTIMONIALS_EN: TestimonialItem[] = [
 ];
 
 export const REFERENCES_EN: ReferenceItem[] = [
-  { client: 'Me Ana Ferreira', sector: 'Lawyer, Brussels Bar', work: 'Practice website: 5 pages, online booking, SEO and Google profile', url: 'https://avocate-anaferreira.com/' },
+  { client: 'Law practice', sector: 'Brussels Bar', work: 'Practice website: 5 pages, online booking, SEO and Google profile' },
   { client: 'Law practice', sector: 'Brussels', work: 'Interconnected billing workflow: timesheet, statement of services and invoice generated automatically' },
   { client: 'Law firms', sector: 'Brussels', work: 'Digital organisation: management tools, files and data security' }
 ];

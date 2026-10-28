@@ -743,10 +743,9 @@ export const TESTIMONIALS: TestimonialItem[] = [
 
 export const REFERENCES: ReferenceItem[] = [
   {
-    client: 'Me Ana Ferreira',
-    sector: 'Avocate au Barreau de Bruxelles',
-    work: 'Site du cabinet : 5 pages, prise de rendez-vous en ligne, référencement et fiche Google',
-    url: 'https://avocate-anaferreira.com/'
+    client: 'Cabinet d’avocate',
+    sector: 'Barreau de Bruxelles',
+    work: 'Site du cabinet : 5 pages, prise de rendez-vous en ligne, référencement et fiche Google'
   },
   {
     client: 'Cabinet d’avocat',
