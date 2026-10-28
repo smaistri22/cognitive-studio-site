@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { ChevronDown, HelpCircle, GraduationCap, Briefcase } from 'lucide-react';
+import { ChevronDown, HelpCircle, Euro, ShieldCheck } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { getTranslations } from '../data/translations';
 
 export const FAQSection: React.FC = () => {
-  const [filter, setFilter] = useState<'all' | 'students' | 'pros'>('all');
+  const [filter, setFilter] = useState<'all' | 'tarifs' | 'methode'>('all');
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const { language } = useLanguage();
   const t = getTranslations(language);
@@ -50,27 +50,27 @@ export const FAQSection: React.FC = () => {
           </button>
 
           <button
-            onClick={() => { setFilter('students'); setOpenIndex(null); }}
+            onClick={() => { setFilter('tarifs'); setOpenIndex(null); }}
             className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer ${
-              filter === 'students'
+              filter === 'tarifs'
                 ? 'bg-[#325249] text-white shadow-sm'
                 : 'text-[#555555] hover:text-[#333333] bg-white border border-[#cfcfc7]'
             }`}
           >
-            <GraduationCap className="w-3.5 h-3.5" />
-            <span>{t.faq.filterStudents}</span>
+            <Euro className="w-3.5 h-3.5" />
+            <span>{t.faq.filterTarifs}</span>
           </button>
 
           <button
-            onClick={() => { setFilter('pros'); setOpenIndex(null); }}
+            onClick={() => { setFilter('methode'); setOpenIndex(null); }}
             className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer ${
-              filter === 'pros'
+              filter === 'methode'
                 ? 'bg-[#325249] text-white shadow-sm'
                 : 'text-[#555555] hover:text-[#333333] bg-white border border-[#cfcfc7]'
             }`}
           >
-            <Briefcase className="w-3.5 h-3.5" />
-            <span>{t.faq.filterPros}</span>
+            <ShieldCheck className="w-3.5 h-3.5" />
+            <span>{t.faq.filterMethode}</span>
           </button>
         </div>
 
@@ -78,7 +78,7 @@ export const FAQSection: React.FC = () => {
         <div className="space-y-3">
           {filteredFaqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
-            const isStudent = faq.category === 'students';
+            const isTarif = faq.category === 'tarifs';
 
             return (
               <div
@@ -94,9 +94,7 @@ export const FAQSection: React.FC = () => {
                 >
                   <div className="space-y-1">
                     <span className="text-[10px] font-mono uppercase tracking-wider font-bold px-2 py-0.5 rounded bg-[#d8e6e1] text-[#325249] border border-[#b8cec7]">
-                      {isStudent 
-                        ? (language === 'fr' ? 'Réussite Académique' : 'Academic Track') 
-                        : (language === 'fr' ? 'Indépendants & Entreprise' : 'Business & Pros')}
+                      {isTarif ? t.faq.filterTarifs : t.faq.filterMethode}
                     </span>
                     <h3 className="text-sm sm:text-base font-bold text-[#333333] font-display pt-1">
                       {faq.question}

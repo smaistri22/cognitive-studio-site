@@ -1,30 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { 
   Star, 
   ExternalLink, 
   ShieldCheck, 
   Sparkles, 
   TrendingUp, 
-  GraduationCap, 
-  Briefcase
+  Scale,
+  ArrowUpRight
 } from 'lucide-react';
 import { COMPANY_INFO } from '../data/content';
 import { useLanguage } from '../context/LanguageContext';
 import { getTranslations } from '../data/translations';
 
 export const TestimonialsSection: React.FC = () => {
-  const [filter, setFilter] = useState<'all' | 'etudiants' | 'pros'>('all');
   const { language } = useLanguage();
   const t = getTranslations(language);
 
   const testimonials = t.testimonials.items;
 
-  const filtered = testimonials.filter(item => {
-    if (filter === 'all') return true;
-    if (filter === 'etudiants') return item.type === 'Étudiant';
-    if (filter === 'pros') return item.type === 'Indépendant' || item.type === 'Créateur de Projet';
-    return true;
-  });
+  const references = t.testimonials.references;
 
   return (
     <section id="temoignages" className="py-16 md:py-24 bg-[#e0e0db] border-b border-[#cfcfc7]">
@@ -103,96 +97,72 @@ export const TestimonialsSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Filter Buttons */}
-        <div className="flex items-center justify-center gap-2 mb-10 flex-wrap">
-          <button
-            onClick={() => setFilter('all')}
-            className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-colors cursor-pointer ${
-              filter === 'all'
-                ? 'bg-[#325249] text-white shadow-xs'
-                : 'bg-white text-[#555555] border border-[#cfcfc7] hover:bg-[#eaeae5]'
-            }`}
-          >
-            {t.testimonials.filterAll} ({testimonials.length})
-          </button>
-          <button
-            onClick={() => setFilter('etudiants')}
-            className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-colors cursor-pointer ${
-              filter === 'etudiants'
-                ? 'bg-[#325249] text-white shadow-xs'
-                : 'bg-white text-[#555555] border border-[#cfcfc7] hover:bg-[#eaeae5]'
-            }`}
-          >
-            {t.testimonials.filterStudents} (3)
-          </button>
-          <button
-            onClick={() => setFilter('pros')}
-            className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-colors cursor-pointer ${
-              filter === 'pros'
-                ? 'bg-[#325249] text-white shadow-xs'
-                : 'bg-white text-[#555555] border border-[#cfcfc7] hover:bg-[#eaeae5]'
-            }`}
-          >
-            {t.testimonials.filterPros} (1)
-          </button>
+        {/* Références */}
+        <div className="mb-12">
+          <h3 className="text-sm font-mono uppercase tracking-wider font-bold text-[#325249] mb-4 text-center">
+            {t.testimonials.referencesTitle}
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {references.map((ref, idx) => (
+              <div key={idx} className="bg-white border border-[#cfcfc7] rounded-2xl p-6 flex flex-col shadow-sm hover:border-[#325249] transition-all">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="w-10 h-10 rounded-xl bg-[#d8e6e1] border border-[#b8cec7] text-[#325249] flex items-center justify-center shrink-0">
+                    <Scale className="w-5 h-5" />
+                  </span>
+                  <div>
+                    <h4 className="text-sm font-bold text-[#333333] font-display">{ref.client}</h4>
+                    <span className="text-[11px] text-[#555555]">{ref.sector}</span>
+                  </div>
+                </div>
+                <p className="text-xs text-[#333333] leading-relaxed flex-1">{ref.work}</p>
+                {ref.url && (
+                  <a
+                    href={ref.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-4 inline-flex items-center gap-1 text-xs font-bold text-[#325249] hover:underline"
+                  >
+                    <span>{t.testimonials.visitSite}</span>
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </a>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {filtered.map((item, idx) => (
+        {/* Avis */}
+        <h3 className="text-sm font-mono uppercase tracking-wider font-bold text-[#325249] mb-4 text-center">
+          {t.testimonials.reviewsTitle}
+        </h3>
+        <div className="max-w-2xl mx-auto">
+          {testimonials.map((item, idx) => (
             <div
               key={idx}
-              className="bg-white border border-[#cfcfc7] rounded-2xl p-6 sm:p-7 flex flex-col justify-between hover:border-[#325249] transition-all shadow-sm hover:shadow-md relative"
+              className="bg-white border border-[#cfcfc7] rounded-2xl p-6 sm:p-7 flex flex-col justify-between shadow-sm"
             >
-              <div>
-                {/* Header card badge & date */}
-                <div className="flex items-center justify-between gap-2 mb-3 text-[11px]">
-                  <span className="font-mono uppercase tracking-wider font-semibold px-2 py-0.5 rounded bg-[#eaeae5] text-[#333333] border border-[#cfcfc7]">
-                    {item.type}
-                  </span>
-                  <span className="text-[#888882] text-[11px] font-mono">
-                    {item.date || (language === 'fr' ? 'Récemment' : 'Recently')}
-                  </span>
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex gap-0.5 text-amber-500">
+                  {[...Array(item.rating || 5)].map((_, i) => (
+                    <Star key={i} className="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
+                  ))}
                 </div>
-
-                {/* Google stars & source */}
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex gap-0.5 text-amber-500">
-                    {[...Array(item.rating || 5)].map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
-                    ))}
-                  </div>
-                  <span className="inline-flex items-center gap-1 text-[10px] font-mono text-[#555555] bg-[#eaeae5] px-2 py-0.5 rounded border border-[#cfcfc7]">
-                    <ShieldCheck className="w-3 h-3 text-[#325249]" />
-                    <span>{language === 'fr' ? 'Avis Google' : 'Google Review'}</span>
-                  </span>
-                </div>
-
-                {/* Quote */}
-                <p className="text-xs sm:text-sm text-[#333333] leading-relaxed italic mb-6 whitespace-pre-line">
-                  « {item.quote} »
-                </p>
+                <span className="inline-flex items-center gap-1 text-[10px] font-mono text-[#555555] bg-[#eaeae5] px-2 py-0.5 rounded border border-[#cfcfc7]">
+                  <ShieldCheck className="w-3 h-3 text-[#325249]" />
+                  <span>{t.testimonials.verifiedGoogle}</span>
+                </span>
               </div>
-
-              <div>
-                {/* Metric */}
-                <div className="mb-4">
-                  <div className="text-[11px] font-bold text-[#325249] font-mono bg-[#d8e6e1] px-2.5 py-1.5 rounded-lg border border-[#b8cec7] inline-flex items-center gap-1.5 w-full justify-center text-center">
-                    <TrendingUp className="w-3.5 h-3.5 shrink-0 text-[#325249]" />
-                    <span>{item.metric}</span>
-                  </div>
+              <p className="text-xs sm:text-sm text-[#333333] leading-relaxed italic mb-6 whitespace-pre-line">
+                « {item.quote} »
+              </p>
+              <div className="flex items-center justify-between gap-3 pt-4 border-t border-[#cfcfc7] flex-wrap">
+                <div>
+                  <h4 className="text-xs sm:text-sm font-bold text-[#333333] font-display">{item.name}</h4>
+                  <span className="text-[11px] text-[#555555]">{item.date}</span>
                 </div>
-
-                {/* Author profile */}
-                <div className="pt-4 border-t border-[#cfcfc7] flex items-center justify-between gap-2">
-                  <div>
-                    <h4 className="text-xs sm:text-sm font-bold text-[#333333] font-display">
-                      {item.name}
-                    </h4>
-                    <span className="text-[11px] text-[#555555] block leading-tight mt-0.5">
-                      {item.role}
-                    </span>
-                  </div>
+                <div className="text-[11px] font-bold text-[#325249] font-mono bg-[#d8e6e1] px-2.5 py-1.5 rounded-lg border border-[#b8cec7] inline-flex items-center gap-1.5">
+                  <TrendingUp className="w-3.5 h-3.5 shrink-0 text-[#325249]" />
+                  <span>{item.metric}</span>
                 </div>
               </div>
             </div>

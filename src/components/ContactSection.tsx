@@ -30,7 +30,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
     name: '',
     email: '',
     phone: '',
-    role: 'Étudiant',
+    role: 'Avocat / Cabinet d’avocats',
     formula: '',
     message: ''
   });
@@ -43,11 +43,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
       setFormData(prev => ({
         ...prev,
         formula: selectedService.name,
-        role: selectedService.target === 'students' 
-          ? (language === 'fr' ? 'Étudiant' : 'Student')
-          : selectedService.target === 'incubator' 
-            ? (language === 'fr' ? 'Porteur de projet' : 'Project Founder')
-            : (language === 'fr' ? 'Indépendant' : 'Freelancer')
+        role: prev.role
       }));
     }
   }, [selectedService, language]);
@@ -211,10 +207,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                       onChange={e => setFormData({ ...formData, role: e.target.value })}
                       className="w-full px-3.5 py-2.5 rounded-xl bg-[#eaeae5] border border-[#cfcfc7] text-[#333333] text-xs sm:text-sm focus:outline-none focus:border-[#325249] transition-colors"
                     >
-                      <option value="Étudiant">{t.contact.form.roleOptions.student}</option>
-                      <option value="Parent d’élève">{t.contact.form.roleOptions.parent}</option>
-                      <option value="Indépendant">{t.contact.form.roleOptions.pro}</option>
-                      <option value="Porteur de projet">{t.contact.form.roleOptions.project}</option>
+                      <option value="Avocat / Cabinet d’avocats">{t.contact.form.roleOptions.lawyer}</option>
+                      <option value="Autre profession libérale">{t.contact.form.roleOptions.liberal}</option>
+                      <option value="Indépendant / PME">{t.contact.form.roleOptions.business}</option>
+                      <option value="Autre">{t.contact.form.roleOptions.other}</option>
                     </select>
                   </div>
                 </div>

@@ -141,9 +141,7 @@ export const FounderSection: React.FC = () => {
                   {t.founder.bio1}
                 </p>
                 <p className="mt-2 text-[#555555]">
-                  {language === 'fr' 
-                    ? "Mon master à Leiden portait sur l'évolution de la cognition humaine, à la croisée de l'archéologie, des sciences cognitives et de la théorie de l'évolution. J'en ai gardé une méthode : comprendre comment l'on apprend et comment l'on résout des problèmes complexes, pour en tirer des outils concrets. C'est cette rigueur que j'apporte à mes étudiants et à mes clients professionnels. Mes études de droit actuelles nourrissent la même exigence de structure et de précision."
-                    : "My Master's at Leiden focused on the evolution of human cognition, at the crossroads of archaeology, the cognitive sciences and evolutionary theory. It gave me a method: understand how people learn and solve complex problems, and turn that into practical tools. That is the rigour I bring to my students and professional clients. My current law studies call for the same discipline of structure and precision."}
+                  {t.founder.quote}
                 </p>
               </div>
 

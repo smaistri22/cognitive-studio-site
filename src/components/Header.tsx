@@ -5,9 +5,6 @@ import {
   Menu, 
   X, 
   ArrowUpRight, 
-  GraduationCap,
-  Briefcase,
-  Rocket,
   Globe
 } from 'lucide-react';
 import { COMPANY_INFO } from '../data/content';
@@ -213,42 +210,6 @@ export const Header: React.FC<HeaderProps> = ({
                 English (EN)
               </button>
             </div>
-          </div>
-
-          <div className="grid grid-cols-3 gap-2 pb-3 border-b border-[#404040]">
-            <button
-              onClick={() => { onSelectAudience('students'); setMobileMenuOpen(false); }}
-              className={`p-2 rounded-lg text-xs font-medium text-center flex flex-col items-center gap-1 border ${
-                currentAudience === 'students' 
-                  ? 'bg-[#325249] border-[#325249] text-white' 
-                  : 'bg-[#2a2a2a] border-[#404040] text-[#e0e0db]'
-              }`}
-            >
-              <GraduationCap className="w-4 h-4" />
-              <span>{t.header.audiences.students}</span>
-            </button>
-            <button
-              onClick={() => { onSelectAudience('pros'); setMobileMenuOpen(false); }}
-              className={`p-2 rounded-lg text-xs font-medium text-center flex flex-col items-center gap-1 border ${
-                currentAudience === 'pros' 
-                  ? 'bg-[#325249] border-[#325249] text-white' 
-                  : 'bg-[#2a2a2a] border-[#404040] text-[#e0e0db]'
-              }`}
-            >
-              <Briefcase className="w-4 h-4" />
-              <span>{t.header.audiences.pros}</span>
-            </button>
-            <button
-              onClick={() => { onSelectAudience('incubator'); setMobileMenuOpen(false); }}
-              className={`p-2 rounded-lg text-xs font-medium text-center flex flex-col items-center gap-1 border ${
-                currentAudience === 'incubator' 
-                  ? 'bg-[#325249] border-[#325249] text-white' 
-                  : 'bg-[#2a2a2a] border-[#404040] text-[#e0e0db]'
-              }`}
-            >
-              <Rocket className="w-4 h-4" />
-              <span>{t.header.audiences.incubator}</span>
-            </button>
           </div>
 
           <div className="space-y-1">

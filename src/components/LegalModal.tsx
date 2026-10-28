@@ -234,7 +234,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
                 </p>
 
                 <p>
-                  <strong className="text-[#222222]">Limites liées à l'apprentissage (Pôle Étudiant) :</strong> La réussite scolaire ou académique dépendant de facteurs intrinsèques à l'élève (travail personnel, assiduité, réactivité cognitive, gestion du stress lors des épreuves), Cognitive Studio ne pourra en aucun cas être tenu responsable d'un échec à un examen, d'une non-admission ou de résultats jugés insuffisants par le client ou sa famille.
+                  <strong className="text-[#222222]">Limites liées aux outils de tiers :</strong> Les logiciels, hébergements et services de tiers recommandés ou configurés (Google Workspace, Microsoft 365, hébergeurs, registraires de noms de domaine, etc.) restent soumis aux conditions de leurs éditeurs. Cognitive Studio ne pourra être tenu responsable de leurs interruptions, modifications tarifaires ou défaillances. La tenue de la comptabilité, les déclarations fiscales et la validation juridique ou déontologique des contenus relèvent du client et de ses conseils.
                 </p>
 
                 <p>
@@ -277,7 +277,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
 
               <ul className="list-disc pl-5 space-y-1 text-xs text-[#505a55]">
                 <li>Identité et coordonnées (Nom, prénom, email, téléphone, adresse de facturation) pour la gestion administrative, contractuelle et comptable.</li>
-                <li>Données relatives au parcours académique (étudiants) ou aux processus organisationnels internes (professionnels) afin d'adapter sur-mesure l'architecture méthodologique.</li>
+                <li>Données relatives aux processus organisationnels internes du client, strictement nécessaires à la mission, traitées en qualité de sous-traitant au sens de l'article 28 du RGPD lorsqu'elles concernent les clients du cabinet.</li>
                 <li>Base légale : Exécution du contrat ou de mesures précontractuelles (Article 6.1.b du RGPD). Aucune donnée n'est jamais vendue, louée ou cédée à des fins de prospection commerciale tierce.</li>
               </ul>
 
