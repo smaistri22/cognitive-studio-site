@@ -1,12 +1,29 @@
-import { CorePillar, ServiceTier, ComparisonRow, TestimonialItem, FaqItem } from '../types';
-import { 
-  CORE_PILLARS, 
-  SERVICE_TIERS, 
-  STUDENT_COMPARISON, 
-  PRO_COMPARISON, 
-  FAQ_DATA, 
-  TESTIMONIALS 
+import { CorePillar, ServiceTier, ServiceOption, ComparisonRow, TestimonialItem, FaqItem, ReferenceItem, ServiceCategory } from '../types';
+import {
+  CORE_PILLARS,
+  SERVICE_TIERS,
+  SERVICE_OPTIONS,
+  PRO_COMPARISON,
+  FAQ_DATA,
+  TESTIMONIALS,
+  REFERENCES
 } from './content';
+import {
+  CORE_PILLARS_EN,
+  SERVICE_TIERS_EN,
+  SERVICE_OPTIONS_EN,
+  PRO_COMPARISON_EN,
+  FAQ_DATA_EN,
+  TESTIMONIALS_EN,
+  REFERENCES_EN
+} from './content.en';
+
+export interface CategoryInfo {
+  label: string;
+  short: string;
+  title: string;
+  subtitle: string;
+}
 
 export interface Translations {
   common: {
@@ -19,6 +36,7 @@ export interface Translations {
     viewOnMaps: string;
     readMore: string;
     close: string;
+    vatNote: string;
   };
   header: {
     tagline: string;
@@ -31,95 +49,97 @@ export interface Translations {
       faq: string;
       contact: string;
     };
-    audiences: {
-      students: string;
-      pros: string;
-      incubator: string;
-    };
   };
   hero: {
     tagline: string;
     subTagline: string;
-    location: string;
+    specialtyBadge: string;
     h1Main: string;
     h1Accent: string;
     description: string;
     scienceNote: string;
-    tabs: {
-      students: string;
-      pros: string;
-      incubator: string;
-    };
-    bullets: string[];
+    polesTitle: string;
+    poles: { category: ServiceCategory; title: string; desc: string; from: string }[];
     ctaBooking: string;
-    ctaWhatsapp: string;
-    ratingText: string;
+    ctaSimulator: string;
+    metrics: { value: string; label: string }[];
   };
   methodCore: {
     badge: string;
     title: string;
     subtitle: string;
-    switchMode: string;
-    modeStudent: string;
-    modePro: string;
+    pillarLabel: string;
+    principleLabel: string;
+    applicationLabel: string;
+    compareTitle: string;
+    compareSubtitle: string;
+    withoutTitle: string;
+    withTitle: string;
+    without: { title: string; text: string }[];
+    with: { title: string; text: string }[];
     pillars: CorePillar[];
   };
   services: {
     badge: string;
     title: string;
     subtitle: string;
-    tabs: {
-      all: string;
-      students: string;
-      pros: string;
-      incubator: string;
-    };
-    durationLabel: string;
-    formatLabel: string;
+    allLabel: string;
+    offersLabel: string;
+    categories: Record<ServiceCategory, CategoryInfo>;
+    pathwayTitle: string;
+    pathway: { step: string; title: string; desc: string }[];
+    cardsView: string;
+    tableView: string;
+    idealForLabel: string;
     deliverablesLabel: string;
     roiLabel: string;
+    showDetails: (n: number) => string;
+    hideDetails: string;
+    recommended: string;
+    popular: string;
+    cardFooter: string;
+    tableTitle: string;
+    tableSubtitle: string;
+    colPackage: string;
+    colCategory: string;
+    colPrice: string;
+    colDuration: string;
+    colFormat: string;
+    colDeliverables: string;
+    colAction: string;
+    select: string;
+    optionsTitle: string;
+    optionsSubtitle: string;
+    bannerTitle: string;
+    bannerText: string;
+    bannerWhatsapp: string;
+    bannerSimulator: string;
     tiers: ServiceTier[];
+    options: ServiceOption[];
   };
   simulator: {
     badge: string;
     title: string;
     subtitle: string;
     roleLabel: string;
-    roles: {
-      student: string;
-      pro: string;
-      incubator: string;
-    };
+    roles: { value: 'solo' | 'team' | 'liberal'; title: string; desc: string }[];
     challengeLabel: string;
-    challenges: {
-      student: { label: string; value: string }[];
-      pro: { label: string; value: string }[];
-      incubator: { label: string; value: string }[];
-    };
-    urgencyLabel: string;
-    urgencies: {
-      urgent: { title: string; desc: string };
-      medium: { title: string; desc: string };
-      deep: { title: string; desc: string };
-    };
-    recommendedFormula: string;
-    estimatedGainLabel: string;
-    timeframeLabel: string;
-    keyHighlightLabel: string;
-    ctaButton: string;
+    challenges: { value: 'web' | 'billing' | 'files' | 'security' | 'all'; label: string }[];
+    intensityLabel: string;
+    intensities: { value: 'ponctuel' | 'projet' | 'suivi'; label: string }[];
+    resultBadge: string;
+    priceLabel: string;
+    impactLabel: string;
+    formatLabel: string;
   };
   comparisons: {
     badge: string;
     title: string;
     subtitle: string;
-    tabStudents: string;
-    tabPros: string;
     colAspect: string;
     colTraditional: string;
     colCognitive: string;
-    colAdvantage: string;
-    studentRows: ComparisonRow[];
-    proRows: ComparisonRow[];
+    rows: ComparisonRow[];
   };
   founder: {
     badge: string;
@@ -130,6 +150,7 @@ export interface Translations {
     bio1: string;
     bio2: string;
     bio3: string;
+    quote: string;
     callToAction: string;
     consultantCreds: string;
   };
@@ -137,19 +158,20 @@ export interface Translations {
     badge: string;
     title: string;
     subtitle: string;
-    filterAll: string;
-    filterStudents: string;
-    filterPros: string;
+    referencesTitle: string;
+    reviewsTitle: string;
     verifiedGoogle: string;
+    visitSite: string;
     items: TestimonialItem[];
+    references: ReferenceItem[];
   };
   faq: {
     badge: string;
     title: string;
     subtitle: string;
     filterAll: string;
-    filterStudents: string;
-    filterPros: string;
+    filterTarifs: string;
+    filterMethode: string;
     items: FaqItem[];
   };
   contact: {
@@ -162,10 +184,10 @@ export interface Translations {
       email: string;
       role: string;
       roleOptions: {
-        student: string;
-        parent: string;
-        pro: string;
-        project: string;
+        lawyer: string;
+        liberal: string;
+        business: string;
+        other: string;
       };
       formula: string;
       formulaPlaceholder: string;
@@ -213,7 +235,7 @@ export interface Translations {
 export const TRANSLATIONS_FR: Translations = {
   common: {
     language: 'Français',
-    bookAudit: 'Réserver un Audit',
+    bookAudit: 'Diagnostic offert',
     whatsAppDirect: 'WhatsApp direct',
     callNow: 'Appeler',
     address: 'Avenue Heydenberg n°39, 1200 Woluwe-Saint-Lambert',
@@ -221,223 +243,212 @@ export const TRANSLATIONS_FR: Translations = {
     viewOnMaps: 'Voir sur Maps',
     readMore: 'En savoir plus',
     close: 'Fermer',
+    vatNote: 'Prix nets • TVA non applicable (régime de franchise)',
   },
   header: {
-    tagline: 'Bruxelles • Stratégie & Incubation',
+    tagline: 'Bruxelles • Cabinets libéraux',
     nav: {
-      core: 'Méthode C.O.R.E.',
-      services: 'Formules & Tarifs',
+      core: 'Méthode',
+      services: 'Tarifs',
       simulator: 'Simulateur',
       comparison: 'Comparatif',
-      founder: 'Simon Maistriau',
+      founder: 'Fondateur',
       faq: 'FAQ',
       contact: 'Contact',
     },
-    audiences: {
-      pros: 'Professionnels & Entreprises',
-      incubator: 'Incubateur',
-      students: 'Projet Académique (Étudiants)',
-    },
   },
   hero: {
-    tagline: 'L’exception au quotidien',
+    tagline: 'Studio numérique',
     subTagline: 'Rigueur universitaire & efficacité concrète',
-    location: '',
-    h1Main: "L'Ingénierie Pédagogique & Opérationnelle",
-    h1Accent: 'Pour Professionnels, Dirigeants & Cabinets.',
-    description: "Déployez votre Second Cerveau, supprimez les frictions opérationnelles et libérez jusqu’à 15 h par mois grâce à un accompagnement personnalisé à Bruxelles.",
-    scienceNote: 'Une méthode nourrie par les sciences cognitives : structurez vos flux, maîtrisez l’intelligence artificielle et gagnez en autonomie. (Volet sociétal : Projet Académique dédié aux étudiants).',
-    tabs: {
-      pros: 'Professionnels & Entreprises',
-      incubator: 'Incubateur Indépendants',
-      students: 'Projet Académique (Étudiants)',
-    },
-    bullets: [
-      'Tarif horaire de référence pour professionnels : 125 €, déductible au titre de frais professionnels',
-      'Installation complète du Second Cerveau digital (Notion, automatisations, CRM)',
-      'Méthode C.O.R.E. propriétaire : Comprendre, Organiser, Restructurer, Exécuter',
+    specialtyBadge: 'Spécialisé dans les cabinets d’avocats & professions libérales',
+    h1Main: 'Le studio numérique',
+    h1Accent: 'des cabinets d’avocats & professions libérales.',
+    description: 'Site internet, fichiers de gestion interconnectés, bureau numérique et sécurité des données : nous organisons votre cabinet pour que vous vous consacriez à vos dossiers.',
+    scienceNote: 'Un interlocuteur unique, qui étudie le droit et connaît les contraintes d’un cabinet : secret professionnel, déontologie, RGPD.',
+    polesTitle: 'Ce que nous mettons en place',
+    poles: [
+      { category: 'web', title: 'Présence en ligne', desc: 'Site du cabinet, prise de rendez-vous en ligne, référencement et fiche Google.', from: 'dès 790 €' },
+      { category: 'fichiers', title: 'Fichiers interconnectés', desc: 'Excel ou Google Sheets reliés entre eux : du temps presté à la facture, sans ressaisie.', from: 'dès 350 €' },
+      { category: 'bureau', title: 'Bureau numérique & sécurité', desc: 'E-mail pro, Drive organisé, double authentification, sauvegardes et RGPD.', from: 'dès 390 €' },
+      { category: 'conseil', title: 'Conseil & organisation', desc: 'Diagnostic offert, refonte de vos processus, documentation et formation.', from: '100 € / h' },
     ],
-    ctaBooking: 'Réserver une séance pro',
-    ctaWhatsapp: 'Échanger sur WhatsApp',
-    ratingText: 'Note Google : 4,8 / 5 (6 avis)',
+    ctaBooking: 'Réserver mon diagnostic offert',
+    ctaSimulator: 'Trouver ma formule (1 min)',
+    metrics: [
+      { value: 'Offert', label: 'Diagnostic de 2 h si vous poursuivez' },
+      { value: '1:1', label: 'Un seul interlocuteur : le fondateur' },
+      { value: '< 24 h', label: 'Réponse par téléphone, e-mail ou WhatsApp' },
+      { value: '100 %', label: 'Site, fichiers et comptes à votre nom' },
+    ],
   },
   methodCore: {
-    badge: 'INGÉNIERIE COGNITIVE PROPRIÉTAIRE',
+    badge: 'NOTRE MÉTHODE',
     title: 'La Méthode C.O.R.E.',
-    subtitle: 'Une architecture cognitive en 4 étapes pour remplacer l’improvisation par la certitude des résultats.',
-    switchMode: 'Voir l’application pour :',
-    modeStudent: 'Projet Académique (Étudiants)',
-    modePro: 'Professionnels & Entreprises',
-    pillars: [
-      {
-        letter: 'C',
-        word: 'Comprendre',
-        subtitle: 'Déconstruire les systèmes & refuser la boîte noire',
-        description: 'La compréhension profonde remplace le par-cœur stérile et la dépendance aveugle aux IA génératives. Nous isolons les principes premiers de chaque défi pour ancrer la logique dans vos réseaux cognitifs durables.',
-        academicApplication: 'Déconstruction méthodique du cours, cartographie conceptuelle sans fiches pré-mâchées, appropriation des mécanismes d’examen.',
-        businessApplication: 'Audit sans complaisance des processus d’entreprise, détection des points de friction et identification précise des goulots d’étranglement.',
-        iconName: 'Brain'
-      },
-      {
-        letter: 'O',
-        word: 'Organiser',
-        subtitle: 'Bâtir votre "Second Cerveau" & structurer le flux',
-        description: 'La clarté mentale naît d’une structure irréprochable. Nous éliminons la charge cognitive inutile en matérialisant un écosystème d’organisation personnel ou d’entreprise (Notion, protocoles, rituels).',
-        academicApplication: 'Rétro-planning réaliste, priorisation absolue des matières à fort coefficient, routine de travail fluide sans procrastination.',
-        businessApplication: 'Architecture Notion complète, centralisation des connaissances, CRM opérationnel et suppression des doublons administratifs.',
-        iconName: 'FolderTree'
-      },
-      {
-        letter: 'R',
-        word: 'Restructurer',
-        subtitle: 'Affûter l’esprit critique & colmater les fuites',
-        description: 'L’outil ne doit jamais précéder la pensée. Nous apprenons à maîtriser les outils modernes (IA, automatisations) plutôt que de leur sous-traiter passivement notre intellect.',
-        academicApplication: 'Méthode « Zéro Support » : l’élève produit lui-même sa matière, développe un esprit de synthèse rigoureux et maîtrise la rhétorique.',
-        businessApplication: 'Simplification radicale des démarches, automatisation des tâches chronophages et réduction des coûts de gestion externe.',
-        iconName: 'Cpu'
-      },
-      {
-        letter: 'E',
-        word: 'Exécuter',
-        subtitle: 'Passer à l’action avec précision',
-        description: 'La théorie sans résultat est inutile. Tout accompagnement se traduit par des livrables tangibles, des quick-wins immédiats et une autonomie totale retrouvée.',
-        academicApplication: 'Mises en situation sous pression, examens blancs minutés, techniques de gestion du stress et validation sereine des crédits ECTS.',
-        businessApplication: 'Mise en ligne de l’offre, contractualisation, facturation automatisée et indépendance opérationnelle pérenne.',
-        iconName: 'Zap'
-      }
-    ]
+    subtitle: 'Quatre étapes, issues des sciences cognitives, pour remplacer l’improvisation par une organisation qui tient dans la durée.',
+    pillarLabel: 'Étape',
+    principleLabel: 'Principe',
+    applicationLabel: 'Dans votre cabinet',
+    compareTitle: 'Votre cabinet, avant et après',
+    compareSubtitle: 'Ce qui change concrètement au quotidien.',
+    withoutTitle: 'Sans organisation numérique',
+    withTitle: 'Avec Cognitive Studio',
+    without: [
+      { title: 'Ressaisies :', text: 'les mêmes informations encodées dans trois fichiers différents.' },
+      { title: 'Facturation :', text: 'des heures chaque mois à reconstituer le temps presté et rédiger les factures.' },
+      { title: 'Comptes privés :', text: 'données de clients mêlées à votre messagerie personnelle, sans double authentification.' },
+      { title: 'Site absent ou daté :', text: 'des clients qui ne vous trouvent pas ou ne peuvent pas prendre rendez-vous.' },
+    ],
+    with: [
+      { title: 'Une seule saisie :', text: 'chaque information alimente automatiquement les autres fichiers.' },
+      { title: 'Facturation automatisée :', text: 'du temps presté à la facture PDF en quelques minutes.' },
+      { title: 'Bureau sécurisé :', text: 'e-mail pro, accès protégés, sauvegardes et registre RGPD.' },
+      { title: 'Cabinet visible :', text: 'un site clair, conforme à votre déontologie, avec prise de rendez-vous en ligne.' },
+    ],
+    pillars: CORE_PILLARS
   },
   services: {
-    badge: 'CATALOGUE DES INTERVENTIONS',
-    title: 'Des Formules Conçues Pour Des Résultats Tangibles',
-    subtitle: 'Interventions pour indépendants et entreprises, et Projet Académique d’accompagnement des étudiants. Tous les prix sont indiqués toutes taxes comprises.',
-    tabs: {
-      pros: 'Professionnels & Entreprises',
-      incubator: 'Incubateur d’Indépendants',
-      students: 'Projet Académique (Étudiants)',
-      all: 'Toutes les formules',
+    badge: 'PRESTATIONS & TARIFS',
+    title: 'Des prix fixes, publiés, sans surprise',
+    subtitle: 'Choisissez une formule clé en main ou composez votre accompagnement. Tous les prix sont nets : TVA non applicable (régime de franchise).',
+    allLabel: 'Tout voir',
+    offersLabel: 'offres',
+    categories: {
+      formules: { label: 'Formules', short: 'Clé en main', title: 'Formules clé en main', subtitle: 'Les prestations les plus demandées par les cabinets, regroupées avec 12 à 14 % d’économie.' },
+      conseil: { label: 'Conseil', short: 'Dès 100 € / h', title: 'Conseil & organisation', subtitle: 'Diagnostic, séances à la carte et refonte de vos processus.' },
+      web: { label: 'Sites', short: 'Dès 790 €', title: 'Présence en ligne', subtitle: 'Des sites sobres, rapides et conformes aux règles de votre profession.' },
+      fichiers: { label: 'Fichiers', short: 'Dès 350 €', title: 'Fichiers interconnectés & automatisation', subtitle: 'Excel ou Google Sheets reliés entre eux : une information saisie une fois alimente tout le reste.' },
+      bureau: { label: 'Bureau & sécurité', short: 'Dès 390 €', title: 'Bureau numérique, sécurité & RGPD', subtitle: 'Un environnement professionnel, séparé de votre vie privée, et des données protégées.' },
+      abonnements: { label: 'Abonnements', short: 'Dès 29 € / mois', title: 'Abonnements mensuels', subtitle: 'Sans engagement, résiliables avec un mois de préavis. 10 % de réduction en paiement annuel.' },
     },
-    durationLabel: 'Durée :',
-    formatLabel: 'Format :',
-    deliverablesLabel: 'Livrables concrets :',
-    roiLabel: 'Impact attendu :',
-    tiers: SERVICE_TIERS
+    pathwayTitle: 'Comment nous travaillons',
+    pathway: [
+      { step: '1. Diagnostic', title: '2 h offertes si vous poursuivez', desc: 'Outils, fichiers, site et sécurité passés en revue, proposition chiffrée sous 5 jours.' },
+      { step: '2. Mise en place', title: 'Forfait à prix fixe', desc: 'Réalisation, point d’étape et deux séries de corrections incluses.' },
+      { step: '3. Suivi', title: 'Abonnement si vous le souhaitez', desc: 'Maintenance, assistance et évolution, sans engagement.' },
+    ],
+    cardsView: 'Fiches détaillées',
+    tableView: 'Comparatif rapide',
+    idealForLabel: 'Pour qui ?',
+    deliverablesLabel: 'Livrables :',
+    roiLabel: 'Résultat attendu :',
+    showDetails: (n) => `Voir les ${n} points`,
+    hideDetails: 'Masquer le détail',
+    recommended: 'Recommandé',
+    popular: 'Populaire',
+    cardFooter: 'Réponse sous 24 h • Sans engagement',
+    tableTitle: 'Tableau comparatif des prestations',
+    tableSubtitle: 'Durées, tarifs, formats et livrables en un coup d’œil.',
+    colPackage: 'Prestation',
+    colCategory: 'Catégorie',
+    colPrice: 'Tarif',
+    colDuration: 'Durée',
+    colFormat: 'Format',
+    colDeliverables: 'Livrables',
+    colAction: 'Action',
+    select: 'Choisir',
+    optionsTitle: 'Options & prestations complémentaires',
+    optionsSubtitle: 'À ajouter à n’importe quelle prestation.',
+    bannerTitle: 'Le diagnostic est offert si vous poursuivez',
+    bannerText: 'Vous ne prenez aucun risque : les 2 h de diagnostic (200 €) sont gratuites si un forfait ou un abonnement est signé dans les 30 jours. Le barème complet est disponible sur simple demande.',
+    bannerWhatsapp: 'Poser une question sur WhatsApp',
+    bannerSimulator: 'Trouver ma formule (1 min)',
+    tiers: SERVICE_TIERS,
+    options: SERVICE_OPTIONS,
   },
   simulator: {
-    badge: 'SIMULATEUR INTERACTIF',
-    title: 'Trouvez la formule exacte pour votre situation',
-    subtitle: 'Répondez à 3 questions pour estimer vos gains de temps, de rentabilité et obtenir votre plan d’action recommandé.',
-    roleLabel: '1. Votre Profil Actuel',
-    roles: {
-      pro: 'Professionnel / Dirigeant / Indépendant',
-      incubator: 'Porteur de projet / Salarié',
-      student: 'Projet Académique (Étudiant / Parent d’élève)',
-    },
-    challengeLabel: '2. Votre Principal Obstacle',
-    challenges: {
-      pro: [
-        { label: 'Noyé sous l’opérationnel et la gestion administrative', value: 'overwhelmed' },
-        { label: 'Perte de temps sur des outils mal synchronisés ou vieillissants', value: 'bad_tools' },
-        { label: 'Besoin d’un pilotage de direction des opérations sans recruter', value: 'coo_needed' }
-      ],
-      incubator: [
-        { label: 'Idée de side-hustle mais peur de la complexité administrative', value: 'side_fear' },
-        { label: 'Lancement d’une société à temps plein avec bases solides', value: 'full_launch' }
-      ],
-      student: [
-        { label: 'Examens ou blocus imminent (panique / manque de temps)', value: 'exam_stress' },
-        { label: 'Méthode de travail inefficace malgré de longues heures d’étude', value: 'bad_method' },
-        { label: 'Objectif de mention ou concours d’excellence (médecine, droit)', value: 'high_stakes' }
-      ]
-    },
-    urgencyLabel: '3. Horizon de Temps & Intensité Souhaitée',
-    urgencies: {
-      urgent: {
-        title: 'Action rapide',
-        desc: 'Intervention ciblée (125 € / h)'
-      },
-      medium: {
-        title: 'Diagnostic & Restructuration',
-        desc: 'Audit Flash 2h (250 €) et plan d’action structuré'
-      },
-      deep: {
-        title: 'Transformation en Profondeur',
-        desc: 'Pack Architecture 15h ou Direction des Opérations Partagée'
-      }
-    },
-    recommendedFormula: 'Formule Recommandée pour Votre Situation :',
-    estimatedGainLabel: 'Gain Estimé :',
-    timeframeLabel: 'Cadence :',
-    keyHighlightLabel: 'Pourquoi ce choix ?',
-    ctaButton: 'Sélectionner cette formule et réserver',
+    badge: 'SIMULATEUR',
+    title: 'Quelle formule pour votre cabinet ?',
+    subtitle: 'Trois questions pour obtenir une recommandation et son prix.',
+    roleLabel: '1. Votre structure',
+    roles: [
+      { value: 'solo', title: 'Avocat seul', desc: 'Cabinet individuel' },
+      { value: 'team', title: 'Cabinet avec équipe', desc: 'Associés, collaborateurs' },
+      { value: 'liberal', title: 'Autre profession', desc: 'Libérale ou indépendante' },
+    ],
+    challengeLabel: '2. Votre priorité',
+    challenges: [
+      { value: 'web', label: 'Avoir un site professionnel et être trouvé en ligne' },
+      { value: 'billing', label: 'Facturer plus vite, sans ressaisie, et suivre les impayés' },
+      { value: 'files', label: 'Mettre de l’ordre dans mes fichiers et mes processus' },
+      { value: 'security', label: 'Passer à un e-mail pro et sécuriser les données de mes clients' },
+      { value: 'all', label: 'Un peu tout cela : remettre le cabinet à plat' },
+    ],
+    intensityLabel: '3. Le format souhaité',
+    intensities: [
+      { value: 'ponctuel', label: 'Ponctuel' },
+      { value: 'projet', label: 'Projet complet' },
+      { value: 'suivi', label: 'Suivi régulier' },
+    ],
+    resultBadge: 'Recommandation',
+    priceLabel: 'Tarif (TVA non applicable)',
+    impactLabel: 'Résultat attendu',
+    formatLabel: 'Durée',
   },
   comparisons: {
-    badge: 'ANALYSE COMPARATIVE',
-    title: 'Pourquoi Cognitive Studio Change la Donne',
-    subtitle: 'Deux approches comparées, pour les professionnels comme pour les étudiants.',
-    tabPros: 'Professionnels : Cognitive Studio vs conseil traditionnel',
-    tabStudents: 'Projet Académique : Cognitive Studio vs Tutorat Classique',
-    colAspect: 'Critère Analysé',
-    colTraditional: 'Approche Traditionnelle',
-    colCognitive: 'Approche Cognitive Studio',
-    colAdvantage: 'Bénéfice Concret',
-    studentRows: STUDENT_COMPARISON,
-    proRows: PRO_COMPARISON
+    badge: 'COMPARATIF',
+    title: 'Pourquoi Cognitive Studio',
+    subtitle: 'Un seul interlocuteur qui connaît les cabinets, au lieu de plusieurs prestataires généralistes.',
+    colAspect: 'Critère',
+    colTraditional: 'Prestataires classiques',
+    colCognitive: 'Cognitive Studio',
+    rows: PRO_COMPARISON
   },
   founder: {
     badge: 'LE FONDATEUR',
-    title: 'De la recherche universitaire à l’efficacité opérationnelle',
+    title: 'De la recherche universitaire à l’organisation des cabinets',
     subtitle: '« Mon approche : allier l’exigence universitaire à l’efficacité concrète sur le terrain. »',
-    roleTitle: 'Fondateur & Consultant en méthodologie',
+    roleTitle: 'Fondateur & Consultant en organisation numérique',
     credentials: [
       'Master en Global Archaeology, Université de Leiden',
       'Année passerelle vers le Master en droit (ULB)',
       'Woluwe-Saint-Lambert, Bruxelles (Belgique)',
     ],
-    bio1: "Diplômé d’un Master en Global Archaeology de l’Université de Leiden, orienté vers l’évolution de la cognition humaine, Simon Maistriau a fondé Cognitive Studio pour réduire l’écart entre la théorie académique et l’efficacité réelle sur le terrain. Il poursuit aujourd’hui des études de droit à l’ULB, en année passerelle vers le Master en droit (droit public et international).",
-    bio2: "Que ce soit auprès d’étudiants en difficulté méthodologique ou d’entrepreneurs submergés par leurs flux administratifs, son diagnostic est le même : l’empilement d’outils sans compréhension profonde ne génère que surcharge mentale et dépendance.",
-    bio3: "À travers la Méthode C.O.R.E. et le principe de « Zéro Support », il aide ses clients à retrouver leur autonomie : vous comprenez les principes premiers, structurez vos données et exécutez avec précision.",
+    bio1: "Diplômé d’un Master en Global Archaeology de l’Université de Leiden, orienté vers l’évolution de la cognition humaine, Simon Maistriau a fondé Cognitive Studio pour réduire l’écart entre la théorie et l’efficacité réelle sur le terrain. Il poursuit aujourd’hui des études de droit à l’ULB, en année passerelle vers le Master en droit.",
+    bio2: "Auprès des cabinets d’avocats et des indépendants qu’il accompagne, son constat est constant : l’empilement d’outils mal reliés crée des ressaisies, des oublis de facturation et des risques pour la confidentialité des dossiers.",
+    bio3: "À travers la Méthode C.O.R.E., il conçoit des systèmes simples — site, fichiers interconnectés, bureau numérique sécurisé — que le cabinet comprend, possède et sait faire évoluer.",
+    quote: "Mon master à Leiden portait sur l'évolution de la cognition humaine, à la croisée de l'archéologie, des sciences cognitives et de la théorie de l'évolution. J'en ai gardé une méthode : comprendre comment l'on travaille et comment l'on résout des problèmes complexes, pour en tirer des outils concrets. Mes études de droit me permettent de parler le même langage que les cabinets que j'accompagne.",
     callToAction: 'Échanger directement avec Simon Maistriau',
     consultantCreds: 'Master en Global Archaeology (Université de Leiden) • Année passerelle Master en droit (ULB)',
   },
   testimonials: {
-    badge: 'RETOURS D’EXPÉRIENCE',
-    title: 'Ce Que Disent Ceux Qui Ont Franchi Le Pas',
-    subtitle: 'Une sélection d’avis publiés sur la fiche Google de Cognitive Studio.',
-    filterAll: 'Tous les avis',
-    filterStudents: 'Pôle Étudiants & Scolarité',
-    filterPros: 'Pôle Professionnels & Gestion',
-    verifiedGoogle: 'Avis publiés sur Google',
-    items: TESTIMONIALS
+    badge: 'RÉFÉRENCES',
+    title: 'Ils nous ont confié leur cabinet',
+    subtitle: 'Quelques réalisations récentes et l’avis publié sur notre fiche Google.',
+    referencesTitle: 'Réalisations',
+    reviewsTitle: 'Avis client',
+    verifiedGoogle: 'Avis publié sur Google',
+    visitSite: 'Voir le site',
+    items: TESTIMONIALS,
+    references: REFERENCES
   },
   faq: {
     badge: 'QUESTIONS FRÉQUENTES',
-    title: 'Toutes les Réponses à Vos Interrogations',
-    subtitle: 'Méthodologie, logistique, déductibilité fiscale et garanties : tout ce qu’il faut savoir avant de démarrer.',
+    title: 'Vos questions, nos réponses',
+    subtitle: 'Tarifs, confidentialité, propriété des outils et méthode de travail.',
     filterAll: 'Toutes les questions',
-    filterStudents: 'Questions Étudiants',
-    filterPros: 'Questions Professionnels',
+    filterTarifs: 'Tarifs & conditions',
+    filterMethode: 'Méthode & confidentialité',
     items: FAQ_DATA
   },
   contact: {
-    badge: 'PRISE DE CONTACT DIRECTE',
-    title: 'Échangeons sur Votre Situation',
-    subtitle: "Une question sur un pack ? Un audit à planifier d'urgence avant vos examens ou votre rentrée ? Réponse du fondateur sous 24 h.",
+    badge: 'CONTACT',
+    title: 'Parlons de votre cabinet',
+    subtitle: 'Une question sur une prestation, un diagnostic à planifier ? Réponse du fondateur sous 24 h ouvrables.',
     form: {
-      name: 'Nom et Prénom *',
-      phone: 'Numéro de Téléphone *',
-      email: 'Adresse E-mail *',
+      name: 'Nom et prénom *',
+      phone: 'Téléphone *',
+      email: 'Adresse e-mail *',
       role: 'Vous êtes :',
       roleOptions: {
-        student: 'Étudiant',
-        parent: 'Parent d’élève',
-        pro: 'Indépendant / Chef d’entreprise',
-        project: 'Porteur de projet',
+        lawyer: 'Avocat / Cabinet d’avocats',
+        liberal: 'Autre profession libérale',
+        business: 'Indépendant / PME',
+        other: 'Autre',
       },
-      formula: 'Formule ou besoin spécifique',
-      formulaPlaceholder: 'Audit Flash (250 €), Pack Examens (350 €), Incubateur...',
-      message: 'Message descriptif du projet ou de la situation scolaire *',
-      messagePlaceholder: 'Précisez votre établissement / métier, vos échéances et les blocages constatés...',
+      formula: 'Prestation ou besoin',
+      formulaPlaceholder: 'Diagnostic offert, Site Cabinet, Circuit de facturation…',
+      message: 'Décrivez votre cabinet et votre besoin *',
+      messagePlaceholder: 'Taille du cabinet, outils utilisés, ce qui vous fait perdre du temps, échéances…',
       sendCopy: '',
       submitBtn: 'Envoyer ma demande par e-mail',
       submitting: 'Ouverture de votre messagerie...',
@@ -447,21 +458,21 @@ export const TRANSLATIONS_FR: Translations = {
       sendAnother: 'Envoyer un autre message',
     },
     directCard: {
-      title: 'Ligne Directe du Fondateur',
+      title: 'Ligne directe du fondateur',
       phoneTitle: 'Téléphone Belgique',
       whatsappTitle: 'WhatsApp',
       emailTitle: 'Courriel officiel',
     },
     hoursCard: {
-      title: 'Heures d’Ouverture & Bureau',
-      zonesTitle: 'Zones Physiques Couvertes (Bruxelles) :',
-      zonesDesc: 'Woluwe-Saint-Lambert, Woluwe-Saint-Pierre, Etterbeek, Ixelles, Uccle, Auderghem. Séances en présentiel au bureau, à domicile ou téléconsultation vidéo sécurisée.',
-      addressTitle: 'Adresse du Bureau :',
+      title: 'Heures d’ouverture & bureau',
+      zonesTitle: 'Déplacements inclus (Bruxelles) :',
+      zonesDesc: 'Woluwe-Saint-Lambert, Woluwe-Saint-Pierre, Etterbeek, Ixelles, Uccle, Auderghem. Ailleurs en Belgique sur devis ; toutes les prestations sont aussi possibles à distance.',
+      addressTitle: 'Adresse du bureau :',
     },
   },
   footer: {
-    brandDesc: 'Cabinet de Conseil en Stratégie Cognitive, Organisation & Méthodologie. Incubateur d’Indépendants à Bruxelles. Une approche fondée sur la rigueur universitaire, pour gagner en autonomie.',
-    legalNote: 'Entreprise individuelle • Conforme au Code de droit économique belge.',
+    brandDesc: 'Studio numérique des cabinets d’avocats et professions libérales à Bruxelles : sites internet, fichiers de gestion interconnectés, bureau numérique et sécurité des données.',
+    legalNote: 'Entreprise individuelle • TVA non applicable (régime de franchise) • Conforme au Code de droit économique belge.',
     address: 'Avenue Heydenberg n°39, 1200 Woluwe-Saint-Lambert, Bruxelles',
     founderLine: 'Fondateur & Responsable : Simon Maistriau',
     navTitle: 'Navigation',
@@ -479,7 +490,7 @@ export const TRANSLATIONS_FR: Translations = {
 export const TRANSLATIONS_EN: Translations = {
   common: {
     language: 'English',
-    bookAudit: 'Book an Audit',
+    bookAudit: 'Free diagnostic',
     whatsAppDirect: 'Direct WhatsApp',
     callNow: 'Call Us',
     address: 'Avenue Heydenberg 39, 1200 Woluwe-Saint-Lambert',
@@ -487,646 +498,212 @@ export const TRANSLATIONS_EN: Translations = {
     viewOnMaps: 'View on Maps',
     readMore: 'Learn More',
     close: 'Close',
+    vatNote: 'Net prices • VAT not applicable (small-business exemption)',
   },
   header: {
-    tagline: 'Brussels • Strategy & Incubation',
+    tagline: 'Brussels • Law firms',
     nav: {
-      core: 'C.O.R.E. Method',
-      services: 'Packages & Pricing',
+      core: 'Method',
+      services: 'Pricing',
       simulator: 'Simulator',
       comparison: 'Comparison',
-      founder: 'Simon Maistriau',
+      founder: 'Founder',
       faq: 'FAQ',
       contact: 'Contact',
     },
-    audiences: {
-      pros: 'Professionals & Enterprises',
-      incubator: 'Incubator',
-      students: 'Academic Project (Students)',
-    },
   },
   hero: {
-    tagline: 'Excellence in everyday practice',
+    tagline: 'Digital studio',
     subTagline: 'Academic rigor & practical efficiency',
-    location: '',
-    h1Main: 'Pedagogical Engineering & Operations',
-    h1Accent: 'For Professionals, Executives & Firms.',
-    description: 'Deploy your Second Brain, eliminate operational friction, and reclaim up to 15 hours per month with personalised support in Brussels.',
-    scienceNote: 'A method informed by the cognitive sciences: structure your workflows, master AI without dependency, and gain autonomy. (Societal initiative: Academic Project for students).',
-    tabs: {
-      pros: 'Professionals & Enterprises',
-      incubator: 'Freelancer Incubator',
-      students: 'Academic Project (Students)',
-    },
-    bullets: [
-      'Standard hourly consulting rate for professionals: €125, deductible as a business expense',
-      'Turnkey Second Brain digital ecosystem (Notion, automations, CRM)',
-      'Proprietary C.O.R.E. Method: Comprehend, Organize, Restructure, Execute',
+    specialtyBadge: 'Specialised in law firms & independent professionals',
+    h1Main: 'The digital studio',
+    h1Accent: 'for law firms & independent professionals.',
+    description: 'Website, interconnected management files, digital office and data security: we organise your practice so you can focus on your cases.',
+    scienceNote: 'A single contact who studies law and knows the constraints of a practice: professional secrecy, ethics, GDPR.',
+    polesTitle: 'What we set up',
+    poles: [
+      { category: 'web', title: 'Online presence', desc: 'Practice website, online booking, SEO and Google profile.', from: 'from €790' },
+      { category: 'fichiers', title: 'Interconnected files', desc: 'Linked Excel or Google Sheets files: from time recorded to invoice, without re-typing.', from: 'from €350' },
+      { category: 'bureau', title: 'Digital office & security', desc: 'Professional email, organised Drive, two-factor authentication, backups and GDPR.', from: 'from €390' },
+      { category: 'conseil', title: 'Consulting & organisation', desc: 'Free diagnostic, process redesign, documentation and training.', from: '€100 / h' },
     ],
-    ctaBooking: 'Book a pro session',
-    ctaWhatsapp: 'Chat on WhatsApp',
-    ratingText: 'Google rating: 4.8 / 5 (6 reviews)',
+    ctaBooking: 'Book my free diagnostic',
+    ctaSimulator: 'Find my package (1 min)',
+    metrics: [
+      { value: 'Free', label: '2-hour diagnostic if you go ahead' },
+      { value: '1:1', label: 'One contact: the founder' },
+      { value: '< 24 h', label: 'Reply by phone, email or WhatsApp' },
+      { value: '100%', label: 'Website, files and accounts in your name' },
+    ],
   },
   methodCore: {
-    badge: 'PROPRIETARY COGNITIVE ENGINEERING',
+    badge: 'OUR METHOD',
     title: 'The C.O.R.E. Method',
-    subtitle: 'A 4-stage cognitive architecture designed to replace guesswork with deterministic results.',
-    switchMode: 'View application for:',
-    modeStudent: 'Academic Project (Students)',
-    modePro: 'Professionals & Enterprises',
-    pillars: [
-      {
-        letter: 'C',
-        word: 'Comprehend',
-        subtitle: 'Deconstruct systems & reject the black box',
-        description: 'Deep understanding replaces rote memorization and blind dependence on generative AI. We isolate the first principles of every challenge to anchor knowledge into long-term cognitive networks.',
-        academicApplication: 'Methodical course deconstruction, concept mapping without pre-made study sheets, full mastery of examination mechanisms.',
-        businessApplication: 'Uncompromising audit of business workflows, detection of friction points, and precise bottleneck identification.',
-        iconName: 'Brain'
-      },
-      {
-        letter: 'O',
-        word: 'Organize',
-        subtitle: 'Build your "Second Brain" & streamline the flow',
-        description: 'Mental clarity stems from flawless structure. We eliminate cognitive overload by materializing an external organization ecosystem (Notion, protocols, rituals).',
-        academicApplication: 'Realistic retro-planning, strict prioritization of high-credit subjects, fluid study routines free of procrastination.',
-        businessApplication: 'Complete Notion workspace architecture, knowledge centralization, operational CRM, and removal of administrative duplications.',
-        iconName: 'FolderTree'
-      },
-      {
-        letter: 'R',
-        word: 'Restructure',
-        subtitle: 'Sharpen critical thinking & seal operational leaks',
-        description: 'Tools must never precede thought. We teach you to master modern software (AI, automations) rather than passively outsourcing your intellect to them.',
-        academicApplication: 'Zero-Support doctrine: students produce their own synthesized notes, sharpen rigorous analysis, and master academic rhetoric.',
-        businessApplication: 'Radical simplification of workflows, automation of repetitive tasks, and lower external management costs.',
-        iconName: 'Cpu'
-      },
-      {
-        letter: 'E',
-        word: 'Execute',
-        subtitle: 'Take action with precision',
-        description: 'Theory without tangible outcome is pointless. Every engagement yields concrete deliverables, immediate quick wins, and lasting autonomy.',
-        academicApplication: 'Timed simulations under real exam conditions, stress regulation techniques, and confident validation of university credits.',
-        businessApplication: 'Live launch of commercial offers, streamlined contracts, automated invoicing, and durable operational independence.',
-        iconName: 'Zap'
-      }
-    ]
+    subtitle: 'Four steps, drawn from the cognitive sciences, to replace improvisation with an organisation that lasts.',
+    pillarLabel: 'Step',
+    principleLabel: 'Principle',
+    applicationLabel: 'In your practice',
+    compareTitle: 'Your practice, before and after',
+    compareSubtitle: 'What concretely changes day to day.',
+    withoutTitle: 'Without digital organisation',
+    withTitle: 'With Cognitive Studio',
+    without: [
+      { title: 'Re-typing:', text: 'the same information entered in three different files.' },
+      { title: 'Billing:', text: 'hours every month rebuilding time records and drafting invoices.' },
+      { title: 'Personal accounts:', text: 'client data mixed with your personal mailbox, without two-factor authentication.' },
+      { title: 'No or outdated website:', text: 'clients who cannot find you or book an appointment.' },
+    ],
+    with: [
+      { title: 'Enter once:', text: 'each piece of information automatically feeds the other files.' },
+      { title: 'Automated billing:', text: 'from time recorded to PDF invoice in minutes.' },
+      { title: 'Secure office:', text: 'professional email, protected access, backups and GDPR records.' },
+      { title: 'Visible practice:', text: 'a clear website, compliant with your professional rules, with online booking.' },
+    ],
+    pillars: CORE_PILLARS_EN
   },
   services: {
-    badge: 'ENGAGEMENT CATALOG',
-    title: 'Solutions Engineered For Measurable Operational ROI',
-    subtitle: 'Services for freelancers and companies, plus an academic project supporting students. All prices include all taxes.',
-    tabs: {
-      pros: 'Professionals & Enterprises',
-      incubator: 'Freelancer Incubator',
-      students: 'Academic Project (Students)',
-      all: 'All Packages',
+    badge: 'SERVICES & PRICING',
+    title: 'Fixed, published prices, no surprises',
+    subtitle: 'Choose a turnkey package or build your own engagement. All prices are net: VAT not applicable (small-business exemption).',
+    allLabel: 'View all',
+    offersLabel: 'offers',
+    categories: {
+      formules: { label: 'Packages', short: 'Turnkey', title: 'Turnkey packages', subtitle: 'The services practices request most, bundled with 12 to 14% savings.' },
+      conseil: { label: 'Consulting', short: 'From €100 / h', title: 'Consulting & organisation', subtitle: 'Diagnostic, on-demand sessions and process redesign.' },
+      web: { label: 'Websites', short: 'From €790', title: 'Online presence', subtitle: 'Clean, fast websites that respect your professional rules.' },
+      fichiers: { label: 'Files', short: 'From €350', title: 'Interconnected files & automation', subtitle: 'Linked Excel or Google Sheets files: information entered once feeds everything else.' },
+      bureau: { label: 'Office & security', short: 'From €390', title: 'Digital office, security & GDPR', subtitle: 'A professional environment, separate from your private life, with protected data.' },
+      abonnements: { label: 'Subscriptions', short: 'From €29 / month', title: 'Monthly subscriptions', subtitle: 'No commitment, one month’s notice. 10% off with annual payment.' },
     },
-    durationLabel: 'Duration:',
-    formatLabel: 'Format:',
-    deliverablesLabel: 'Concrete Deliverables:',
-    roiLabel: 'Expected Impact:',
-    tiers: [
-      // 1. PRIMARY: PROFESSIONALS & ENTERPRISES
-      {
-        id: 'pro-hourly',
-        name: 'Operational Consulting & Strategy',
-        target: 'pros',
-        tagline: 'On-demand high-touch session to unlock critical friction, audit tools, or restructure workflows.',
-        price: '€125',
-        priceDetail: 'Per intervention hour • Deductible as a business expense',
-        badge: 'Benchmark Hourly Rate',
-        duration: 'On-demand (starting from 1 hour)',
-        format: 'In-person in Brussels or interactive video',
-        idealFor: 'Independent professionals, executives, partners, and firms requiring immediate expert advice.',
-        deliverables: [
-          'Real-time diagnostic and operational root-cause analysis',
-          'Concrete solutions implemented directly during the session',
-          'Action summary and written roadmap within 24 hours'
-        ],
-        expectedImpact: 'Immediate bottleneck clearance and tangible efficiency gains right after the session.',
-        features: [
-          'Transparent benchmark hourly rate: €125 / hour',
-          'Zero volume commitment: book according to your strict needs',
-          'Direct work on your real tools, data, and workflows (Zero-Support method)',
-          'Deductible as a business expense, depending on your tax situation'
-        ],
-        ctaText: 'Book a pro session'
-      },
-      {
-        id: 'pro-audit',
-        name: 'Flash Operations Audit (2h)',
-        target: 'pros',
-        tagline: 'Two hours of analysis to uncover losses of time, energy and profitability.',
-        price: '€250',
-        priceDetail: '2-hour fixed package (2 × €125) • Deducted if you continue',
-        badge: 'Deducted from next step',
-        highlightNote: 'Fully deducted if you continue with the Architecture Pack or the Fractional COO formula',
-        duration: '2 hours of live analytical immersion',
-        format: 'On-site immersion at your Brussels office or via video',
-        idealFor: 'Freelancers, legal professionals and founders overwhelmed by daily operations.',
-        deliverables: [
-          'Comprehensive visual mapping of your operational workflows',
-          'Clear audit report free of theoretical jargon',
-          '5 Quick Wins roadmap to be deployed within 48 hours'
-        ],
-        expectedImpact: 'Immediate identification of at least 10 to 15 wasted hours per month.',
-        features: [
-          '2 hours observing real daily tools, client flows and administrative routines (based on €125/h)',
-          'Clear, actionable audit report without consultant fluff',
-          'Exact blueprint of administrative bottlenecks and manual errors',
-          'Actionable Quick Wins list ready to implement within 48 hours',
-          'Goal: pinpoint at least 10 hours lost every month'
-        ],
-        ctaText: 'Order a pro audit'
-      },
-      {
-        id: 'pro-focus',
-        name: 'Knockout Process Focus (6h)',
-        target: 'pros',
-        tagline: '6-hour intensive sprint to unlock a critical operational or commercial bottleneck.',
-        price: '€750',
-        priceDetail: '6-hour modular package (6 × €125)',
-        badge: 'Rapid Action',
-        duration: '6 flexible hours of expert tactical intervention',
-        format: '1h30 to 3h working sessions based on your priorities',
-        idealFor: 'Professionals facing a critical client deadline or a stalled internal process.',
-        deliverables: [
-          'Complete overhaul of a key process (client onboarding, proposal, delivery)',
-          'Zero-Support method: direct co-working on your actual live deliverables',
-          'Responsive WhatsApp access to unblock tactical micro-decisions'
-        ],
-        expectedImpact: 'Immediate unlocking of high-stakes projects and eradication of operational friction.',
-        features: [
-          '6 hours of agile consulting scheduled around your critical priorities',
-          'Ideal for structuring a decisive pitch or revamping a client workflow',
-          'Zero-Support doctrine: live hands-on execution on real business assets',
-          'Maximum flexibility in booking time slots',
-          'Direct WhatsApp chat to clear bottlenecks in real time'
-        ],
-        ctaText: 'Unblock my project'
-      },
-      {
-        id: 'pro-architecture',
-        name: 'Architecture & Second Brain Pack (15h)',
-        target: 'pros',
-        tagline: 'Holistic system redesign and turnkey deployment of your digital Second Brain.',
-        price: '€1,500',
-        priceDetail: '15-hour turnkey package (€375 discount compared with the hourly rate)',
-        popular: true,
-        badge: 'Complete System Transformation',
-        duration: '15 coaching and execution hours over 6 to 8 weeks',
-        format: 'Co-design workshops + hands-on technical deployment',
-        idealFor: 'Boutique firms, freelancers and SMEs aiming to double output without hiring.',
-        deliverables: [
-          'Turnkey Notion / Second Brain workspace customized to your trade',
-          'No-code automation flows (Make / Zapier / CRM integration)',
-          'Standard operating procedures (SOPs) and video tutorials for team'
-        ],
-        expectedImpact: 'Net savings of 1 to 2 full days per week to focus on high-value business.',
-        features: [
-          'All components from the Knockout Process pack included',
-          'End-to-end setup of your digital Second Brain from scratch',
-          'Modern tech stack: Notion, tailored CRM, automated pipelines',
-          'Configured AI agents tailored to your business without black-box dependency',
-          'Comprehensive training for you and/or your staff members',
-          'Ideal for career transitions, practice setup or scaling operations'
-        ],
-        ctaText: 'Select Architecture Pack'
-      },
-      {
-        id: 'pro-retainer',
-        name: 'Fractional COO (Chief Operating Officer)',
-        target: 'pros',
-        tagline: 'Your outsourced COO to orchestrate systems, optimize pipelines, and safeguard your time.',
-        price: 'From €490',
-        priceDetail: 'Per month • Flexible agreement without rigid lock-in',
-        badge: 'Shared operations lead',
-        duration: 'Agile monthly subscription, cancelable anytime',
-        format: 'Monthly governance session + asynchronous ongoing oversight',
-        idealFor: 'Growing boutique firms, successful solo founders, and busy leaders wanting continuous operational rigor.',
-        deliverables: [
-          'Monthly strategic alignment and operational roadmapping',
-          'Continuous maintenance and upgrades of your Second Brain & automations',
-          'Priority WhatsApp channel with the founder, reply within 12 hours'
-        ],
-        expectedImpact: 'Reclaiming at least 15 hours of mental bandwidth every month.',
-        features: [
-          'Fractional COO presence at a fraction of a full-time executive cost',
-          'Monthly strategic sprint to audit KPIs and eliminate newly created friction',
-          'Continuous evolution of your internal knowledge base and client portals',
-          'Priority direct access to Simon Maistriau via WhatsApp',
-          'Cancelable each month with 15 days notice: zero forced lock-in'
-        ],
-        ctaText: 'Retain Fractional COO'
-      },
-      // 2. INCUBATOR FOR ASPIRING FOUNDERS
-      {
-        id: 'incubator-side',
-        name: 'Side-Hustle Launchpad',
-        target: 'incubator',
-        tagline: 'Go from idea to your first paying client without putting your current situation at risk.',
-        price: '€2,500',
-        priceDetail: 'Payment possible in 5 × €500',
-        badge: 'Turnkey Programme',
-        popular: true,
-        duration: 'Structured 3-month programme',
-        format: 'One-to-one coaching + execution follow-up',
-        idealFor: 'Employees or graduates who want to start a self-employed activity safely.',
-        deliverables: [
-          'Offer and Minimum Viable Product (MVP) tested on the market',
-          'Complete Belgian administrative & tax toolkit (self-employed status, BCE, VAT)',
-          'Full operational stack: CRM, invoicing, Second Brain'
-        ],
-        expectedImpact: 'First revenue from the second month, on sound foundations.',
-        features: [
-          'Side-hustle diagnostic (1h30): targeting the fastest growth lever',
-          'MVP design (3h) to test the market immediately',
-          'Full system setup (6h): Second Brain, CRM, invoicing',
-          'Complete administrative support: BCE registration, Belgian business account',
-          'Practical training in bookkeeping and self-employed taxation',
-          'Zero-Support architecture: automated start from the first euro earned'
-        ],
-        ctaText: 'Apply to Incubator'
-      },
-      {
-        id: 'incubator-full',
-        name: 'Flagship Project Launch',
-        target: 'incubator',
-        tagline: 'Build a resilient, scalable, and profitable business from day one, with close mentoring.',
-        price: 'Custom Quote',
-        priceDetail: '3 to 6-month intensive high-touch incubation',
-        badge: 'High Impact',
-        duration: '3 to 6 months of intensive mentorship',
-        format: 'Weekly executive coaching + full operational immersion',
-        idealFor: 'Entrepreneurs aiming for full-time venture launch requiring flawless foundational systems.',
-        deliverables: [
-          'Validated business model and high-ticket pricing strategy',
-          'Bespoke digital ecosystem and no-code automations',
-          'Privileged introduction to Cognitive Studio’s network and legal partners'
-        ],
-        expectedImpact: 'Secured launch with sustainable operational architecture and accelerated profitability.',
-        features: [
-          'Competitive market analysis and premium brand positioning',
-          'Precise design of the business model and client acquisition systems',
-          'Comprehensive day-one operational and automated workflow architecture',
-          'Founder cognitive coaching: mental resilience and decision clarity',
-          'Exclusive access to partner ecosystem and legal advisory network'
-        ],
-        ctaText: 'Explore Flagship Launch'
-      },
-      // 3. MINOR PROJECT: ACADEMIC PROJECT (STUDENTS)
-      {
-        id: 'student-audit',
-        name: 'Methodological Audit',
-        target: 'students',
-        tagline: 'Targeted analytical intervention to pinpoint learning bottlenecks and restore study efficiency.',
-        price: '€90',
-        priceDetail: 'Single 1h30 session (Brussels or HD Video)',
-        badge: 'Academic Project • Diagnosis',
-        duration: '1h30 live diagnostic analysis',
-        format: 'In-person in Brussels or secure video call',
-        idealFor: 'Students losing efficiency, feeling overwhelmed or stuck in unproductive study habits.',
-        deliverables: [
-          'Personalised diagnosis of study methods, strengths and blockers',
-          'Written strategic action plan delivered within 24 hours',
-          'Concrete roadmap immediately applicable for upcoming study blocks'
-        ],
-        expectedImpact: 'End of passive revision & immediate clarity on exam priorities.',
-        features: [
-          'In-depth diagnosis of cognitive learning profile and mental load',
-          'Precise mapping of underperformance root causes and attention dispersion',
-          'Critical review of real course syllabus notes & elimination of traps',
-          'Immediate action plan delivered right after the consultation',
-          'Deducted if you continue with the Intensive Exam Pack'
-        ],
-        ctaText: 'Book Student Audit'
-      },
-      {
-        id: 'student-commando',
-        name: 'Intensive Exam Pack',
-        target: 'students',
-        tagline: 'Intensive emergency rescue plan before university blocus to secure your academic year.',
-        price: '€350',
-        priceDetail: '5-hour flexible intensive package',
-        popular: false,
-        badge: 'Academic Project • Blocus',
-        duration: '5 intensive hours of 1:1 strategic coaching',
-        format: 'Hybrid or in-person Brussels • Flexible scheduling',
-        idealFor: 'Students within 4 to 6 weeks of exams or at risk of repeating the year.',
-        deliverables: [
-          'Day-by-day retro-planning through the last exam',
-          'Active extraction study sheets built with the C.O.R.E. Method',
-          'Targeted mock simulations of real exam questions and oral juries'
-        ],
-        expectedImpact: 'Better-targeted revision and calmer exams, up to the very last one.',
-        features: [
-          'Immediate creation of a realistic revision schedule',
-          'Express synthesis of core concepts & drastic elimination of noise',
-          'Direct implementation of the C.O.R.E. Method on university course materials',
-          'Exam question drills and physiological stress regulation protocols',
-          'Direct WhatsApp line with Simon Maistriau, reply within 24 hours'
-        ],
-        ctaText: 'Activate the Exam Pack'
-      },
-      {
-        id: 'student-custom',
-        name: 'Stress-Free & Autonomy Formula',
-        target: 'students',
-        tagline: 'Ongoing coaching to build a lifelong Second Brain and lasting autonomy.',
-        price: 'From €60',
-        priceDetail: 'Per coaching hour based on volume',
-        badge: 'Academic Project • Autonomy',
-        duration: 'Custom volume per semester or academic year',
-        format: 'Regular bespoke weekly or bi-monthly follow-up',
-        idealFor: 'Students preparing medical school, law, engineering, civil competitions or high-stake juries.',
-        deliverables: [
-          'Custom Notion workspace: "Student Second Brain"',
-          'Learning logbook and spaced retention indicators',
-          'Coaching until the student works independently'
-        ],
-        expectedImpact: 'Fewer all-nighters and lasting independence in study.',
-        features: [
-          'Customizable hours adapted to your exact academic milestones',
-          'Deployment of the student\'s digital "Second Brain" (Notion & active notes)',
-          'Regular logbook reviews and ongoing strategic recalibration',
-          'Rigorous training for university exam sessions and jury defense',
-          'Zero-dependence target: student never needs a tutor again'
-        ],
-        ctaText: 'Build My Program'
-      }
-    ]
+    pathwayTitle: 'How we work',
+    pathway: [
+      { step: '1. Diagnostic', title: '2 hours, free if you go ahead', desc: 'Tools, files, website and security reviewed; costed proposal within 5 days.' },
+      { step: '2. Set-up', title: 'Fixed-price package', desc: 'Delivery, mid-point review and two rounds of corrections included.' },
+      { step: '3. Support', title: 'Subscription if you wish', desc: 'Maintenance, assistance and improvements, no commitment.' },
+    ],
+    cardsView: 'Detailed cards',
+    tableView: 'Quick table',
+    idealForLabel: 'Ideal for:',
+    deliverablesLabel: 'Deliverables:',
+    roiLabel: 'Expected result:',
+    showDetails: (n) => `View all ${n} points`,
+    hideDetails: 'Hide details',
+    recommended: 'Recommended',
+    popular: 'Popular',
+    cardFooter: 'Reply within 24h • No commitment',
+    tableTitle: 'Services comparison table',
+    tableSubtitle: 'Durations, prices, formats and deliverables at a glance.',
+    colPackage: 'Service',
+    colCategory: 'Category',
+    colPrice: 'Price',
+    colDuration: 'Duration',
+    colFormat: 'Format',
+    colDeliverables: 'Deliverables',
+    colAction: 'Action',
+    select: 'Select',
+    optionsTitle: 'Options & add-ons',
+    optionsSubtitle: 'Can be added to any service.',
+    bannerTitle: 'The diagnostic is free if you go ahead',
+    bannerText: 'No risk: the 2-hour diagnostic (€200) is free if a package or subscription is signed within 30 days. The full price list is available on request.',
+    bannerWhatsapp: 'Ask on WhatsApp',
+    bannerSimulator: 'Find my package (1 min)',
+    tiers: SERVICE_TIERS_EN,
+    options: SERVICE_OPTIONS_EN,
   },
   simulator: {
-    badge: 'INTERACTIVE SIMULATOR',
-    title: 'Find the exact formula for your situation',
-    subtitle: 'Answer 3 quick questions to estimate time savings, ROI, and receive your recommended action plan.',
-    roleLabel: '1. Your Current Profile',
-    roles: {
-      pro: 'Freelancer / Business Executive',
-      incubator: 'Aspiring Founder / Professional',
-      student: 'Academic Project (Student / Parent)',
-    },
-    challengeLabel: '2. Your Primary Challenge',
-    challenges: {
-      pro: [
-        { label: 'Drowning under manual operations and repetitive administration', value: 'overwhelmed' },
-        { label: 'Losing time across disconnected or outdated software tools', value: 'bad_tools' },
-        { label: 'Need executive operational leadership without full-time payroll', value: 'coo_needed' }
-      ],
-      incubator: [
-        { label: 'Have a side-hustle idea but deterred by administrative hurdles', value: 'side_fear' },
-        { label: 'Launching a full-time enterprise built on solid foundations', value: 'full_launch' }
-      ],
-      student: [
-        { label: 'Upcoming university blocus or exams (stress / time crunch)', value: 'exam_stress' },
-        { label: 'Inefficient study method despite long hours of revision', value: 'bad_method' },
-        { label: 'Aiming for honors or competitive exams (medicine, law, engineering)', value: 'high_stakes' }
-      ]
-    },
-    urgencyLabel: '3. Time Horizon & Desired Intensity',
-    urgencies: {
-      urgent: {
-        title: 'Rapid action',
-        desc: 'Targeted intervention (€125 / h)'
-      },
-      medium: {
-        title: 'Diagnostic & Restructuring',
-        desc: 'Deep-dive 2h audit (€250) and structured strategic roadmap'
-      },
-      deep: {
-        title: 'Deep System Transformation',
-        desc: 'Architecture Pack 15h or Fractional COO partnership'
-      }
-    },
-    recommendedFormula: 'Recommended Formula for Your Situation:',
-    estimatedGainLabel: 'Estimated Gain:',
-    timeframeLabel: 'Cadence:',
-    keyHighlightLabel: 'Why This Choice?',
-    ctaButton: 'Select this formula and book',
+    badge: 'SIMULATOR',
+    title: 'Which package for your practice?',
+    subtitle: 'Three questions to get a recommendation and its price.',
+    roleLabel: '1. Your structure',
+    roles: [
+      { value: 'solo', title: 'Sole lawyer', desc: 'Individual practice' },
+      { value: 'team', title: 'Firm with a team', desc: 'Partners, associates' },
+      { value: 'liberal', title: 'Other profession', desc: 'Liberal or independent' },
+    ],
+    challengeLabel: '2. Your priority',
+    challenges: [
+      { value: 'web', label: 'Have a professional website and be found online' },
+      { value: 'billing', label: 'Bill faster, without re-typing, and track unpaid invoices' },
+      { value: 'files', label: 'Bring order to my files and processes' },
+      { value: 'security', label: 'Move to professional email and secure my clients’ data' },
+      { value: 'all', label: 'A bit of everything: reset the whole practice' },
+    ],
+    intensityLabel: '3. Preferred format',
+    intensities: [
+      { value: 'ponctuel', label: 'One-off' },
+      { value: 'projet', label: 'Full project' },
+      { value: 'suivi', label: 'Ongoing support' },
+    ],
+    resultBadge: 'Recommendation',
+    priceLabel: 'Price (VAT not applicable)',
+    impactLabel: 'Expected result',
+    formatLabel: 'Duration',
   },
   comparisons: {
-    badge: 'COMPARATIVE ANALYSIS',
-    title: 'Why Cognitive Studio Is A Game Changer',
-    subtitle: 'Two approaches compared, for professionals and for students.',
-    tabPros: 'Professionals: Cognitive Studio vs traditional consulting',
-    tabStudents: 'Academic Project: Cognitive Studio vs Traditional Tutoring',
-    colAspect: 'Evaluated Metric',
-    colTraditional: 'Traditional Approach',
-    colCognitive: 'Cognitive Studio Approach',
-    colAdvantage: 'Tangible Benefit',
-    studentRows: [
-      {
-        aspect: 'Type of Intervention',
-        traditional: 'Surface-level tutoring (putting out fires subject by subject)',
-        cognitiveStudio: 'Holistic coaching (subject matter, method, cognition & autonomy)',
-        advantage: 'Sustainable 360° perspective'
-      },
-      {
-        aspect: 'Coach Profile',
-        traditional: 'Tutor profile varies depending on the platform or agency',
-        cognitiveStudio: 'A single point of contact, Simon Maistriau, who follows the student throughout',
-        advantage: 'Personalised, consistent follow-up'
-      },
-      {
-        aspect: 'Availability & Support',
-        traditional: 'Strict session hours only, zero contact in-between sessions',
-        cognitiveStudio: 'Direct WhatsApp line, reply within 24 hours',
-        advantage: 'Reassuring continuous guidance'
-      },
-      {
-        aspect: 'Materials & Tools',
-        traditional: 'Generic pre-made study sheets forgotten 48h after the exam',
-        cognitiveStudio: 'Zero-Support Method + Personal Second Brain database construction',
-        advantage: 'Lifelong memory anchoring'
-      },
-      {
-        aspect: 'Real Pricing',
-        traditional: 'Variable hourly rate, often increased by agency fees',
-        cognitiveStudio: 'From €60 / hour depending on volume, no intermediary',
-        advantage: 'Clear pricing, no agency fees'
-      }
-    ],
-    proRows: [
-      {
-        aspect: 'Pricing Transparency',
-        traditional: 'Day-rate billing that is often hard to read',
-        cognitiveStudio: '€125 / h and published fixed packages (€250 audit, deducted if you continue)',
-        advantage: 'No surprises on the invoice'
-      },
-      {
-        aspect: 'Retainer Model',
-        traditional: 'Monthly retainers that are often expensive',
-        cognitiveStudio: 'Fractional COO from €490 / month',
-        advantage: 'Controlled budget'
-      },
-      {
-        aspect: 'Contractual Flexibility',
-        traditional: 'Rigid 6 to 12-month lock-in contracts with strict termination notice',
-        cognitiveStudio: 'Agile customized terms with or without long-term commitment',
-        advantage: 'Complete operational freedom'
-      },
-      {
-        aspect: 'Technology & Stack',
-        traditional: 'Tools that are often heavy and slow to deploy',
-        cognitiveStudio: 'Current tools (Notion, n8n/Make, controlled AI, no black box)',
-        advantage: 'Live deployment in days'
-      },
-      {
-        aspect: 'Concrete Deliverables',
-        traditional: 'Theoretical reports that can be hard to put into practice',
-        cognitiveStudio: '100% Operational: live Notion spaces, active automations, immediate ROI',
-        advantage: 'Measurable instant results'
-      },
-      {
-        aspect: 'Client Support',
-        traditional: 'Multiple contacts and ticket-based support',
-        cognitiveStudio: 'Direct WhatsApp communication with the founder within 24 hours',
-        advantage: 'Immediate human responsiveness'
-      }
-    ]
+    badge: 'COMPARISON',
+    title: 'Why Cognitive Studio',
+    subtitle: 'One contact who knows professional practices, instead of several general providers.',
+    colAspect: 'Criterion',
+    colTraditional: 'Typical providers',
+    colCognitive: 'Cognitive Studio',
+    rows: PRO_COMPARISON_EN
   },
   founder: {
     badge: 'THE FOUNDER',
-    title: 'From academic research to operational efficiency',
+    title: 'From academic research to organising professional practices',
     subtitle: '« My approach: combining academic rigor with practical, hands-on efficiency. »',
-    roleTitle: 'Founder & Methodology Consultant',
+    roleTitle: 'Founder & Digital Organisation Consultant',
     credentials: [
       'MA in Global Archaeology, Leiden University',
       'Bridging year towards a Master of Laws (ULB)',
       'Woluwe-Saint-Lambert, Brussels (Belgium)',
     ],
-    bio1: "A graduate of Leiden University (MA in Global Archaeology, with a focus on the evolution of human cognition), Simon Maistriau founded Cognitive Studio to close the gap between academic theory and real-world effectiveness. He is now studying law at ULB, in the bridging year towards a Master of Laws (public and international law).",
-    bio2: "Whether working with university students struggling with study methodology or entrepreneurs overwhelmed by administrative friction, his diagnostic is identical: stacking software tools without fundamental comprehension creates mental exhaustion and helplessness.",
-    bio3: "Through the proprietary C.O.R.E. Method and the strict 'Zero-Support' doctrine, he helps his clients regain their autonomy: you grasp first principles, organize your systems, and execute with precision.",
+    bio1: "A graduate of Leiden University (MA in Global Archaeology, with a focus on the evolution of human cognition), Simon Maistriau founded Cognitive Studio to close the gap between theory and real-world effectiveness. He is now studying law at ULB, in the bridging year towards a Master of Laws.",
+    bio2: "With the law firms and independents he supports, his finding is always the same: a pile of poorly connected tools creates re-typing, forgotten billing and risks to client confidentiality.",
+    bio3: "Through the C.O.R.E. Method, he designs simple systems — website, interconnected files, secure digital office — that the practice understands, owns and can evolve.",
+    quote: "My Master's at Leiden focused on the evolution of human cognition, at the crossroads of archaeology, the cognitive sciences and evolutionary theory. It gave me a method: understanding how people work and solve complex problems, and turning that into concrete tools. My law studies let me speak the same language as the practices I support.",
     callToAction: 'Talk Directly with Simon Maistriau',
     consultantCreds: 'MA in Global Archaeology (Leiden University) • Bridging year, Master of Laws (ULB)',
   },
   testimonials: {
-    badge: 'CLIENT REVIEWS',
-    title: 'What Those Who Made The Shift Say',
-    subtitle: 'A selection of reviews published on the Cognitive Studio Google profile.',
-    filterAll: 'All Reviews',
-    filterStudents: 'Students & Academics',
-    filterPros: 'Professionals & Operations',
-    verifiedGoogle: 'Reviews published on Google',
-    items: [
-      {
-        name: 'Corporate & Business Client',
-        role: 'Executive Direction & Corporate Partnership',
-        type: 'Indépendant',
-        quote: "The team at Cognitive Studio demonstrates excellent management and impeccable follow-up. Communication is fluid, efficient and transparent, making collaboration particularly smooth and enjoyable.\n\nI highly recommend their services to any professional seeking rigorous, high-quality support!",
-        metric: 'Exemplary management & flawless follow-up for business leaders',
-        rating: 5,
-        source: 'Google Review',
-        verified: true,
-        date: 'Published on Google'
-      },
-      {
-        name: 'Student Parent',
-        role: 'Mentorship from 10th Grade to 1st Year University',
-        type: 'Étudiant',
-        quote: "The founder accompanied my son throughout his schooling from 10th grade all the way to his 1st year of university. He is a truly human, dependable, pedagogical and knowledgeable person. He knows exactly how to speak with teenagers/young adults, guide them and keep them motivated. Always kind, helpful and attentive. He helped my son across all subjects and we achieved our goals; I can never thank him enough.\n\nI recommend him 100% with complete confidence.",
-        metric: 'Target goals achieved in every academic subject',
-        rating: 5,
-        source: 'Google Review',
-        verified: true,
-        date: 'Published on Google'
-      },
-      {
-        name: 'University Student',
-        role: 'Transition 12th Grade to 1st Year University',
-        type: 'Étudiant',
-        quote: "I had classes with him for two years, in 12th grade and then during my first year at university. He helped me tremendously, especially with methodology (where I had significant difficulties). Thanks to him, I learned how to work better, manage my stress and prepare for exams effectively. He pushed me to aim higher, which allowed me to enter university with much greater confidence and pass my entire first semester! He was a genuine pillar of support and was able to help in every subject, whether literature, languages or sciences.\n\nHighly dedicated, always available and truly attentive. I recommend without hesitation.",
-        metric: 'Methodology mastery & entire 1st semester passed',
-        rating: 5,
-        source: 'Google Review',
-        verified: true,
-        date: 'Published on Google'
-      },
-      {
-        name: 'High School Senior (Rhéto)',
-        role: 'CESS Graduate (Final Year Secondary)',
-        type: 'Étudiant',
-        quote: 'The teacher helped me immensely. I took a similar pack at the end of high school. Having not studied much beforehand it was tricky, but he guided me and I passed without any re-sit exam. Thank you again!',
-        metric: 'Direct pass without re-sit exam',
-        rating: 5,
-        source: 'Google Review',
-        verified: true,
-        date: 'Published on Google'
-      }
-    ]
+    badge: 'REFERENCES',
+    title: 'They trusted us with their practice',
+    subtitle: 'Some recent projects and the review published on our Google profile.',
+    referencesTitle: 'Projects',
+    reviewsTitle: 'Client review',
+    verifiedGoogle: 'Review published on Google',
+    visitSite: 'Visit website',
+    items: TESTIMONIALS_EN,
+    references: REFERENCES_EN
   },
   faq: {
     badge: 'FREQUENTLY ASKED QUESTIONS',
-    title: 'Answers to Your Questions',
-    subtitle: 'Methodology, logistics, tax deductibility, and guarantees: everything you need to know before getting started.',
-    filterAll: 'All Questions',
-    filterStudents: 'Student Questions',
-    filterPros: 'Professional Questions',
-    items: [
-      {
-        category: 'students',
-        question: 'Why do you refuse to provide pre-made revision summaries or flashcards?',
-        answer: 'This is our core neuro-pedagogical doctrine and the key to our students\' success. Handing over a pre-digested summary produces an illusion of competence (cognitive ease), but the brain discards it within days. With our "Zero-Support" method, we guide students to deconstruct course architecture themselves, prioritize knowledge, and construct active syntheses. It requires deliberate effort initially, but it is the only scientifically validated path to enduring memory retention and genuine academic autonomy.'
-      },
-      {
-        category: 'students',
-        question: 'What is the real difference between Cognitive Studio and traditional private tutoring?',
-        answer: 'Traditional tutoring acts like a temporary crutch: it puts out the immediate fire of tomorrow\'s homework on a subject-by-subject basis. Cognitive Studio offers systemic cognitive and methodological coaching: we train students how to learn, how to direct sustained focus, build realistic study schedules, regulate exam stress, and reason critically. Our crowning achievement is when students never need us again.'
-      },
-      {
-        category: 'students',
-        question: 'Should I choose an intensive pack (e.g., the Exam Pack) or a continuous formula?',
-        answer: 'Packs are targeted tactical interventions: the Intensive Exam Pack (5h) is designed for emergency situations to secure an upcoming blocus or exam session by prioritizing high-coefficient subjects. Continuous formulas establish durable study systems across an entire semester or academic year. In practice, most students start with an Audit or the Exam Pack to resolve urgent challenges, then transition smoothly into a customized regular schedule.'
-      },
-      {
-        category: 'students',
-        question: 'My child has fallen behind and lost motivation. Can your approach work for them?',
-        answer: 'Absolutely. Academic demotivation almost always stems from learned helplessness: the student exerts effort without seeing proportional marks, and disengages as an ego defense. By equipping them with concrete cognitive strategies that yield rapid initial breakthroughs, confidence and intrinsic motivation regenerate naturally. We guarantee our rigor and empathy, provided the student commits to active engagement.'
-      },
-      {
-        category: 'pros',
-        question: 'I am not tech-savvy: won’t tools like Notion, AI, and automations overwhelm me?',
-        answer: 'Preventing overwhelm is precisely why we exist. Our founding principle is: "Tools must never precede thought." We do not build bloated software monuments. We craft ergonomic, clean ecosystems tailored to your actual daily habits. Every tool is delivered with step-by-step training and simplified standard operating procedures. You save hours within the first week without ever having to write a line of code.'
-      },
-      {
-        category: 'pros',
-        question: 'Why is the Flash Audit (€250) billed upfront before ongoing consulting?',
-        answer: 'We never reorganise anything without a prior diagnosis. The Flash Audit is a 2-hour analytical immersion where we dissect your actual workflows to produce an uncompromising roadmap. To reward your decision to take action, this €250 fee is fully deducted from your first invoice when upgrading to the Architecture Pack or Fractional COO retainer.'
-      },
-      {
-        category: 'pros',
-        question: 'How much time commitment is required from my side during the engagement?',
-        answer: 'Our commitment is to save you valuable time, not drain it. During the first month of setup and architectural calibration, we request 1 to 2 hours of strategic consultation per week. Subsequently, under our recurring retainer, we operate quietly in the background maintaining and optimizing your systems while you focus exclusively on clients and core expertise.'
-      },
-      {
-        category: 'pros',
-        question: 'How do you differ from a traditional agency or corporate consultancy?',
-        answer: 'Many consulting engagements end with a report that you then have to implement yourself. At Cognitive Studio, we work hands-on: we get into your workflows, build your custom Notion databases, configure your automation pipelines, and remain directly accessible on WhatsApp to clear roadblocks immediately.'
-      }
-    ]
+    title: 'Your questions, our answers',
+    subtitle: 'Pricing, confidentiality, ownership of tools and working method.',
+    filterAll: 'All questions',
+    filterTarifs: 'Pricing & terms',
+    filterMethode: 'Method & confidentiality',
+    items: FAQ_DATA_EN
   },
   contact: {
-    badge: 'DIRECT CONTACT',
-    title: 'Let’s Discuss Your Objectives',
-    subtitle: 'Have a question about a package? Need an urgent audit before your upcoming exams or project launch? Reply from the founder within 24 hours.',
+    badge: 'CONTACT',
+    title: 'Let’s talk about your practice',
+    subtitle: 'A question about a service, a diagnostic to schedule? Reply from the founder within 24 working hours.',
     form: {
-      name: 'Full Name *',
-      phone: 'Phone Number *',
-      email: 'Email Address *',
+      name: 'Full name *',
+      phone: 'Phone *',
+      email: 'Email address *',
       role: 'You are:',
       roleOptions: {
-        student: 'Student',
-        parent: 'Parent of Student',
-        pro: 'Freelancer / Business Executive',
-        project: 'Project Founder / Entrepreneur',
+        lawyer: 'Lawyer / Law firm',
+        liberal: 'Other independent profession',
+        business: 'Freelancer / SME',
+        other: 'Other',
       },
-      formula: 'Requested package or specific need',
-      formulaPlaceholder: 'Flash Audit (€250), Exam Pack (€350), Incubator...',
-      message: 'Description of your project or academic situation *',
-      messagePlaceholder: 'Please specify your institution or trade, upcoming deadlines, and observed bottlenecks...',
+      formula: 'Service or need',
+      formulaPlaceholder: 'Free diagnostic, Practice Website, Billing workflow…',
+      message: 'Describe your practice and your need *',
+      messagePlaceholder: 'Size of the practice, tools used, what wastes your time, deadlines…',
       sendCopy: '',
       submitBtn: 'Send my request by email',
       submitting: 'Opening your email app...',
@@ -1143,14 +720,14 @@ export const TRANSLATIONS_EN: Translations = {
     },
     hoursCard: {
       title: 'Office Location & Availability',
-      zonesTitle: 'In-Person Coverage (Brussels):',
-      zonesDesc: 'Woluwe-Saint-Lambert, Woluwe-Saint-Pierre, Etterbeek, Ixelles, Uccle, Auderghem. In-person sessions at the office, at home, or via secure HD video calls.',
+      zonesTitle: 'Travel included (Brussels):',
+      zonesDesc: 'Woluwe-Saint-Lambert, Woluwe-Saint-Pierre, Etterbeek, Ixelles, Uccle, Auderghem. Elsewhere in Belgium on quote; all services are also available remotely.',
       addressTitle: 'Office Address:',
     },
   },
   footer: {
-    brandDesc: 'Consulting Practice in Cognitive Strategy, Organization & Methodology. Freelancer Incubator in Brussels. An approach grounded in academic rigor, to help you gain autonomy.',
-    legalNote: 'Sole proprietorship • Compliant with the Belgian Code of Economic Law.',
+    brandDesc: 'Digital studio for law firms and independent professionals in Brussels: websites, interconnected management files, digital office and data security.',
+    legalNote: 'Sole proprietorship • VAT not applicable (small-business exemption) • Compliant with the Belgian Code of Economic Law.',
     address: 'Avenue Heydenberg 39, 1200 Woluwe-Saint-Lambert, Brussels',
     founderLine: 'Founder & Managing Director: Simon Maistriau',
     navTitle: 'Navigation',
@@ -1168,4 +745,3 @@ export const TRANSLATIONS_EN: Translations = {
 export const getTranslations = (lang: 'fr' | 'en'): Translations => {
   return lang === 'en' ? TRANSLATIONS_EN : TRANSLATIONS_FR;
 };
-
