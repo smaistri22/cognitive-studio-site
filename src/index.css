@@ -42,9 +42,13 @@ body {
   padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6, .font-display {
-  font-family: var(--font-display);
-  color: #333333;
+/* Couleur par défaut des titres placée dans la couche « base » : les classes utilitaires
+   (ex. text-white dans l'en-tête sombre) peuvent ainsi la remplacer. */
+@layer base {
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: var(--font-display);
+    color: #333333;
+  }
 }
 
 
