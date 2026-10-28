@@ -1,4 +1,7 @@
-export type AudienceType = 'all' | 'students' | 'pros' | 'incubator';
+// Catégories de prestations (site 100 % professionnel)
+export type ServiceCategory = 'formules' | 'conseil' | 'web' | 'fichiers' | 'bureau' | 'abonnements';
+
+export type AudienceType = 'all' | ServiceCategory;
 
 export interface ServiceTier {
   id: string;
@@ -8,7 +11,7 @@ export interface ServiceTier {
   priceDetail?: string;
   badge?: string;
   popular?: boolean;
-  target: 'students' | 'pros' | 'incubator';
+  target: ServiceCategory;
   features: string[];
   ctaText: string;
   highlightNote?: string;
@@ -19,12 +22,17 @@ export interface ServiceTier {
   expectedImpact?: string;
 }
 
+export interface ServiceOption {
+  name: string;
+  price: string;
+  category: ServiceCategory;
+}
+
 export interface CorePillar {
   letter: 'C' | 'O' | 'R' | 'E';
   word: string;
   subtitle: string;
   description: string;
-  academicApplication: string;
   businessApplication: string;
   iconName: string;
 }
@@ -32,7 +40,7 @@ export interface CorePillar {
 export interface FaqItem {
   question: string;
   answer: string;
-  category: 'students' | 'pros' | 'general';
+  category: 'tarifs' | 'methode';
 }
 
 export interface ComparisonRow {
@@ -45,11 +53,17 @@ export interface ComparisonRow {
 export interface TestimonialItem {
   name: string;
   role: string;
-  type: 'Étudiant' | 'Indépendant' | 'Créateur de Projet';
   quote: string;
   metric: string;
   rating?: number;
   source?: string;
   verified?: boolean;
   date?: string;
+}
+
+export interface ReferenceItem {
+  client: string;
+  sector: string;
+  work: string;
+  url?: string;
 }

@@ -15,7 +15,7 @@ import { AudienceType, ServiceTier } from './types';
 import { COMPANY_INFO } from './data/content';
 
 function AppContent() {
-  const [currentAudience, setCurrentAudience] = useState<AudienceType>('pros');
+  const [currentAudience, setCurrentAudience] = useState<AudienceType>('formules');
   const [selectedService, setSelectedService] = useState<ServiceTier | null>(null);
 
   const handleSelectService = (service: ServiceTier) => {
@@ -60,7 +60,7 @@ function AppContent() {
         {/* Method C.O.R.E. Interactive Explicator */}
         <MethodCORE />
 
-        {/* Services & Formulas (3 Poles: Students, Pros, Incubator) */}
+        {/* Prestations & tarifs (100 % professionnels) */}
         <ServicesSection 
           currentAudience={currentAudience}
           onSelectAudience={setCurrentAudience}
