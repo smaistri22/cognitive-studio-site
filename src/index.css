@@ -5,13 +5,13 @@
   --font-display: "Outfit", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
-  /* Palette principale officielle : #e0e0db (Pierre/Sable) ; #325249 (Vert Cognitif) ; #333333 (Anthracite) */
-  --color-pine: #325249;
-  --color-pine-deep: #325249;
-  --color-pine-dark: #243c35;
-  --color-pine-hover: #29443c;
-  --color-pine-soft: #b8cec7;
-  --color-pine-tint: #d8e6e1;
+  /* Palette principale officielle : #e0e0db (Pierre/Sable) ; #6b2a33 (Bordeaux Cognitif) ; #333333 (Anthracite) */
+  --color-pine: #6b2a33;
+  --color-pine-deep: #6b2a33;
+  --color-pine-dark: #4e1e25;
+  --color-pine-hover: #5a232b;
+  --color-pine-soft: #dcc2c5;
+  --color-pine-tint: #f0e3e4;
 
   --color-charcoal: #333333;
   --color-charcoal-dark: #333333;
