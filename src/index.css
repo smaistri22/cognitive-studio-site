@@ -2,42 +2,42 @@
 
 @theme {
   --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-display: "Outfit", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Source Serif 4", Georgia, "Times New Roman", serif, "Outfit", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
-  /* Palette principale officielle : #e0e0db (Pierre/Sable) ; #6b2a33 (Bordeaux Cognitif) ; #333333 (Anthracite) */
-  --color-pine: #6b2a33;
-  --color-pine-deep: #6b2a33;
-  --color-pine-dark: #4e1e25;
-  --color-pine-hover: #5a232b;
-  --color-pine-soft: #dcc2c5;
-  --color-pine-tint: #f0e3e4;
+  /* Palette principale officielle : #faf8f6 (Ivoire) ; #7a4e54 (Bordeaux sobre) ; #2f2b2a (Anthracite) */
+  --color-pine: #7a4e54;
+  --color-pine-deep: #7a4e54;
+  --color-pine-dark: #5e3a40;
+  --color-pine-hover: #6a434a;
+  --color-pine-soft: #dcc9ca;
+  --color-pine-tint: #f1e9e8;
 
-  --color-charcoal: #333333;
-  --color-charcoal-dark: #333333;
-  --color-charcoal-nav: #333333;
-  --color-charcoal-body: #333333;
+  --color-charcoal: #2f2b2a;
+  --color-charcoal-dark: #2f2b2a;
+  --color-charcoal-nav: #2f2b2a;
+  --color-charcoal-body: #2f2b2a;
   --color-charcoal-muted: #555555;
   --color-charcoal-border: #444444;
 
-  --color-stone: #e0e0db;
-  --color-stone-canvas: #e0e0db;
-  --color-stone-surface: #eaeae5;
+  --color-stone: #faf8f6;
+  --color-stone-canvas: #faf8f6;
+  --color-stone-surface: #f3efec;
   --color-stone-card: #ffffff;
-  --color-stone-border: #cfcfc7;
-  --color-stone-accent: #e0e0db;
+  --color-stone-border: #e6dfdb;
+  --color-stone-accent: #faf8f6;
 }
 
 html {
   scroll-behavior: smooth;
   font-family: var(--font-sans);
-  color: #333333;
-  background-color: #e0e0db;
+  color: #2f2b2a;
+  background-color: #faf8f6;
 }
 
 body {
-  background-color: #e0e0db;
-  color: #333333;
+  background-color: #faf8f6;
+  color: #2f2b2a;
   margin: 0;
   padding: 0;
 }
@@ -47,7 +47,7 @@ body {
 @layer base {
   h1, h2, h3, h4, h5, h6, .font-display {
     font-family: var(--font-display);
-    color: #333333;
+    color: #2f2b2a;
   }
 }
 

@@ -40,7 +40,7 @@ function AppContent() {
   };
 
   return (
-    <div className="min-h-screen bg-[#e0e0db] text-[#333333] flex flex-col font-sans selection:bg-[#6b2a33] selection:text-white">
+    <div className="min-h-screen bg-[#faf8f6] text-[#2f2b2a] flex flex-col font-sans selection:bg-[#7a4e54] selection:text-white">
       
       {/* Main Header with Navigation, Direct Actions & Language Switcher */}
       <Header 
