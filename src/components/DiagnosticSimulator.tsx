@@ -53,28 +53,28 @@ export const DiagnosticSimulator: React.FC<DiagnosticSimulatorProps> = ({ onSele
   const service = tiers.find(s => s.id === pickServiceId(role, challenge, intensity)) || tiers[0];
 
   const roleIcon = (value: Role, active: boolean) => {
-    const cls = `w-4 h-4 mb-1 ${active ? 'text-[#e0e0db]' : 'text-[#6b2a33]'}`;
+    const cls = `w-4 h-4 mb-1 ${active ? 'text-[#faf8f6]' : 'text-[#7a4e54]'}`;
     if (value === 'solo') return <User className={cls} />;
     if (value === 'team') return <Users className={cls} />;
     return <Briefcase className={cls} />;
   };
 
   return (
-    <section id="simulateur" className="py-16 md:py-24 bg-[#e0e0db] border-y border-[#cfcfc7]">
+    <section id="simulateur" className="py-16 md:py-24 bg-[#faf8f6] border-y border-[#e6dfdb]">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f0e3e4] border border-[#dcc2c5] text-[#6b2a33] text-xs font-mono font-semibold mb-3">
-            <Calculator className="w-3.5 h-3.5 text-[#6b2a33]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f1e9e8] border border-[#dcc9ca] text-[#7a4e54] text-xs font-mono font-semibold mb-3">
+            <Calculator className="w-3.5 h-3.5 text-[#7a4e54]" />
             <span>{sim.badge}</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#333333] font-display">{sim.title}</h2>
+          <h2 className="text-2xl sm:text-3xl font-semibold text-[#2f2b2a] font-display">{sim.title}</h2>
           <p className="mt-2 text-xs sm:text-sm text-[#555555]">{sim.subtitle}</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
 
-          <div className="lg:col-span-7 bg-white border border-[#cfcfc7] rounded-2xl p-6 sm:p-7 space-y-6 shadow-sm">
+          <div className="lg:col-span-7 bg-white border border-[#e6dfdb] rounded-2xl p-6 sm:p-7 space-y-6 shadow-sm">
 
             {/* Q1 */}
             <div>
@@ -88,12 +88,12 @@ export const DiagnosticSimulator: React.FC<DiagnosticSimulatorProps> = ({ onSele
                       type="button"
                       onClick={() => setRole(r.value)}
                       className={`p-3 rounded-xl border text-left transition-all text-xs font-semibold cursor-pointer ${
-                        active ? 'bg-[#6b2a33] border-[#4e1e25] text-white shadow-xs' : 'bg-[#eaeae5] border-[#cfcfc7] text-[#333333] hover:bg-white'
+                        active ? 'bg-[#7a4e54] border-[#5e3a40] text-white shadow-xs' : 'bg-[#f3efec] border-[#e6dfdb] text-[#2f2b2a] hover:bg-white'
                       }`}
                     >
                       {roleIcon(r.value, active)}
                       <span className="font-bold block">{r.title}</span>
-                      <span className={`text-[10px] ${active ? 'text-[#e0e0db]' : 'text-[#555555]'}`}>{r.desc}</span>
+                      <span className={`text-[10px] ${active ? 'text-[#faf8f6]' : 'text-[#555555]'}`}>{r.desc}</span>
                     </button>
                   );
                 })}
@@ -112,11 +112,11 @@ export const DiagnosticSimulator: React.FC<DiagnosticSimulatorProps> = ({ onSele
                       type="button"
                       onClick={() => setChallenge(c.value)}
                       className={`w-full p-3 rounded-xl border text-left text-xs transition-all flex items-center justify-between cursor-pointer font-medium ${
-                        active ? 'bg-[#f0e3e4] border-[#6b2a33] text-[#6b2a33]' : 'bg-[#eaeae5] border-[#cfcfc7] text-[#555555] hover:bg-white'
+                        active ? 'bg-[#f1e9e8] border-[#7a4e54] text-[#7a4e54]' : 'bg-[#f3efec] border-[#e6dfdb] text-[#555555] hover:bg-white'
                       }`}
                     >
                       <span>{c.label}</span>
-                      <CheckCircle2 className={`w-4 h-4 shrink-0 ${active ? 'text-[#6b2a33]' : 'text-transparent'}`} />
+                      <CheckCircle2 className={`w-4 h-4 shrink-0 ${active ? 'text-[#7a4e54]' : 'text-transparent'}`} />
                     </button>
                   );
                 })}
@@ -133,7 +133,7 @@ export const DiagnosticSimulator: React.FC<DiagnosticSimulatorProps> = ({ onSele
                     type="button"
                     onClick={() => setIntensity(i.value)}
                     className={`p-2.5 rounded-lg border text-xs font-semibold text-center transition-all cursor-pointer ${
-                      intensity === i.value ? 'bg-[#6b2a33] border-[#4e1e25] text-white shadow-xs' : 'bg-[#eaeae5] border-[#cfcfc7] text-[#555555] hover:bg-white'
+                      intensity === i.value ? 'bg-[#7a4e54] border-[#5e3a40] text-white shadow-xs' : 'bg-[#f3efec] border-[#e6dfdb] text-[#555555] hover:bg-white'
                     }`}
                   >
                     {i.label}
@@ -144,34 +144,34 @@ export const DiagnosticSimulator: React.FC<DiagnosticSimulatorProps> = ({ onSele
           </div>
 
           {/* Result */}
-          <div className="lg:col-span-5 bg-white border-2 border-[#6b2a33] rounded-2xl p-6 sm:p-7 flex flex-col justify-between shadow-md relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-[#f0e3e4] rounded-full blur-2xl pointer-events-none"></div>
+          <div className="lg:col-span-5 bg-white border-2 border-[#7a4e54] rounded-2xl p-6 sm:p-7 flex flex-col justify-between shadow-md relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#f1e9e8] rounded-full blur-2xl pointer-events-none"></div>
 
             <div className="relative">
               <div className="flex items-center justify-between mb-4">
-                <span className="text-xs font-mono uppercase text-[#6b2a33] font-bold tracking-wider">{sim.resultBadge}</span>
-                <span className="text-[10px] font-bold bg-[#f0e3e4] text-[#6b2a33] px-2.5 py-0.5 rounded-md border border-[#dcc2c5]">
+                <span className="text-xs font-mono uppercase text-[#7a4e54] font-bold tracking-wider">{sim.resultBadge}</span>
+                <span className="text-[10px] font-bold bg-[#f1e9e8] text-[#7a4e54] px-2.5 py-0.5 rounded-md border border-[#dcc9ca]">
                   {t.services.categories[service.target].label}
                 </span>
               </div>
 
-              <h3 className="text-xl sm:text-2xl font-bold text-[#333333] font-display mb-1">{service.name}</h3>
+              <h3 className="text-xl sm:text-2xl font-semibold text-[#2f2b2a] font-display mb-1">{service.name}</h3>
               <p className="text-xs text-[#555555] mb-6">{service.tagline}</p>
 
-              <div className="p-4 rounded-xl bg-[#eaeae5] border border-[#cfcfc7] space-y-3 mb-6">
+              <div className="p-4 rounded-xl bg-[#f3efec] border border-[#e6dfdb] space-y-3 mb-6">
                 <div>
                   <span className="text-[10px] font-mono text-[#555555] block uppercase font-semibold">{sim.priceLabel}</span>
-                  <span className="text-2xl font-extrabold text-[#333333] font-display">{service.price}</span>
+                  <span className="text-2xl font-semibold text-[#2f2b2a] font-display">{service.price}</span>
                   {service.priceDetail && <span className="text-xs text-[#555555] ml-1.5">{service.priceDetail}</span>}
                 </div>
                 {service.expectedImpact && (
-                  <div className="pt-2 border-t border-[#cfcfc7]">
-                    <span className="text-[10px] font-mono text-[#6b2a33] block uppercase font-bold">{sim.impactLabel}</span>
-                    <p className="text-xs font-semibold text-[#333333]">{service.expectedImpact}</p>
+                  <div className="pt-2 border-t border-[#e6dfdb]">
+                    <span className="text-[10px] font-mono text-[#7a4e54] block uppercase font-bold">{sim.impactLabel}</span>
+                    <p className="text-xs font-semibold text-[#2f2b2a]">{service.expectedImpact}</p>
                   </div>
                 )}
                 {service.duration && (
-                  <div className="pt-2 border-t border-[#cfcfc7]">
+                  <div className="pt-2 border-t border-[#e6dfdb]">
                     <span className="text-[10px] font-mono text-[#555555] block uppercase font-semibold">{sim.formatLabel}</span>
                     <p className="text-xs text-[#555555]">{service.duration}</p>
                   </div>
@@ -186,7 +186,7 @@ export const DiagnosticSimulator: React.FC<DiagnosticSimulatorProps> = ({ onSele
             <button
               id="simulator-action-btn"
               onClick={() => onSelectService(service)}
-              className="relative w-full py-3.5 px-4 rounded-xl bg-[#6b2a33] hover:bg-[#4e1e25] text-white font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 shadow-sm cursor-pointer border border-[#4e1e25]"
+              className="relative w-full py-3.5 px-4 rounded-xl bg-[#7a4e54] hover:bg-[#5e3a40] text-white font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 shadow-sm cursor-pointer border border-[#5e3a40]"
             >
               <span>{service.ctaText}</span>
               <ArrowRight className="w-4 h-4" />

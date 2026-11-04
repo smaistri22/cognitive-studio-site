@@ -20,7 +20,7 @@ export const Footer: React.FC = () => {
   const t = getTranslations(language);
 
   return (
-    <footer className="bg-[#333333] border-t border-[#444444] pt-16 pb-12 text-[#b1b0ac] text-xs">
+    <footer className="bg-[#2f2b2a] border-t border-[#444444] pt-16 pb-12 text-[#b1b0ac] text-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
@@ -35,8 +35,8 @@ export const Footer: React.FC = () => {
                 width={36}
                 height={36}
               />
-              <span className="text-base font-extrabold text-white font-display tracking-tight uppercase">
-                Cognitive<span className="text-[#e4cdd0]">Studio</span>
+              <span className="text-base font-semibold text-white font-display tracking-tight uppercase">
+                Cognitive<span className="text-[#e6d6d7]">Studio</span>
               </span>
             </div>
 
@@ -60,7 +60,7 @@ export const Footer: React.FC = () => {
                 href={COMPANY_INFO.socials.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2 rounded-lg bg-[#242424] hover:bg-[#6b2a33] text-white transition-colors border border-[#484848]"
+                className="p-2 rounded-lg bg-[#242424] hover:bg-[#7a4e54] text-white transition-colors border border-[#484848]"
                 title="LinkedIn"
               >
                 <Linkedin className="w-4 h-4" />
@@ -69,14 +69,14 @@ export const Footer: React.FC = () => {
                 href={COMPANY_INFO.socials.instagram}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2 rounded-lg bg-[#242424] hover:bg-[#6b2a33] text-white transition-colors border border-[#484848]"
+                className="p-2 rounded-lg bg-[#242424] hover:bg-[#7a4e54] text-white transition-colors border border-[#484848]"
                 title="Instagram"
               >
                 <Instagram className="w-4 h-4" />
               </a>
               <a
                 href={`tel:${COMPANY_INFO.phoneRaw}`}
-                className="p-2 rounded-lg bg-[#242424] hover:bg-[#6b2a33] text-white transition-colors border border-[#484848]"
+                className="p-2 rounded-lg bg-[#242424] hover:bg-[#7a4e54] text-white transition-colors border border-[#484848]"
                 title="Appel"
               >
                 <Phone className="w-4 h-4" />
@@ -88,7 +88,7 @@ export const Footer: React.FC = () => {
                   type="button"
                   onClick={() => setLanguage('fr')}
                   className={`px-2 py-0.5 rounded cursor-pointer transition-colors ${
-                    language === 'fr' ? 'bg-[#6b2a33] text-white font-bold' : 'text-[#888880] hover:text-white'
+                    language === 'fr' ? 'bg-[#7a4e54] text-white font-bold' : 'text-[#888880] hover:text-white'
                   }`}
                 >
                   FR
@@ -97,7 +97,7 @@ export const Footer: React.FC = () => {
                   type="button"
                   onClick={() => setLanguage('en')}
                   className={`px-2 py-0.5 rounded cursor-pointer transition-colors ${
-                    language === 'en' ? 'bg-[#6b2a33] text-white font-bold' : 'text-[#888880] hover:text-white'
+                    language === 'en' ? 'bg-[#7a4e54] text-white font-bold' : 'text-[#888880] hover:text-white'
                   }`}
                 >
                   EN
@@ -126,7 +126,7 @@ export const Footer: React.FC = () => {
           {/* Col 4: Collaborations (Replaces the listed packs per user request) */}
           <div className="space-y-3">
             <h4 className="text-xs font-mono uppercase tracking-wider text-white font-bold flex items-center gap-1.5">
-              <Scale className="w-3.5 h-3.5 text-[#e4cdd0]" />
+              <Scale className="w-3.5 h-3.5 text-[#e6d6d7]" />
               <span>{t.footer.collaborationsTitle}</span>
             </h4>
             
@@ -138,18 +138,18 @@ export const Footer: React.FC = () => {
 
             <ul className="space-y-2.5 pt-1">
               {t.footer.collaborations.map((collab, index) => (
-                <li key={index} className="p-2.5 rounded-xl bg-[#272727] border border-[#444444] transition-colors hover:border-[#6b2a33]">
+                <li key={index} className="p-2.5 rounded-xl bg-[#272727] border border-[#444444] transition-colors hover:border-[#7a4e54]">
                   <div className="font-semibold text-white text-xs flex items-center justify-between">
                     {collab.url ? (
-                      <a href={collab.url} target="_blank" rel="noopener noreferrer" className="hover:text-[#e4cdd0] hover:underline transition-colors">
+                      <a href={collab.url} target="_blank" rel="noopener noreferrer" className="hover:text-[#e6d6d7] hover:underline transition-colors">
                         {collab.name}
                       </a>
                     ) : (
                       <span>{collab.name}</span>
                     )}
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#6b2a33]"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#7a4e54]"></span>
                   </div>
-                  <div className="text-[10px] text-[#e4cdd0] font-mono mt-0.5">
+                  <div className="text-[10px] text-[#e6d6d7] font-mono mt-0.5">
                     {collab.detail}
                   </div>
                 </li>
@@ -181,7 +181,7 @@ export const Footer: React.FC = () => {
                 href={COMPANY_INFO.whatsappUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#39252a] text-[#e4cdd0] border border-[#8c3b4a] font-semibold text-xs hover:bg-[#6b2a33] transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#39252a] text-[#e6d6d7] border border-[#94636a] font-semibold text-xs hover:bg-[#7a4e54] transition-colors"
               >
                 <span>WhatsApp : +32 472 23 06 14</span>
               </a>
@@ -190,7 +190,7 @@ export const Footer: React.FC = () => {
             <div className="pt-2">
               <button
                 onClick={() => setLegalModalOpen(true)}
-                className="text-xs text-[#e4cdd0] hover:text-white underline flex items-center gap-1 cursor-pointer text-left"
+                className="text-xs text-[#e6d6d7] hover:text-white underline flex items-center gap-1 cursor-pointer text-left"
               >
                 <FileText className="w-3.5 h-3.5 shrink-0" />
                 <span>{t.footer.legalModalBtn}</span>

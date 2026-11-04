@@ -18,16 +18,16 @@ export const FounderSection: React.FC = () => {
   const t = getTranslations(language);
 
   return (
-    <section id="fondateur" className="py-16 md:py-24 bg-[#e0e0db] border-b border-[#cfcfc7] relative">
+    <section id="fondateur" className="py-16 md:py-24 bg-[#faf8f6] border-b border-[#e6dfdb] relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Tag */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f0e3e4] border border-[#dcc2c5] text-[#6b2a33] text-xs font-mono font-semibold mb-3">
-            <Sparkles className="w-3.5 h-3.5 text-[#6b2a33]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f1e9e8] border border-[#dcc9ca] text-[#7a4e54] text-xs font-mono font-semibold mb-3">
+            <Sparkles className="w-3.5 h-3.5 text-[#7a4e54]" />
             <span>{t.founder.badge}</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-[#333333] font-display tracking-tight">
+          <h2 className="text-2xl sm:text-4xl font-semibold text-[#2f2b2a] font-display tracking-tight">
             {t.founder.title}
           </h2>
           <p className="mt-4 text-[#555555] text-sm sm:text-base leading-relaxed">
@@ -36,13 +36,13 @@ export const FounderSection: React.FC = () => {
         </div>
 
         {/* Founder Bio Card */}
-        <div className="bg-white border border-[#cfcfc7] rounded-3xl p-6 sm:p-10 shadow-sm">
+        <div className="bg-white border border-[#e6dfdb] rounded-3xl p-6 sm:p-10 shadow-sm">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             
             {/* Left Column: Visual Portrait & Badges */}
             <div className="lg:col-span-4 space-y-6">
-              <div className="relative rounded-2xl overflow-hidden border border-[#cfcfc7] bg-[#eaeae5] p-6 text-center shadow-xs">
-                <div className="w-28 h-28 mx-auto mb-4 rounded-2xl overflow-hidden border-2 border-[#6b2a33] shadow-sm relative">
+              <div className="relative rounded-2xl overflow-hidden border border-[#e6dfdb] bg-[#f3efec] p-6 text-center shadow-xs">
+                <div className="w-28 h-28 mx-auto mb-4 rounded-2xl overflow-hidden border-2 border-[#7a4e54] shadow-sm relative">
                   <img 
                     src="/simon-maistriau.jpg" 
                     alt="Simon Maistriau" 
@@ -52,24 +52,24 @@ export const FounderSection: React.FC = () => {
                   />
                 </div>
 
-                <h3 className="text-xl font-bold text-[#333333] font-display">
+                <h3 className="text-xl font-semibold text-[#2f2b2a] font-display">
                   {COMPANY_INFO.founder}
                 </h3>
-                <p className="text-xs text-[#6b2a33] font-mono font-semibold mt-1">
+                <p className="text-xs text-[#7a4e54] font-mono font-semibold mt-1">
                   {t.founder.roleTitle}
                 </p>
 
-                <div className="mt-4 pt-4 border-t border-[#cfcfc7] space-y-2 text-left text-xs text-[#333333]">
+                <div className="mt-4 pt-4 border-t border-[#e6dfdb] space-y-2 text-left text-xs text-[#2f2b2a]">
                   <div className="flex items-center gap-2">
-                    <Award className="w-4 h-4 text-[#6b2a33] shrink-0" />
-                    <span><strong className="text-[#333333]">{t.founder.credentials[0]}</strong></span>
+                    <Award className="w-4 h-4 text-[#7a4e54] shrink-0" />
+                    <span><strong className="text-[#2f2b2a]">{t.founder.credentials[0]}</strong></span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <BookOpen className="w-4 h-4 text-[#6b2a33] shrink-0" />
+                    <BookOpen className="w-4 h-4 text-[#7a4e54] shrink-0" />
                     <span>{t.founder.credentials[1]}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-[#6b2a33] shrink-0" />
+                    <MapPin className="w-4 h-4 text-[#7a4e54] shrink-0" />
                     <span>Avenue Heydenberg 39, 1200 Woluwe-Saint-Lambert</span>
                   </div>
                 </div>
@@ -79,7 +79,7 @@ export const FounderSection: React.FC = () => {
                     href={COMPANY_INFO.socials.linkedin}
                     target="_blank"
                     rel="noreferrer"
-                    className="p-2.5 rounded-xl bg-white hover:bg-[#6b2a33] text-[#333333] hover:text-white transition-colors border border-[#cfcfc7]"
+                    className="p-2.5 rounded-xl bg-white hover:bg-[#7a4e54] text-[#2f2b2a] hover:text-white transition-colors border border-[#e6dfdb]"
                     title="LinkedIn Simon Maistriau"
                   >
                     <Linkedin className="w-4 h-4" />
@@ -88,14 +88,14 @@ export const FounderSection: React.FC = () => {
                     href={COMPANY_INFO.socials.instagram}
                     target="_blank"
                     rel="noreferrer"
-                    className="p-2.5 rounded-xl bg-white hover:bg-[#6b2a33] text-[#333333] hover:text-white transition-colors border border-[#cfcfc7]"
+                    className="p-2.5 rounded-xl bg-white hover:bg-[#7a4e54] text-[#2f2b2a] hover:text-white transition-colors border border-[#e6dfdb]"
                     title="Instagram Cognitive Studio"
                   >
                     <Instagram className="w-4 h-4" />
                   </a>
                   <a
                     href={`tel:${COMPANY_INFO.phoneRaw}`}
-                    className="p-2.5 rounded-xl bg-[#f0e3e4] hover:bg-[#6b2a33] text-[#6b2a33] hover:text-white transition-colors border border-[#dcc2c5]"
+                    className="p-2.5 rounded-xl bg-[#f1e9e8] hover:bg-[#7a4e54] text-[#7a4e54] hover:text-white transition-colors border border-[#dcc9ca]"
                     title="Appeler Simon Maistriau"
                   >
                     <Phone className="w-4 h-4" />
@@ -104,9 +104,9 @@ export const FounderSection: React.FC = () => {
               </div>
 
               {/* Brussels Zones Card */}
-              <div className="bg-[#eaeae5] border border-[#cfcfc7] rounded-xl p-4">
-                <div className="flex items-center gap-2 text-xs font-bold text-[#333333] mb-2">
-                  <MapPin className="w-4 h-4 text-[#6b2a33]" />
+              <div className="bg-[#f3efec] border border-[#e6dfdb] rounded-xl p-4">
+                <div className="flex items-center gap-2 text-xs font-bold text-[#2f2b2a] mb-2">
+                  <MapPin className="w-4 h-4 text-[#7a4e54]" />
                   <span>{language === 'fr' ? 'Zones d’Intervention Physique' : 'Physical Coverage Areas'}</span>
                 </div>
                 <p className="text-[11px] text-[#555555] mb-2">
@@ -118,7 +118,7 @@ export const FounderSection: React.FC = () => {
                   {COMPANY_INFO.zones.map((zone, i) => (
                     <span 
                       key={i} 
-                      className="text-[10px] font-medium px-2 py-0.5 rounded-md bg-white text-[#333333] border border-[#cfcfc7]"
+                      className="text-[10px] font-medium px-2 py-0.5 rounded-md bg-white text-[#2f2b2a] border border-[#e6dfdb]"
                     >
                       {zone}
                     </span>
@@ -128,11 +128,11 @@ export const FounderSection: React.FC = () => {
             </div>
 
             {/* Right Column: Founder's Narrative */}
-            <div className="lg:col-span-8 space-y-6 text-sm text-[#333333] leading-relaxed">
+            <div className="lg:col-span-8 space-y-6 text-sm text-[#2f2b2a] leading-relaxed">
               
               <div>
-                <h4 className="text-base sm:text-lg font-bold text-[#333333] font-display mb-2 flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#6b2a33]"></span>
+                <h4 className="text-base sm:text-lg font-semibold text-[#2f2b2a] font-display mb-2 flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#7a4e54]"></span>
                   {language === 'fr' 
                     ? 'Un parcours universitaire au service de la méthode' 
                     : 'An academic background in the service of method'}
@@ -145,9 +145,9 @@ export const FounderSection: React.FC = () => {
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-[#cfcfc7]">
-                <h4 className="text-base sm:text-lg font-bold text-[#333333] font-display mb-2 flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#6b2a33]"></span>
+              <div className="pt-4 border-t border-[#e6dfdb]">
+                <h4 className="text-base sm:text-lg font-semibold text-[#2f2b2a] font-display mb-2 flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#7a4e54]"></span>
                   {language === 'fr' 
                     ? 'Le Déclic : La Naissance de la Méthode C.O.R.E.' 
                     : 'The Turning Point: Genesis of the C.O.R.E. Method'}
@@ -155,14 +155,14 @@ export const FounderSection: React.FC = () => {
                 <p>
                   {t.founder.bio2}
                 </p>
-                <p className="mt-2 text-[#6b2a33] font-semibold">
+                <p className="mt-2 text-[#7a4e54] font-semibold">
                   {t.founder.bio3}
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-[#cfcfc7]">
-                <h4 className="text-base sm:text-lg font-bold text-[#333333] font-display mb-2 flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#6b2a33]"></span>
+              <div className="pt-4 border-t border-[#e6dfdb]">
+                <h4 className="text-base sm:text-lg font-semibold text-[#2f2b2a] font-display mb-2 flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#7a4e54]"></span>
                   {language === 'fr' 
                     ? 'Ma force : un diagnostic précis' 
                     : 'My core strength: precise diagnosis'}
@@ -175,12 +175,12 @@ export const FounderSection: React.FC = () => {
               </div>
 
               {/* Hours Box */}
-              <div className="pt-4 border-t border-[#cfcfc7] bg-[#f0e3e4] p-4 rounded-xl border border-[#dcc2c5] flex flex-wrap items-center justify-between gap-3">
+              <div className="pt-4 border-t border-[#e6dfdb] bg-[#f1e9e8] p-4 rounded-xl border border-[#dcc9ca] flex flex-wrap items-center justify-between gap-3">
                 <div>
-                  <span className="text-xs font-mono uppercase text-[#6b2a33] font-bold block">
+                  <span className="text-xs font-mono uppercase text-[#7a4e54] font-bold block">
                     {language === 'fr' ? 'Bureau & Disponibilités' : 'Office & Availability'}
                   </span>
-                  <span className="text-xs text-[#333333]">
+                  <span className="text-xs text-[#2f2b2a]">
                     {language === 'fr' 
                       ? 'Lundi au vendredi (9h-18h) • Week-end : urgences uniquement' 
                       : 'Monday to Friday (09:00-18:00) • Weekends: emergencies only'}
@@ -188,7 +188,7 @@ export const FounderSection: React.FC = () => {
                 </div>
                 <a
                   href={`tel:${COMPANY_INFO.phoneRaw}`}
-                  className="px-4 py-2 rounded-lg bg-[#6b2a33] hover:bg-[#4e1e25] text-white font-bold text-xs transition-colors flex items-center gap-1.5 shadow-xs"
+                  className="px-4 py-2 rounded-lg bg-[#7a4e54] hover:bg-[#5e3a40] text-white font-bold text-xs transition-colors flex items-center gap-1.5 shadow-xs"
                 >
                   <Phone className="w-3.5 h-3.5" />
                   <span>{COMPANY_INFO.phone}</span>

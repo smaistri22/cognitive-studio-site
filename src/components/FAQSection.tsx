@@ -19,16 +19,16 @@ export const FAQSection: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="py-16 md:py-24 bg-[#e0e0db] border-b border-[#cfcfc7]">
+    <section id="faq" className="py-16 md:py-24 bg-[#faf8f6] border-b border-[#e6dfdb]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f0e3e4] border border-[#dcc2c5] text-[#6b2a33] text-xs font-mono font-semibold mb-3">
-            <HelpCircle className="w-3.5 h-3.5 text-[#6b2a33]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f1e9e8] border border-[#dcc9ca] text-[#7a4e54] text-xs font-mono font-semibold mb-3">
+            <HelpCircle className="w-3.5 h-3.5 text-[#7a4e54]" />
             <span>{t.faq.badge}</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-[#333333] font-display tracking-tight">
+          <h2 className="text-2xl sm:text-4xl font-semibold text-[#2f2b2a] font-display tracking-tight">
             {t.faq.title}
           </h2>
           <p className="mt-3 text-[#555555] text-xs sm:text-sm">
@@ -42,8 +42,8 @@ export const FAQSection: React.FC = () => {
             onClick={() => { setFilter('all'); setOpenIndex(null); }}
             className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
               filter === 'all'
-                ? 'bg-[#6b2a33] text-white shadow-sm'
-                : 'text-[#555555] hover:text-[#333333] bg-white border border-[#cfcfc7]'
+                ? 'bg-[#7a4e54] text-white shadow-sm'
+                : 'text-[#555555] hover:text-[#2f2b2a] bg-white border border-[#e6dfdb]'
             }`}
           >
             {t.faq.filterAll}
@@ -53,8 +53,8 @@ export const FAQSection: React.FC = () => {
             onClick={() => { setFilter('tarifs'); setOpenIndex(null); }}
             className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer ${
               filter === 'tarifs'
-                ? 'bg-[#6b2a33] text-white shadow-sm'
-                : 'text-[#555555] hover:text-[#333333] bg-white border border-[#cfcfc7]'
+                ? 'bg-[#7a4e54] text-white shadow-sm'
+                : 'text-[#555555] hover:text-[#2f2b2a] bg-white border border-[#e6dfdb]'
             }`}
           >
             <Euro className="w-3.5 h-3.5" />
@@ -65,8 +65,8 @@ export const FAQSection: React.FC = () => {
             onClick={() => { setFilter('methode'); setOpenIndex(null); }}
             className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer ${
               filter === 'methode'
-                ? 'bg-[#6b2a33] text-white shadow-sm'
-                : 'text-[#555555] hover:text-[#333333] bg-white border border-[#cfcfc7]'
+                ? 'bg-[#7a4e54] text-white shadow-sm'
+                : 'text-[#555555] hover:text-[#2f2b2a] bg-white border border-[#e6dfdb]'
             }`}
           >
             <ShieldCheck className="w-3.5 h-3.5" />
@@ -84,7 +84,7 @@ export const FAQSection: React.FC = () => {
               <div
                 key={idx}
                 className={`bg-white border rounded-xl overflow-hidden transition-all shadow-xs ${
-                  isOpen ? 'border-[#6b2a33] ring-1 ring-[#6b2a33]/30 shadow-sm' : 'border-[#cfcfc7] hover:border-[#6b2a33]'
+                  isOpen ? 'border-[#7a4e54] ring-1 ring-[#7a4e54]/30 shadow-sm' : 'border-[#e6dfdb] hover:border-[#7a4e54]'
                 }`}
               >
                 <button
@@ -93,23 +93,23 @@ export const FAQSection: React.FC = () => {
                   className="w-full p-4 sm:p-5 text-left flex items-start justify-between gap-4 cursor-pointer focus:outline-none"
                 >
                   <div className="space-y-1">
-                    <span className="text-[10px] font-mono uppercase tracking-wider font-bold px-2 py-0.5 rounded bg-[#f0e3e4] text-[#6b2a33] border border-[#dcc2c5]">
+                    <span className="text-[10px] font-mono uppercase tracking-wider font-bold px-2 py-0.5 rounded bg-[#f1e9e8] text-[#7a4e54] border border-[#dcc9ca]">
                       {isTarif ? t.faq.filterTarifs : t.faq.filterMethode}
                     </span>
-                    <h3 className="text-sm sm:text-base font-bold text-[#333333] font-display pt-1">
+                    <h3 className="text-sm sm:text-base font-semibold text-[#2f2b2a] font-display pt-1">
                       {faq.question}
                     </h3>
                   </div>
 
                   <div className={`p-1.5 rounded-lg border transition-transform shrink-0 mt-1 ${
-                    isOpen ? 'rotate-180 bg-[#6b2a33] text-white border-[#4e1e25]' : 'bg-[#eaeae5] text-[#555555] border-[#cfcfc7]'
+                    isOpen ? 'rotate-180 bg-[#7a4e54] text-white border-[#5e3a40]' : 'bg-[#f3efec] text-[#555555] border-[#e6dfdb]'
                   }`}>
                     <ChevronDown className="w-4 h-4" />
                   </div>
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-[#555555] leading-relaxed border-t border-[#eaeae5] animate-fadeIn">
+                  <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-[#555555] leading-relaxed border-t border-[#f3efec] animate-fadeIn">
                     <p>{faq.answer}</p>
                   </div>
                 )}
