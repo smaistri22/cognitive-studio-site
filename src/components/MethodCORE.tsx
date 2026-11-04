@@ -40,8 +40,8 @@ export const MethodCORE: React.FC = () => {
 
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#d8e6e1] border border-[#b8cec7] text-[#325249] text-xs font-mono font-semibold mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-[#325249]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f0e3e4] border border-[#dcc2c5] text-[#6b2a33] text-xs font-mono font-semibold mb-4">
+            <Sparkles className="w-3.5 h-3.5 text-[#6b2a33]" />
             <span>{t.methodCore.badge}</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-extrabold text-[#333333] font-display tracking-tight">
@@ -63,15 +63,15 @@ export const MethodCORE: React.FC = () => {
                 onClick={() => setActivePillar(pillar.letter)}
                 className={`p-4 sm:p-5 rounded-2xl text-left border transition-all cursor-pointer relative overflow-hidden ${
                   isSelected
-                    ? 'bg-[#325249] border-[#243c35] text-white shadow-md scale-[1.02]'
-                    : 'bg-white border-[#cfcfc7] text-[#333333] hover:border-[#325249] hover:bg-[#eaeae5]'
+                    ? 'bg-[#6b2a33] border-[#4e1e25] text-white shadow-md scale-[1.02]'
+                    : 'bg-white border-[#cfcfc7] text-[#333333] hover:border-[#6b2a33] hover:bg-[#eaeae5]'
                 }`}
               >
                 <div className="flex items-center justify-between mb-3">
                   <span className={`w-10 h-10 rounded-xl flex items-center justify-center font-mono font-extrabold text-lg ${
                     isSelected
-                      ? 'bg-[#243c35] text-[#e0e0db] border border-[#325249]'
-                      : 'bg-[#eaeae5] text-[#325249] border border-[#cfcfc7]'
+                      ? 'bg-[#4e1e25] text-[#e0e0db] border border-[#6b2a33]'
+                      : 'bg-[#eaeae5] text-[#6b2a33] border border-[#cfcfc7]'
                   }`}>
                     {pillar.letter}
                   </span>
@@ -88,7 +88,7 @@ export const MethodCORE: React.FC = () => {
                 </div>
 
                 {isSelected && (
-                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#b8cec7]" />
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#dcc2c5]" />
                 )}
               </button>
             );
@@ -100,7 +100,7 @@ export const MethodCORE: React.FC = () => {
           <div className="flex flex-col lg:flex-row gap-8 items-start justify-between">
             <div className="lg:max-w-xl space-y-4">
               <div className="flex items-center gap-3">
-                <span className="px-3 py-1 rounded-md bg-[#d8e6e1] text-[#325249] font-mono text-xs font-bold border border-[#b8cec7]">
+                <span className="px-3 py-1 rounded-md bg-[#f0e3e4] text-[#6b2a33] font-mono text-xs font-bold border border-[#dcc2c5]">
                   {t.methodCore.pillarLabel} {selected.letter}
                 </span>
                 <span className="text-xs text-[#555555] font-mono">
@@ -117,8 +117,8 @@ export const MethodCORE: React.FC = () => {
 
             <div className="w-full lg:w-96 pt-4 lg:pt-0 lg:border-l lg:border-[#cfcfc7] lg:pl-8">
               <div className="bg-[#eaeae5] border border-[#cfcfc7] rounded-xl p-4">
-                <div className="flex items-center gap-2 text-[#325249] text-xs font-bold uppercase tracking-wider mb-2">
-                  <Briefcase className="w-4 h-4 text-[#325249]" />
+                <div className="flex items-center gap-2 text-[#6b2a33] text-xs font-bold uppercase tracking-wider mb-2">
+                  <Briefcase className="w-4 h-4 text-[#6b2a33]" />
                   <span>{t.methodCore.applicationLabel}</span>
                 </div>
                 <p className="text-xs text-[#555555] leading-relaxed">
@@ -141,35 +141,35 @@ export const MethodCORE: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-[#faf2f2] border border-[#f2d0d0] rounded-xl p-5">
-              <div className="flex items-center gap-2 text-[#9e2a2b] font-bold text-sm mb-3">
-                <div className="w-6 h-6 rounded-full bg-[#fce8e8] border border-[#f2d0d0] flex items-center justify-center">
-                  <X className="w-3.5 h-3.5 text-[#9e2a2b]" />
+            <div className="bg-[#f3f3f0] border border-[#dcdcd5] rounded-xl p-5">
+              <div className="flex items-center gap-2 text-[#777770] font-bold text-sm mb-3">
+                <div className="w-6 h-6 rounded-full bg-[#eaeae5] border border-[#dcdcd5] flex items-center justify-center">
+                  <X className="w-3.5 h-3.5 text-[#777770]" />
                 </div>
                 <span>{t.methodCore.withoutTitle}</span>
               </div>
               <ul className="space-y-2.5 text-xs text-[#555555]">
                 {t.methodCore.without.map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2">
-                    <span className="text-[#9e2a2b] font-bold">✕</span>
+                    <span className="text-[#777770] font-bold">✕</span>
                     <span><strong className="text-[#333333]">{item.title}</strong> {item.text}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="bg-[#d8e6e1]/40 border border-[#b8cec7] rounded-xl p-5">
-              <div className="flex items-center gap-2 text-[#325249] font-bold text-sm mb-3">
-                <div className="w-6 h-6 rounded-full bg-[#d8e6e1] border border-[#b8cec7] flex items-center justify-center">
-                  <Check className="w-3.5 h-3.5 text-[#325249]" />
+            <div className="bg-[#f0e3e4]/40 border border-[#dcc2c5] rounded-xl p-5">
+              <div className="flex items-center gap-2 text-[#6b2a33] font-bold text-sm mb-3">
+                <div className="w-6 h-6 rounded-full bg-[#f0e3e4] border border-[#dcc2c5] flex items-center justify-center">
+                  <Check className="w-3.5 h-3.5 text-[#6b2a33]" />
                 </div>
                 <span>{t.methodCore.withTitle}</span>
               </div>
               <ul className="space-y-2.5 text-xs text-[#333333]">
                 {t.methodCore.with.map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2">
-                    <span className="text-[#325249] font-bold">✓</span>
-                    <span><strong className="text-[#325249]">{item.title}</strong> {item.text}</span>
+                    <span className="text-[#6b2a33] font-bold">✓</span>
+                    <span><strong className="text-[#6b2a33]">{item.title}</strong> {item.text}</span>
                   </li>
                 ))}
               </ul>

@@ -85,8 +85,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#d8e6e1] border border-[#b8cec7] text-[#325249] text-xs font-mono font-semibold mb-3">
-            <MessageSquare className="w-3.5 h-3.5 text-[#325249]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f0e3e4] border border-[#dcc2c5] text-[#6b2a33] text-xs font-mono font-semibold mb-3">
+            <MessageSquare className="w-3.5 h-3.5 text-[#6b2a33]" />
             <span>{t.contact.badge}</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-extrabold text-[#333333] font-display tracking-tight">
@@ -104,8 +104,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
             
             {submitted ? (
               <div className="py-12 text-center space-y-4 animate-fadeIn">
-                <div className="w-16 h-16 rounded-full bg-[#d8e6e1] border border-[#b8cec7] text-[#325249] flex items-center justify-center mx-auto">
-                  <CheckCircle2 className="w-8 h-8 text-[#325249]" />
+                <div className="w-16 h-16 rounded-full bg-[#f0e3e4] border border-[#dcc2c5] text-[#6b2a33] flex items-center justify-center mx-auto">
+                  <CheckCircle2 className="w-8 h-8 text-[#6b2a33]" />
                 </div>
                 <h3 className="text-xl font-bold text-[#333333] font-display">
                   {t.contact.form.successTitle}
@@ -119,7 +119,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     href={`https://wa.me/32472230614?text=${whatsappMessage}`}
                     target="_blank"
                     rel="noreferrer"
-                    className="px-4 py-2.5 rounded-xl bg-[#325249] hover:bg-[#243c35] text-white font-semibold text-xs transition-colors flex items-center gap-2 shadow-xs"
+                    className="px-4 py-2.5 rounded-xl bg-[#6b2a33] hover:bg-[#4e1e25] text-white font-semibold text-xs transition-colors flex items-center gap-2 shadow-xs"
                   >
                     <MessageSquare className="w-4 h-4" />
                     <span>{t.contact.form.accelerateWhatsapp}</span>
@@ -136,9 +136,9 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
               <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
                 
                 {selectedService && (
-                  <div className="bg-[#d8e6e1] border border-[#b8cec7] rounded-xl p-3 flex items-center justify-between">
+                  <div className="bg-[#f0e3e4] border border-[#dcc2c5] rounded-xl p-3 flex items-center justify-between">
                     <div className="text-xs">
-                      <span className="text-[#325249] font-mono font-bold block">
+                      <span className="text-[#6b2a33] font-mono font-bold block">
                         {language === 'fr' ? 'Formule sélectionnée :' : 'Selected formula:'}
                       </span>
                       <span className="text-[#333333] font-bold">{selectedService.name} ({selectedService.price})</span>
@@ -164,7 +164,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                       placeholder="Simon Maistriau"
                       value={formData.name}
                       onChange={e => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#eaeae5] border border-[#cfcfc7] text-[#333333] placeholder-[#777770] text-xs sm:text-sm focus:outline-none focus:border-[#325249] transition-colors"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#eaeae5] border border-[#cfcfc7] text-[#333333] placeholder-[#777770] text-xs sm:text-sm focus:outline-none focus:border-[#6b2a33] transition-colors"
                     />
                   </div>
 
@@ -178,7 +178,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                       placeholder="+32 472 23 06 14"
                       value={formData.phone}
                       onChange={e => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#eaeae5] border border-[#cfcfc7] text-[#333333] placeholder-[#777770] text-xs sm:text-sm focus:outline-none focus:border-[#325249] transition-colors"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#eaeae5] border border-[#cfcfc7] text-[#333333] placeholder-[#777770] text-xs sm:text-sm focus:outline-none focus:border-[#6b2a33] transition-colors"
                     />
                   </div>
                 </div>
@@ -194,7 +194,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                       placeholder="votre-email@domaine.com"
                       value={formData.email}
                       onChange={e => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#eaeae5] border border-[#cfcfc7] text-[#333333] placeholder-[#777770] text-xs sm:text-sm focus:outline-none focus:border-[#325249] transition-colors"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#eaeae5] border border-[#cfcfc7] text-[#333333] placeholder-[#777770] text-xs sm:text-sm focus:outline-none focus:border-[#6b2a33] transition-colors"
                     />
                   </div>
 
@@ -205,7 +205,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     <select
                       value={formData.role}
                       onChange={e => setFormData({ ...formData, role: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#eaeae5] border border-[#cfcfc7] text-[#333333] text-xs sm:text-sm focus:outline-none focus:border-[#325249] transition-colors"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#eaeae5] border border-[#cfcfc7] text-[#333333] text-xs sm:text-sm focus:outline-none focus:border-[#6b2a33] transition-colors"
                     >
                       <option value="Avocat / Cabinet d’avocats">{t.contact.form.roleOptions.lawyer}</option>
                       <option value="Autre profession libérale">{t.contact.form.roleOptions.liberal}</option>
@@ -224,7 +224,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     placeholder={t.contact.form.formulaPlaceholder}
                     value={formData.formula}
                     onChange={e => setFormData({ ...formData, formula: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#eaeae5] border border-[#cfcfc7] text-[#333333] placeholder-[#777770] text-xs sm:text-sm focus:outline-none focus:border-[#325249] transition-colors"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#eaeae5] border border-[#cfcfc7] text-[#333333] placeholder-[#777770] text-xs sm:text-sm focus:outline-none focus:border-[#6b2a33] transition-colors"
                   />
                 </div>
 
@@ -238,7 +238,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     placeholder={t.contact.form.messagePlaceholder}
                     value={formData.message}
                     onChange={e => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#eaeae5] border border-[#cfcfc7] text-[#333333] placeholder-[#777770] text-xs sm:text-sm focus:outline-none focus:border-[#325249] transition-colors resize-none"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#eaeae5] border border-[#cfcfc7] text-[#333333] placeholder-[#777770] text-xs sm:text-sm focus:outline-none focus:border-[#6b2a33] transition-colors resize-none"
                   ></textarea>
                 </div>
 
@@ -252,7 +252,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-3.5 px-6 rounded-xl bg-[#325249] hover:bg-[#243c35] text-white font-extrabold text-sm transition-all flex items-center justify-center gap-2 shadow-sm cursor-pointer"
+                    className="w-full py-3.5 px-6 rounded-xl bg-[#6b2a33] hover:bg-[#4e1e25] text-white font-extrabold text-sm transition-all flex items-center justify-center gap-2 shadow-sm cursor-pointer"
                   >
                     {isSubmitting ? (
                       <span>{t.contact.form.submitting}</span>
@@ -275,23 +275,23 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
             {/* Quick Contact Card */}
             <div className="bg-white border border-[#cfcfc7] rounded-3xl p-6 sm:p-7 space-y-5 shadow-sm">
               <h3 className="text-lg font-bold text-[#333333] font-display flex items-center gap-2">
-                <ShieldCheck className="w-5 h-5 text-[#325249]" />
+                <ShieldCheck className="w-5 h-5 text-[#6b2a33]" />
                 {t.contact.directCard.title}
               </h3>
 
               <div className="space-y-3">
                 <a
                   href={`tel:${COMPANY_INFO.phoneRaw}`}
-                  className="p-3.5 rounded-2xl bg-[#eaeae5] border border-[#cfcfc7] hover:border-[#325249] flex items-center gap-3.5 group transition-colors"
+                  className="p-3.5 rounded-2xl bg-[#eaeae5] border border-[#cfcfc7] hover:border-[#6b2a33] flex items-center gap-3.5 group transition-colors"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-[#d8e6e1] text-[#325249] flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-[#f0e3e4] text-[#6b2a33] flex items-center justify-center shrink-0">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
                     <span className="text-[10px] font-mono text-[#555555] block uppercase font-medium">
                       {t.contact.directCard.phoneTitle}
                     </span>
-                    <span className="text-sm font-bold text-[#333333] group-hover:text-[#325249]">
+                    <span className="text-sm font-bold text-[#333333] group-hover:text-[#6b2a33]">
                       {COMPANY_INFO.phone}
                     </span>
                   </div>
@@ -301,16 +301,16 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   href={COMPANY_INFO.whatsappUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="p-3.5 rounded-2xl bg-[#d8e6e1]/40 border border-[#b8cec7] hover:border-[#325249] flex items-center gap-3.5 group transition-colors"
+                  className="p-3.5 rounded-2xl bg-[#f0e3e4]/40 border border-[#dcc2c5] hover:border-[#6b2a33] flex items-center gap-3.5 group transition-colors"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-[#325249] text-white flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-[#6b2a33] text-white flex items-center justify-center shrink-0">
                     <MessageSquare className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-[10px] font-mono text-[#325249] block uppercase font-bold">
+                    <span className="text-[10px] font-mono text-[#6b2a33] block uppercase font-bold">
                       {t.contact.directCard.whatsappTitle}
                     </span>
-                    <span className="text-sm font-bold text-[#325249] group-hover:text-[#243c35]">
+                    <span className="text-sm font-bold text-[#6b2a33] group-hover:text-[#4e1e25]">
                       {language === 'fr' ? 'Discuter avec Simon Maistriau' : 'Chat with Simon Maistriau'}
                     </span>
                   </div>
@@ -318,16 +318,16 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
 
                 <a
                   href={`mailto:${COMPANY_INFO.email}`}
-                  className="p-3.5 rounded-2xl bg-[#eaeae5] border border-[#cfcfc7] hover:border-[#325249] flex items-center gap-3.5 group transition-colors"
+                  className="p-3.5 rounded-2xl bg-[#eaeae5] border border-[#cfcfc7] hover:border-[#6b2a33] flex items-center gap-3.5 group transition-colors"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-[#d8e6e1] text-[#325249] flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-[#f0e3e4] text-[#6b2a33] flex items-center justify-center shrink-0">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
                     <span className="text-[10px] font-mono text-[#555555] block uppercase font-medium">
                       {t.contact.directCard.emailTitle}
                     </span>
-                    <span className="text-xs sm:text-sm font-bold text-[#333333] group-hover:text-[#325249]">
+                    <span className="text-xs sm:text-sm font-bold text-[#333333] group-hover:text-[#6b2a33]">
                       {COMPANY_INFO.email}
                     </span>
                   </div>
@@ -338,7 +338,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
             {/* Office Address & Hours Card */}
             <div className="bg-white border border-[#cfcfc7] rounded-3xl p-6 sm:p-7 space-y-4 shadow-sm">
               <div className="flex items-center gap-2 text-[#333333] font-display font-bold text-base">
-                <MapPin className="w-4 h-4 text-[#325249]" />
+                <MapPin className="w-4 h-4 text-[#6b2a33]" />
                 <span>{t.contact.hoursCard.addressTitle}</span>
               </div>
 
@@ -356,7 +356,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     href={COMPANY_INFO.googleReviewsUrl} 
                     target="_blank" 
                     rel="noreferrer"
-                    className="text-[#325249] font-semibold hover:underline"
+                    className="text-[#6b2a33] font-semibold hover:underline"
                   >
                     {t.common.viewOnMaps} →
                   </a>
@@ -365,7 +365,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
 
               <div className="pt-2">
                 <div className="flex items-center gap-2 text-[#333333] font-display font-bold text-sm mb-2">
-                  <Clock className="w-3.5 h-3.5 text-[#325249]" />
+                  <Clock className="w-3.5 h-3.5 text-[#6b2a33]" />
                   <span>{t.contact.hoursCard.title}</span>
                 </div>
 
@@ -374,22 +374,22 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     <>
                       <div className="py-2 flex items-center justify-between">
                         <span className="text-[#333333] font-medium">Lundi au vendredi</span>
-                        <span className="font-mono text-[#325249] font-bold">09:00 - 18:00</span>
+                        <span className="font-mono text-[#6b2a33] font-bold">09:00 - 18:00</span>
                       </div>
                       <div className="py-2 flex items-center justify-between">
                         <span className="text-[#333333] font-medium">Week-end</span>
-                        <span className="font-mono text-[#325249] font-bold">Urgences uniquement</span>
+                        <span className="font-mono text-[#6b2a33] font-bold">Urgences uniquement</span>
                       </div>
                     </>
                   ) : (
                     <>
                       <div className="py-2 flex items-center justify-between">
                         <span className="text-[#333333] font-medium">Monday to Friday</span>
-                        <span className="font-mono text-[#325249] font-bold">09:00 - 18:00</span>
+                        <span className="font-mono text-[#6b2a33] font-bold">09:00 - 18:00</span>
                       </div>
                       <div className="py-2 flex items-center justify-between">
                         <span className="text-[#333333] font-medium">Weekends</span>
-                        <span className="font-mono text-[#325249] font-bold">Emergencies only</span>
+                        <span className="font-mono text-[#6b2a33] font-bold">Emergencies only</span>
                       </div>
                     </>
                   )}

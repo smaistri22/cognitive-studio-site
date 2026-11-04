@@ -92,7 +92,7 @@ export const Header: React.FC<HeaderProps> = ({
               href={link.href}
               id={`nav-${link.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
               onClick={() => handleNavClick(link.href)}
-              className="px-2.5 py-1.5 rounded-md hover:text-white hover:bg-[#3d3d3d] transition-colors text-xs xl:text-sm border-b-2 border-transparent hover:border-[#325249]"
+              className="px-2.5 py-1.5 rounded-md hover:text-white hover:bg-[#3d3d3d] transition-colors text-xs xl:text-sm border-b-2 border-transparent hover:border-[#6b2a33]"
             >
               {link.name}
             </a>
@@ -111,7 +111,7 @@ export const Header: React.FC<HeaderProps> = ({
               onClick={() => setLanguage('fr')}
               className={`px-2 py-1 rounded-md transition-all cursor-pointer ${
                 language === 'fr' 
-                  ? 'bg-[#325249] text-white font-bold shadow-xs' 
+                  ? 'bg-[#6b2a33] text-white font-bold shadow-xs' 
                   : 'text-[#9e9e95] hover:text-white hover:bg-[#323232]'
               }`}
             >
@@ -122,7 +122,7 @@ export const Header: React.FC<HeaderProps> = ({
               onClick={() => setLanguage('en')}
               className={`px-2 py-1 rounded-md transition-all cursor-pointer ${
                 language === 'en' 
-                  ? 'bg-[#325249] text-white font-bold shadow-xs' 
+                  ? 'bg-[#6b2a33] text-white font-bold shadow-xs' 
                   : 'text-[#9e9e95] hover:text-white hover:bg-[#323232]'
               }`}
             >
@@ -136,7 +136,7 @@ export const Header: React.FC<HeaderProps> = ({
             rel="noreferrer"
             id="header-whatsapp-btn"
             title="Poser une question directe sur WhatsApp"
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#243c35] hover:bg-[#1d312b] text-[#e0e0db] border border-[#325249] text-xs font-semibold transition-all hover:scale-[1.02]"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#4e1e25] hover:bg-[#2e1c20] text-[#e0e0db] border border-[#6b2a33] text-xs font-semibold transition-all hover:scale-[1.02]"
           >
             <MessageSquare className="w-3.5 h-3.5 text-[#e0e0db]" />
             <span>{t.common.whatsAppDirect}</span>
@@ -145,7 +145,7 @@ export const Header: React.FC<HeaderProps> = ({
           <button
             id="header-booking-btn"
             onClick={onOpenBooking}
-            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#325249] hover:bg-[#243c35] text-white font-semibold text-xs tracking-wide shadow-sm transition-all hover:scale-[1.02] cursor-pointer border border-[#325249]"
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#6b2a33] hover:bg-[#4e1e25] text-white font-semibold text-xs tracking-wide shadow-sm transition-all hover:scale-[1.02] cursor-pointer border border-[#6b2a33]"
           >
             <span>{t.common.bookAudit}</span>
             <ArrowUpRight className="w-3.5 h-3.5 text-white stroke-[2.5]" />
@@ -192,7 +192,7 @@ export const Header: React.FC<HeaderProps> = ({
                 onClick={() => setLanguage('fr')}
                 className={`px-3 py-1 rounded-md transition-all ${
                   language === 'fr' 
-                    ? 'bg-[#325249] text-white font-bold' 
+                    ? 'bg-[#6b2a33] text-white font-bold' 
                     : 'text-[#888880] hover:text-white'
                 }`}
               >
@@ -203,7 +203,7 @@ export const Header: React.FC<HeaderProps> = ({
                 onClick={() => setLanguage('en')}
                 className={`px-3 py-1 rounded-md transition-all ${
                   language === 'en' 
-                    ? 'bg-[#325249] text-white font-bold' 
+                    ? 'bg-[#6b2a33] text-white font-bold' 
                     : 'text-[#888880] hover:text-white'
                 }`}
               >
@@ -237,14 +237,14 @@ export const Header: React.FC<HeaderProps> = ({
               href={COMPANY_INFO.whatsappUrl}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-[#243c35] hover:bg-[#1d312b] text-[#e0e0db] font-medium text-sm border border-[#325249]"
+              className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-[#4e1e25] hover:bg-[#2e1c20] text-[#e0e0db] font-medium text-sm border border-[#6b2a33]"
             >
               <MessageSquare className="w-4 h-4 text-[#e0e0db]" />
               <span>{t.common.whatsAppDirect}</span>
             </a>
             <button
               onClick={() => { setMobileMenuOpen(false); onOpenBooking(); }}
-              className="w-full py-2.5 rounded-lg bg-[#325249] hover:bg-[#243c35] text-white font-bold text-sm text-center shadow-sm cursor-pointer"
+              className="w-full py-2.5 rounded-lg bg-[#6b2a33] hover:bg-[#4e1e25] text-white font-bold text-sm text-center shadow-sm cursor-pointer"
             >
               {t.common.bookAudit}
             </button>

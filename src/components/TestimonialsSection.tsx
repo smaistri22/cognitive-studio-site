@@ -26,8 +26,8 @@ export const TestimonialsSection: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#d8e6e1] border border-[#b8cec7] text-[#325249] text-xs font-mono font-semibold mb-3">
-            <Sparkles className="w-3.5 h-3.5 text-[#325249]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f0e3e4] border border-[#dcc2c5] text-[#6b2a33] text-xs font-mono font-semibold mb-3">
+            <Sparkles className="w-3.5 h-3.5 text-[#6b2a33]" />
             <span>{t.testimonials.badge}</span>
           </div>
 
@@ -89,7 +89,7 @@ export const TestimonialsSection: React.FC = () => {
               href={COMPANY_INFO.googleReviewsUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1 text-xs font-bold text-[#325249] hover:text-[#333333] hover:underline transition-colors ml-1"
+              className="inline-flex items-center gap-1 text-xs font-bold text-[#6b2a33] hover:text-[#333333] hover:underline transition-colors ml-1"
             >
               <span>{t.common.viewOnMaps}</span>
               <ExternalLink className="w-3 h-3" />
@@ -99,14 +99,14 @@ export const TestimonialsSection: React.FC = () => {
 
         {/* Références */}
         <div className="mb-12">
-          <h3 className="text-sm font-mono uppercase tracking-wider font-bold text-[#325249] mb-4 text-center">
+          <h3 className="text-sm font-mono uppercase tracking-wider font-bold text-[#6b2a33] mb-4 text-center">
             {t.testimonials.referencesTitle}
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {references.map((ref, idx) => (
-              <div key={idx} className="bg-white border border-[#cfcfc7] rounded-2xl p-6 flex flex-col shadow-sm hover:border-[#325249] transition-all">
+              <div key={idx} className="bg-white border border-[#cfcfc7] rounded-2xl p-6 flex flex-col shadow-sm hover:border-[#6b2a33] transition-all">
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="w-10 h-10 rounded-xl bg-[#d8e6e1] border border-[#b8cec7] text-[#325249] flex items-center justify-center shrink-0">
+                  <span className="w-10 h-10 rounded-xl bg-[#f0e3e4] border border-[#dcc2c5] text-[#6b2a33] flex items-center justify-center shrink-0">
                     <Scale className="w-5 h-5" />
                   </span>
                   <div>
@@ -120,7 +120,7 @@ export const TestimonialsSection: React.FC = () => {
                     href={ref.url}
                     target="_blank"
                     rel="noreferrer"
-                    className="mt-4 inline-flex items-center gap-1 text-xs font-bold text-[#325249] hover:underline"
+                    className="mt-4 inline-flex items-center gap-1 text-xs font-bold text-[#6b2a33] hover:underline"
                   >
                     <span>{t.testimonials.visitSite}</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
@@ -132,7 +132,7 @@ export const TestimonialsSection: React.FC = () => {
         </div>
 
         {/* Avis */}
-        <h3 className="text-sm font-mono uppercase tracking-wider font-bold text-[#325249] mb-4 text-center">
+        <h3 className="text-sm font-mono uppercase tracking-wider font-bold text-[#6b2a33] mb-4 text-center">
           {t.testimonials.reviewsTitle}
         </h3>
         <div className="max-w-2xl mx-auto">
@@ -148,7 +148,7 @@ export const TestimonialsSection: React.FC = () => {
                   ))}
                 </div>
                 <span className="inline-flex items-center gap-1 text-[10px] font-mono text-[#555555] bg-[#eaeae5] px-2 py-0.5 rounded border border-[#cfcfc7]">
-                  <ShieldCheck className="w-3 h-3 text-[#325249]" />
+                  <ShieldCheck className="w-3 h-3 text-[#6b2a33]" />
                   <span>{t.testimonials.verifiedGoogle}</span>
                 </span>
               </div>
@@ -160,8 +160,8 @@ export const TestimonialsSection: React.FC = () => {
                   <h4 className="text-xs sm:text-sm font-bold text-[#333333] font-display">{item.name}</h4>
                   <span className="text-[11px] text-[#555555]">{item.date}</span>
                 </div>
-                <div className="text-[11px] font-bold text-[#325249] font-mono bg-[#d8e6e1] px-2.5 py-1.5 rounded-lg border border-[#b8cec7] inline-flex items-center gap-1.5">
-                  <TrendingUp className="w-3.5 h-3.5 shrink-0 text-[#325249]" />
+                <div className="text-[11px] font-bold text-[#6b2a33] font-mono bg-[#f0e3e4] px-2.5 py-1.5 rounded-lg border border-[#dcc2c5] inline-flex items-center gap-1.5">
+                  <TrendingUp className="w-3.5 h-3.5 shrink-0 text-[#6b2a33]" />
                   <span>{item.metric}</span>
                 </div>
               </div>

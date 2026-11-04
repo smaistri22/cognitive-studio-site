@@ -24,8 +24,8 @@ export const FAQSection: React.FC = () => {
         
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#d8e6e1] border border-[#b8cec7] text-[#325249] text-xs font-mono font-semibold mb-3">
-            <HelpCircle className="w-3.5 h-3.5 text-[#325249]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f0e3e4] border border-[#dcc2c5] text-[#6b2a33] text-xs font-mono font-semibold mb-3">
+            <HelpCircle className="w-3.5 h-3.5 text-[#6b2a33]" />
             <span>{t.faq.badge}</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-extrabold text-[#333333] font-display tracking-tight">
@@ -42,7 +42,7 @@ export const FAQSection: React.FC = () => {
             onClick={() => { setFilter('all'); setOpenIndex(null); }}
             className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
               filter === 'all'
-                ? 'bg-[#325249] text-white shadow-sm'
+                ? 'bg-[#6b2a33] text-white shadow-sm'
                 : 'text-[#555555] hover:text-[#333333] bg-white border border-[#cfcfc7]'
             }`}
           >
@@ -53,7 +53,7 @@ export const FAQSection: React.FC = () => {
             onClick={() => { setFilter('tarifs'); setOpenIndex(null); }}
             className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer ${
               filter === 'tarifs'
-                ? 'bg-[#325249] text-white shadow-sm'
+                ? 'bg-[#6b2a33] text-white shadow-sm'
                 : 'text-[#555555] hover:text-[#333333] bg-white border border-[#cfcfc7]'
             }`}
           >
@@ -65,7 +65,7 @@ export const FAQSection: React.FC = () => {
             onClick={() => { setFilter('methode'); setOpenIndex(null); }}
             className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer ${
               filter === 'methode'
-                ? 'bg-[#325249] text-white shadow-sm'
+                ? 'bg-[#6b2a33] text-white shadow-sm'
                 : 'text-[#555555] hover:text-[#333333] bg-white border border-[#cfcfc7]'
             }`}
           >
@@ -84,7 +84,7 @@ export const FAQSection: React.FC = () => {
               <div
                 key={idx}
                 className={`bg-white border rounded-xl overflow-hidden transition-all shadow-xs ${
-                  isOpen ? 'border-[#325249] ring-1 ring-[#325249]/30 shadow-sm' : 'border-[#cfcfc7] hover:border-[#325249]'
+                  isOpen ? 'border-[#6b2a33] ring-1 ring-[#6b2a33]/30 shadow-sm' : 'border-[#cfcfc7] hover:border-[#6b2a33]'
                 }`}
               >
                 <button
@@ -93,7 +93,7 @@ export const FAQSection: React.FC = () => {
                   className="w-full p-4 sm:p-5 text-left flex items-start justify-between gap-4 cursor-pointer focus:outline-none"
                 >
                   <div className="space-y-1">
-                    <span className="text-[10px] font-mono uppercase tracking-wider font-bold px-2 py-0.5 rounded bg-[#d8e6e1] text-[#325249] border border-[#b8cec7]">
+                    <span className="text-[10px] font-mono uppercase tracking-wider font-bold px-2 py-0.5 rounded bg-[#f0e3e4] text-[#6b2a33] border border-[#dcc2c5]">
                       {isTarif ? t.faq.filterTarifs : t.faq.filterMethode}
                     </span>
                     <h3 className="text-sm sm:text-base font-bold text-[#333333] font-display pt-1">
@@ -102,7 +102,7 @@ export const FAQSection: React.FC = () => {
                   </div>
 
                   <div className={`p-1.5 rounded-lg border transition-transform shrink-0 mt-1 ${
-                    isOpen ? 'rotate-180 bg-[#325249] text-white border-[#243c35]' : 'bg-[#eaeae5] text-[#555555] border-[#cfcfc7]'
+                    isOpen ? 'rotate-180 bg-[#6b2a33] text-white border-[#4e1e25]' : 'bg-[#eaeae5] text-[#555555] border-[#cfcfc7]'
                   }`}>
                     <ChevronDown className="w-4 h-4" />
                   </div>

@@ -16,9 +16,9 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-[#1e2824]/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 bg-[#281e20]/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 animate-in fade-in duration-200">
       <div 
-        className="bg-white border border-[#c2dad3] rounded-2xl max-w-4xl w-full shadow-2xl max-h-[90vh] flex flex-col overflow-hidden relative text-[#2c3531]"
+        className="bg-white border border-[#e4cdd0] rounded-2xl max-w-4xl w-full shadow-2xl max-h-[90vh] flex flex-col overflow-hidden relative text-[#352c2e]"
         role="dialog"
         aria-modal="true"
         aria-labelledby="legal-title"
@@ -26,7 +26,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
         {/* Header */}
         <div className="p-5 sm:p-6 border-b border-[#e5e5de] bg-[#fbfbfa] flex items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#e2edea] border border-[#c2dad3] flex items-center justify-center text-[#325249] shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-[#f4eaeb] border border-[#e4cdd0] flex items-center justify-center text-[#6b2a33] shrink-0">
               <Scale className="w-5 h-5" />
             </div>
             <div>
@@ -42,7 +42,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
           <div className="flex items-center gap-2">
             <button
               onClick={() => window.print()}
-              className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#dcdcd5] text-xs font-semibold text-[#505a55] hover:bg-[#efefe9] transition-colors"
+              className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#dcdcd5] text-xs font-semibold text-[#5a5052] hover:bg-[#efefe9] transition-colors"
               title="Imprimer"
             >
               <Printer className="w-3.5 h-3.5" />
@@ -64,8 +64,8 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
             onClick={() => setActiveTab('all')}
             className={`px-3 py-1.5 rounded-lg transition-colors whitespace-nowrap cursor-pointer ${
               activeTab === 'all'
-                ? 'bg-[#325249] text-white font-semibold'
-                : 'text-[#505a55] hover:bg-[#e8e8e1]'
+                ? 'bg-[#6b2a33] text-white font-semibold'
+                : 'text-[#5a5052] hover:bg-[#e8e8e1]'
             }`}
           >
             Vue Intégrale
@@ -74,8 +74,8 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
             onClick={() => setActiveTab('bce')}
             className={`px-3 py-1.5 rounded-lg transition-colors whitespace-nowrap cursor-pointer ${
               activeTab === 'bce'
-                ? 'bg-[#325249] text-white font-semibold'
-                : 'text-[#505a55] hover:bg-[#e8e8e1]'
+                ? 'bg-[#6b2a33] text-white font-semibold'
+                : 'text-[#5a5052] hover:bg-[#e8e8e1]'
             }`}
           >
             1. Identité & BCE
@@ -84,8 +84,8 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
             onClick={() => setActiveTab('ip')}
             className={`px-3 py-1.5 rounded-lg transition-colors whitespace-nowrap cursor-pointer ${
               activeTab === 'ip'
-                ? 'bg-[#325249] text-white font-semibold'
-                : 'text-[#505a55] hover:bg-[#e8e8e1]'
+                ? 'bg-[#6b2a33] text-white font-semibold'
+                : 'text-[#5a5052] hover:bg-[#e8e8e1]'
             }`}
           >
             2. Propriété Intellectuelle
@@ -94,8 +94,8 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
             onClick={() => setActiveTab('liability')}
             className={`px-3 py-1.5 rounded-lg transition-colors whitespace-nowrap cursor-pointer ${
               activeTab === 'liability'
-                ? 'bg-[#325249] text-white font-semibold'
-                : 'text-[#505a55] hover:bg-[#e8e8e1]'
+                ? 'bg-[#6b2a33] text-white font-semibold'
+                : 'text-[#5a5052] hover:bg-[#e8e8e1]'
             }`}
           >
             3. Responsabilité & IA
@@ -104,8 +104,8 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
             onClick={() => setActiveTab('gdpr')}
             className={`px-3 py-1.5 rounded-lg transition-colors whitespace-nowrap cursor-pointer ${
               activeTab === 'gdpr'
-                ? 'bg-[#325249] text-white font-semibold'
-                : 'text-[#505a55] hover:bg-[#e8e8e1]'
+                ? 'bg-[#6b2a33] text-white font-semibold'
+                : 'text-[#5a5052] hover:bg-[#e8e8e1]'
             }`}
           >
             4. RGPD & Confidentialité
@@ -114,8 +114,8 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
             onClick={() => setActiveTab('science')}
             className={`px-3 py-1.5 rounded-lg transition-colors whitespace-nowrap cursor-pointer ${
               activeTab === 'science'
-                ? 'bg-[#325249] text-white font-semibold'
-                : 'text-[#505a55] hover:bg-[#e8e8e1]'
+                ? 'bg-[#6b2a33] text-white font-semibold'
+                : 'text-[#5a5052] hover:bg-[#e8e8e1]'
             }`}
           >
             5. Droit Scientifique
@@ -123,13 +123,13 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
         </div>
 
         {/* Scrollable Body */}
-        <div className="p-5 sm:p-8 overflow-y-auto space-y-8 text-xs sm:text-sm leading-relaxed text-[#404b46]">
+        <div className="p-5 sm:p-8 overflow-y-auto space-y-8 text-xs sm:text-sm leading-relaxed text-[#4b4042]">
 
           {/* SECTION 1: Identité Juridique */}
           {(activeTab === 'all' || activeTab === 'bce') && (
             <section className="space-y-3 pb-6 border-b border-[#e5e5de]">
-              <div className="flex items-center gap-2 text-[#325249] font-bold text-sm sm:text-base font-display">
-                <Building2 className="w-4 h-4 text-[#457265]" />
+              <div className="flex items-center gap-2 text-[#6b2a33] font-bold text-sm sm:text-base font-display">
+                <Building2 className="w-4 h-4 text-[#8c3b4a]" />
                 <h4>1. IDENTITÉ JURIDIQUE & INFORMATIONS LÉGALES</h4>
               </div>
 
@@ -191,8 +191,8 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
           {/* SECTION 2: Propriété Intellectuelle */}
           {(activeTab === 'all' || activeTab === 'ip') && (
             <section className="space-y-3 pb-6 border-b border-[#e5e5de]">
-              <div className="flex items-center gap-2 text-[#325249] font-bold text-sm sm:text-base font-display">
-                <Shield className="w-4 h-4 text-[#457265]" />
+              <div className="flex items-center gap-2 text-[#6b2a33] font-bold text-sm sm:text-base font-display">
+                <Shield className="w-4 h-4 text-[#8c3b4a]" />
                 <h4>2. MENTIONS LÉGALES ET PROPRIÉTÉ INTELLECTUELLE</h4>
               </div>
               <p className="text-[11px] font-mono text-[#656563]">
@@ -211,7 +211,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
                 Ces éléments sont la propriété exclusive de Simon Maistriau ou de ses partenaires. Toute reproduction, représentation, modification, publication, transmission ou dénaturation, totale ou partielle, des contenus, par quelque procédé que ce soit et sur quelque support que ce soit, est formellement interdite sans l'autorisation écrite et préalable de l'auteur.
               </p>
 
-              <div className="p-3 bg-[#e2edea]/40 rounded-xl border border-[#c2dad3] text-xs text-[#2c3531]">
+              <div className="p-3 bg-[#f4eaeb]/40 rounded-xl border border-[#e4cdd0] text-xs text-[#352c2e]">
                 <strong>Licence d'usage privé concédée :</strong> L'accès aux formations, masterclasses et audits confère au client un droit d'usage privé, strictement personnel et non exclusif du matériel pédagogique. Le client s'interdit formellement de revendre, distribuer ou former des tiers avec la méthode Cognitive Studio sans accord de licence explicite. Tout contrevenant s'expose à des poursuites judiciaires conformément aux dispositions du Code de droit économique belge.
               </div>
             </section>
@@ -220,8 +220,8 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
           {/* SECTION 3: Limitation de Responsabilité & IA */}
           {(activeTab === 'all' || activeTab === 'liability') && (
             <section className="space-y-3 pb-6 border-b border-[#e5e5de]">
-              <div className="flex items-center gap-2 text-[#325249] font-bold text-sm sm:text-base font-display">
-                <FileText className="w-4 h-4 text-[#457265]" />
+              <div className="flex items-center gap-2 text-[#6b2a33] font-bold text-sm sm:text-base font-display">
+                <FileText className="w-4 h-4 text-[#8c3b4a]" />
                 <h4>3. CLAUSE DE NON-RESPONSABILITÉ & CADRE D'UTILISATION DE L'IA</h4>
               </div>
               <p className="text-[11px] font-mono text-[#656563]">
@@ -241,7 +241,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
                   <strong className="text-[#222222]">Limites liées au conseil et à l'Intelligence Artificielle (Pôle Professionnel) :</strong> Cognitive Studio conseille le client sur l'organisation et l'utilisation d'outils technologiques avancés (logiciels Low-Code, CRM, bases Notion, Intelligence Artificielle générative type OpenAI, Anthropic, Google Gemini).
                 </p>
 
-                <ul className="list-disc pl-5 space-y-1.5 text-xs text-[#505a55]">
+                <ul className="list-disc pl-5 space-y-1.5 text-xs text-[#5a5052]">
                   <li>
                     <strong className="text-[#222222]">Utilisation de l'IA :</strong> Le client reconnaît expressément que les outils d'Intelligence Artificielle générative sont susceptibles de produire des hallucinations ou inexactitudes. Cognitive Studio forme le client à l'esprit critique et à la vérification systématique, mais ne saurait être tenu responsable des contenus générés par ces tiers technologiques ni des conséquences de leur exploitation sans contrôle humain préalable.
                   </li>
@@ -259,8 +259,8 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
           {/* SECTION 4: RGPD & Confidentialité */}
           {(activeTab === 'all' || activeTab === 'gdpr') && (
             <section className="space-y-3 pb-6 border-b border-[#e5e5de]">
-              <div className="flex items-center gap-2 text-[#325249] font-bold text-sm sm:text-base font-display">
-                <Lock className="w-4 h-4 text-[#457265]" />
+              <div className="flex items-center gap-2 text-[#6b2a33] font-bold text-sm sm:text-base font-display">
+                <Lock className="w-4 h-4 text-[#8c3b4a]" />
                 <h4>4. POLITIQUE DE CONFIDENTIALITÉ & TRAITEMENT DES DONNÉES (RGPD)</h4>
               </div>
               <p className="text-[11px] font-mono text-[#656563]">
@@ -275,7 +275,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
                 <strong className="text-[#222222]">Collecte et Finalités :</strong> Nous ne collectons que les données strictement nécessaires à l'exécution de nos missions de conseil et d'accompagnement :
               </p>
 
-              <ul className="list-disc pl-5 space-y-1 text-xs text-[#505a55]">
+              <ul className="list-disc pl-5 space-y-1 text-xs text-[#5a5052]">
                 <li>Identité et coordonnées (Nom, prénom, email, téléphone, adresse de facturation) pour la gestion administrative, contractuelle et comptable.</li>
                 <li>Données relatives aux processus organisationnels internes du client, strictement nécessaires à la mission, traitées en qualité de sous-traitant au sens de l'article 28 du RGPD lorsqu'elles concernent les clients du cabinet.</li>
                 <li>Base légale : Exécution du contrat ou de mesures précontractuelles (Article 6.1.b du RGPD). Aucune donnée n'est jamais vendue, louée ou cédée à des fins de prospection commerciale tierce.</li>
@@ -283,7 +283,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
 
               <div className="p-3 bg-[#f8f8f6] rounded-xl border border-[#e5e5de] space-y-1.5">
                 <h5 className="font-bold text-[#222222] text-xs">Données collectées via ce site</h5>
-                <p className="text-xs text-[#505a55]">
+                <p className="text-xs text-[#5a5052]">
                   • <strong>Formulaire de contact :</strong> il ne transmet rien à un serveur. Il ouvre votre propre messagerie avec un e-mail pré-rempli (nom, téléphone, e-mail, profil, message) que vous choisissez d'envoyer ou non à info@cognitive-studio.be. Ces informations servent uniquement à répondre à votre demande et à préparer un éventuel accompagnement.<br />
                   • <strong>WhatsApp :</strong> si vous nous écrivez via WhatsApp, vos messages sont traités par WhatsApp (Meta) selon ses propres conditions ; nous les utilisons uniquement pour vous répondre.<br />
                   • <strong>Prise de rendez-vous :</strong> les réservations se font via la page de réservation Google Agenda, qui collecte vos nom, adresse e-mail et créneau choisi selon les conditions de Google ; nous les utilisons uniquement pour organiser la consultation.<br />
@@ -294,7 +294,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
 
               <div className="p-3 bg-[#f8f8f6] rounded-xl border border-[#e5e5de] space-y-1.5">
                 <h5 className="font-bold text-[#222222] text-xs">Mesures de Sécurité & Vigilance IA</h5>
-                <p className="text-xs text-[#505a55]">
+                <p className="text-xs text-[#5a5052]">
                   • <strong>Minimisation :</strong> Aucune donnée superflue n'est archivée.<br />
                   • <strong>Cloisonnement étanche :</strong> Les dossiers opérationnels sont chiffrés et uniquement accessibles par Simon Maistriau.<br />
                   • <strong>Vigilance IA & Confidentialité (« Opt-out ») :</strong> Lors des audits et déploiements d'outils d'IA pour nos clients, nous appliquons systématiquement les protocoles de désactivation de l'entraînement des modèles (« Zero Data Retention » / « Training Opt-out ») pour préserver le secret des affaires et les secrets professionnels.
@@ -306,7 +306,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
               </p>
 
               <p>
-                <strong className="text-[#222222]">Exercice de vos Droits :</strong> Vous bénéficiez d'un droit permanent d'accès, de rectification, de limitation, d'effacement (« droit à l'oubli ») et de portabilité de vos données. Pour exercer l'un de ces droits, adressez un simple courriel à <span className="font-mono font-bold text-[#325249]">info@cognitive-studio.be</span> avec copie de votre justificatif d'identité. Vous disposez également du droit d'introduire une réclamation auprès de l'Autorité de Protection des Données belge (APD, rue de la Presse 35, 1000 Bruxelles - www.autoriteprotectiondonnees.be).
+                <strong className="text-[#222222]">Exercice de vos Droits :</strong> Vous bénéficiez d'un droit permanent d'accès, de rectification, de limitation, d'effacement (« droit à l'oubli ») et de portabilité de vos données. Pour exercer l'un de ces droits, adressez un simple courriel à <span className="font-mono font-bold text-[#6b2a33]">info@cognitive-studio.be</span> avec copie de votre justificatif d'identité. Vous disposez également du droit d'introduire une réclamation auprès de l'Autorité de Protection des Données belge (APD, rue de la Presse 35, 1000 Bruxelles - www.autoriteprotectiondonnees.be).
               </p>
             </section>
           )}
@@ -314,8 +314,8 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
           {/* SECTION 5: Droit Scientifique & Citation */}
           {(activeTab === 'all' || activeTab === 'science') && (
             <section className="space-y-3">
-              <div className="flex items-center gap-2 text-[#325249] font-bold text-sm sm:text-base font-display">
-                <BookOpen className="w-4 h-4 text-[#457265]" />
+              <div className="flex items-center gap-2 text-[#6b2a33] font-bold text-sm sm:text-base font-display">
+                <BookOpen className="w-4 h-4 text-[#8c3b4a]" />
                 <h4>5. POLITIQUE D'UTILISATION DES RESSOURCES SCIENTIFIQUES & CITATION</h4>
               </div>
               <p className="text-[11px] font-mono text-[#656563]">
@@ -331,10 +331,10 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
               </p>
 
               <p>
-                <strong className="text-[#222222]">Procédure de Signalement & Retrait (Notice and Takedown) :</strong> Si vous êtes l'auteur ou l'ayant droit d'une œuvre mentionnée et estimez que son utilisation outrepasse les principes de l'exception d'enseignement, vous pouvez notifier votre demande motivée à <span className="font-mono font-bold text-[#325249]">info@cognitive-studio.be</span>. Le contenu litigieux sera ajusté ou retiré dans les plus brefs délais.
+                <strong className="text-[#222222]">Procédure de Signalement & Retrait (Notice and Takedown) :</strong> Si vous êtes l'auteur ou l'ayant droit d'une œuvre mentionnée et estimez que son utilisation outrepasse les principes de l'exception d'enseignement, vous pouvez notifier votre demande motivée à <span className="font-mono font-bold text-[#6b2a33]">info@cognitive-studio.be</span>. Le contenu litigieux sera ajusté ou retiré dans les plus brefs délais.
               </p>
 
-              <div className="p-3 bg-[#f8f8f6] rounded-xl border border-[#e5e5de] text-xs text-[#505a55]">
+              <div className="p-3 bg-[#f8f8f6] rounded-xl border border-[#e5e5de] text-xs text-[#5a5052]">
                 <strong className="text-[#222222]">Droit applicable & Règlement des Litiges :</strong> Les présentes mentions légales et conditions d'exercice sont régies exclusivement par le droit belge. En cas de litige relatif à l'interprétation ou à l'exécution des prestations, les parties s'engagent à privilégier une conciliation amiable ou une médiation agréée avant toute saisine judiciaire. À défaut d'accord, les tribunaux francophones de l'arrondissement judiciaire de Bruxelles sont seuls compétents.
               </div>
             </section>
@@ -344,14 +344,14 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
 
         {/* Footer actions */}
         <div className="p-4 sm:p-5 border-t border-[#e5e5de] bg-[#fbfbfa] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
-          <div className="flex items-center gap-2 text-[#505a55]">
-            <CheckCircle2 className="w-4 h-4 text-[#325249]" />
+          <div className="flex items-center gap-2 text-[#5a5052]">
+            <CheckCircle2 className="w-4 h-4 text-[#6b2a33]" />
             <span>Document mis à jour pour l'exercice 2026 • Cognitive Studio</span>
           </div>
 
           <button
             onClick={onClose}
-            className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-[#325249] hover:bg-[#233a34] text-white font-semibold shadow-sm transition-colors cursor-pointer"
+            className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-[#6b2a33] hover:bg-[#3a2329] text-white font-semibold shadow-sm transition-colors cursor-pointer"
           >
             J'ai pris connaissance des mentions légales
           </button>

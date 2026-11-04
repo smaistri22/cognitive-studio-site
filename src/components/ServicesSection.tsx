@@ -72,8 +72,8 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
 
         {/* Heading */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#d8e6e1] border border-[#b8cec7] text-[#325249] text-xs font-mono font-semibold mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-[#325249]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f0e3e4] border border-[#dcc2c5] text-[#6b2a33] text-xs font-mono font-semibold mb-4">
+            <Sparkles className="w-3.5 h-3.5 text-[#6b2a33]" />
             <span>{s.badge}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#333333] font-display tracking-tight leading-tight">
@@ -86,14 +86,14 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
 
         {/* Pathway */}
         <div className="mb-10 bg-white rounded-2xl border border-[#cfcfc7] p-5 sm:p-6 shadow-xs">
-          <div className="flex items-center gap-2 mb-4 text-[#325249] font-mono text-xs font-bold uppercase tracking-wider">
-            <TrendingUp className="w-4 h-4 text-[#325249]" />
+          <div className="flex items-center gap-2 mb-4 text-[#6b2a33] font-mono text-xs font-bold uppercase tracking-wider">
+            <TrendingUp className="w-4 h-4 text-[#6b2a33]" />
             <span>{s.pathwayTitle}</span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {s.pathway.map((item, idx) => (
               <div key={idx} className="bg-[#eaeae5] rounded-xl p-4 border border-[#cfcfc7]">
-                <div className="text-[11px] font-mono font-bold text-[#325249] mb-1">{item.step}</div>
+                <div className="text-[11px] font-mono font-bold text-[#6b2a33] mb-1">{item.step}</div>
                 <h4 className="text-sm font-bold text-[#333333] font-display mb-1">{item.title}</h4>
                 <p className="text-xs text-[#555555] leading-relaxed">{item.desc}</p>
               </div>
@@ -114,12 +114,12 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                   onClick={() => selectCategory(cat)}
                   className={`py-3 px-2 rounded-xl text-xs sm:text-sm font-semibold transition-all flex flex-col items-center justify-center gap-1 cursor-pointer ${
                     isActive
-                      ? 'bg-[#325249] text-white shadow-sm'
+                      ? 'bg-[#6b2a33] text-white shadow-sm'
                       : 'text-[#555555] hover:text-[#333333] hover:bg-[#eaeae5]'
                   }`}
                 >
                   <span className="font-bold text-center">{info.label}</span>
-                  <span className={`text-[10px] ${isActive ? 'text-[#e0e0db]' : 'text-[#325249] font-bold'}`}>
+                  <span className={`text-[10px] ${isActive ? 'text-[#e0e0db]' : 'text-[#6b2a33] font-bold'}`}>
                     {info.short}
                   </span>
                 </button>
@@ -129,7 +129,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
               onClick={() => selectCategory('all')}
               className={`py-3 px-2 rounded-xl text-xs sm:text-sm font-semibold transition-all flex flex-col items-center justify-center gap-1 cursor-pointer ${
                 activeCategory === 'all'
-                  ? 'bg-[#325249] text-white shadow-sm'
+                  ? 'bg-[#6b2a33] text-white shadow-sm'
                   : 'text-[#555555] hover:text-[#333333] hover:bg-[#eaeae5]'
               }`}
             >
@@ -156,7 +156,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
             <button
               onClick={() => setViewMode('cards')}
               className={`px-3 py-1.5 rounded-lg font-semibold transition-colors cursor-pointer flex items-center gap-1.5 ${
-                viewMode === 'cards' ? 'bg-[#325249] text-white' : 'text-[#555555] hover:text-[#333333]'
+                viewMode === 'cards' ? 'bg-[#6b2a33] text-white' : 'text-[#555555] hover:text-[#333333]'
               }`}
             >
               <Layers className="w-3.5 h-3.5" />
@@ -165,7 +165,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
             <button
               onClick={() => setViewMode('compare')}
               className={`px-3 py-1.5 rounded-lg font-semibold transition-colors cursor-pointer flex items-center gap-1.5 ${
-                viewMode === 'compare' ? 'bg-[#325249] text-white' : 'text-[#555555] hover:text-[#333333]'
+                viewMode === 'compare' ? 'bg-[#6b2a33] text-white' : 'text-[#555555] hover:text-[#333333]'
               }`}
             >
               <SlidersHorizontal className="w-3.5 h-3.5" />
@@ -187,12 +187,12 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                   id={`card-${tier.id}`}
                   className={`group relative bg-white rounded-2xl border flex flex-col justify-between transition-all duration-300 hover:shadow-md ${
                     isPopular
-                      ? 'border-[#325249] shadow-sm ring-1 ring-[#325249]/20'
-                      : 'border-[#cfcfc7] hover:border-[#325249]'
+                      ? 'border-[#6b2a33] shadow-sm ring-1 ring-[#6b2a33]/20'
+                      : 'border-[#cfcfc7] hover:border-[#6b2a33]'
                   }`}
                 >
                   {isPopular && (
-                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#325249] text-white text-[11px] font-bold font-mono uppercase tracking-wider px-3.5 py-1 rounded-full shadow-xs flex items-center gap-1.5 border border-[#243c35] whitespace-nowrap">
+                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#6b2a33] text-white text-[11px] font-bold font-mono uppercase tracking-wider px-3.5 py-1 rounded-full shadow-xs flex items-center gap-1.5 border border-[#4e1e25] whitespace-nowrap">
                       <Sparkles className="w-3 h-3 text-[#e0e0db]" />
                       <span>{tier.badge || s.recommended}</span>
                     </div>
@@ -200,7 +200,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
 
                   <div className="p-6 sm:p-7 flex-1 flex flex-col">
                     <div className="flex items-center justify-between gap-2 mb-3 pt-1">
-                      <span className="text-[10px] font-mono uppercase tracking-wider font-bold px-2.5 py-1 rounded-md bg-[#d8e6e1] text-[#325249] border border-[#b8cec7]">
+                      <span className="text-[10px] font-mono uppercase tracking-wider font-bold px-2.5 py-1 rounded-md bg-[#f0e3e4] text-[#6b2a33] border border-[#dcc2c5]">
                         {s.categories[tier.target].label}
                       </span>
                       {!isPopular && tier.badge && (
@@ -210,7 +210,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                       )}
                     </div>
 
-                    <h3 className="text-xl font-bold text-[#333333] font-display mb-2 tracking-tight group-hover:text-[#325249] transition-colors">
+                    <h3 className="text-xl font-bold text-[#333333] font-display mb-2 tracking-tight group-hover:text-[#6b2a33] transition-colors">
                       {tier.name}
                     </h3>
                     <p className="text-xs text-[#555555] leading-relaxed mb-4 min-h-[34px]">
@@ -220,13 +220,13 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                     <div className="flex flex-wrap items-center gap-2 mb-5">
                       {tier.duration && (
                         <span className="inline-flex items-center gap-1 text-[11px] font-medium bg-[#eaeae5] text-[#333333] px-2.5 py-1 rounded-lg border border-[#cfcfc7]">
-                          <Clock className="w-3 h-3 text-[#325249]" />
+                          <Clock className="w-3 h-3 text-[#6b2a33]" />
                           <span>{tier.duration}</span>
                         </span>
                       )}
                       {tier.format && (
                         <span className="inline-flex items-center gap-1 text-[11px] font-medium bg-[#eaeae5] text-[#333333] px-2.5 py-1 rounded-lg border border-[#cfcfc7]">
-                          <MapPin className="w-3 h-3 text-[#325249]" />
+                          <MapPin className="w-3 h-3 text-[#6b2a33]" />
                           <span>{tier.format}</span>
                         </span>
                       )}
@@ -234,7 +234,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
 
                     {tier.idealFor && (
                       <div className="mb-5 p-3 rounded-xl bg-[#eaeae5]/60 border border-[#cfcfc7] text-xs">
-                        <span className="font-bold text-[#325249] block mb-0.5 text-[11px] uppercase tracking-wider font-mono">
+                        <span className="font-bold text-[#6b2a33] block mb-0.5 text-[11px] uppercase tracking-wider font-mono">
                           {s.idealForLabel}
                         </span>
                         <p className="text-[#555555] leading-snug">{tier.idealFor}</p>
@@ -251,8 +251,8 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                         )}
                       </div>
                       {tier.highlightNote && (
-                        <div className="mt-2.5 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#d8e6e1] text-[#325249] text-[11px] font-semibold border border-[#b8cec7]">
-                          <ShieldCheck className="w-3.5 h-3.5 text-[#325249]" />
+                        <div className="mt-2.5 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#f0e3e4] text-[#6b2a33] text-[11px] font-semibold border border-[#dcc2c5]">
+                          <ShieldCheck className="w-3.5 h-3.5 text-[#6b2a33]" />
                           <span>{tier.highlightNote}</span>
                         </div>
                       )}
@@ -260,14 +260,14 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
 
                     {tier.deliverables && tier.deliverables.length > 0 && (
                       <div className="mb-4 space-y-2">
-                        <span className="text-[11px] font-mono uppercase text-[#325249] tracking-wider font-bold flex items-center gap-1.5">
-                          <FileCheck className="w-3.5 h-3.5 text-[#325249]" />
+                        <span className="text-[11px] font-mono uppercase text-[#6b2a33] tracking-wider font-bold flex items-center gap-1.5">
+                          <FileCheck className="w-3.5 h-3.5 text-[#6b2a33]" />
                           <span>{s.deliverablesLabel}</span>
                         </span>
                         <div className="space-y-1.5">
                           {tier.deliverables.map((deliv, idx) => (
                             <div key={idx} className="flex items-start gap-2 text-xs text-[#333333] bg-[#eaeae5] p-2 rounded-lg border border-[#cfcfc7]">
-                              <Check className="w-3.5 h-3.5 text-[#325249] mt-0.5 shrink-0 stroke-[2.5]" />
+                              <Check className="w-3.5 h-3.5 text-[#6b2a33] mt-0.5 shrink-0 stroke-[2.5]" />
                               <span className="font-medium">{deliv}</span>
                             </div>
                           ))}
@@ -276,8 +276,8 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                     )}
 
                     {tier.expectedImpact && (
-                      <div className="mb-5 p-2.5 rounded-xl bg-[#d8e6e1]/40 border border-[#b8cec7] text-xs flex items-start gap-2 text-[#325249]">
-                        <TrendingUp className="w-4 h-4 shrink-0 text-[#325249] mt-0.5" />
+                      <div className="mb-5 p-2.5 rounded-xl bg-[#f0e3e4]/40 border border-[#dcc2c5] text-xs flex items-start gap-2 text-[#6b2a33]">
+                        <TrendingUp className="w-4 h-4 shrink-0 text-[#6b2a33] mt-0.5" />
                         <div>
                           <span className="font-bold block text-[10px] uppercase font-mono">{s.roiLabel}</span>
                           <span className="text-xs leading-snug text-[#333333]">{tier.expectedImpact}</span>
@@ -289,7 +289,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                       <button
                         type="button"
                         onClick={() => toggleExpand(tier.id)}
-                        className="w-full text-left py-2 text-xs font-semibold text-[#325249] hover:underline flex items-center justify-between border-t border-[#cfcfc7] pt-3 transition-colors cursor-pointer"
+                        className="w-full text-left py-2 text-xs font-semibold text-[#6b2a33] hover:underline flex items-center justify-between border-t border-[#cfcfc7] pt-3 transition-colors cursor-pointer"
                       >
                         <span className="font-mono text-[11px] uppercase tracking-wider">
                           {isExpanded ? s.hideDetails : s.showDetails(tier.features.length)}
@@ -300,7 +300,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                         <ul className="pt-3 space-y-2 border-t border-[#cfcfc7] mt-2 animate-fadeIn">
                           {tier.features.map((feature, idx) => (
                             <li key={idx} className="flex items-start gap-2 text-xs text-[#333333] leading-normal">
-                              <Check className="w-3.5 h-3.5 shrink-0 mt-0.5 text-[#325249] stroke-[2.5]" />
+                              <Check className="w-3.5 h-3.5 shrink-0 mt-0.5 text-[#6b2a33] stroke-[2.5]" />
                               <span>{feature}</span>
                             </li>
                           ))}
@@ -315,8 +315,8 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                       onClick={() => onSelectService(tier)}
                       className={`w-full mt-4 py-3.5 px-4 rounded-xl font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs ${
                         isPopular
-                          ? 'bg-[#325249] hover:bg-[#243c35] text-white shadow-sm border border-[#243c35]'
-                          : 'bg-[#eaeae5] hover:bg-[#325249] hover:text-white text-[#325249] border border-[#cfcfc7]'
+                          ? 'bg-[#6b2a33] hover:bg-[#4e1e25] text-white shadow-sm border border-[#4e1e25]'
+                          : 'bg-[#eaeae5] hover:bg-[#6b2a33] hover:text-white text-[#6b2a33] border border-[#cfcfc7]'
                       }`}
                     >
                       <span>{tier.ctaText}</span>
@@ -340,7 +340,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs border-collapse">
                 <thead>
-                  <tr className="bg-[#eaeae5] text-[#325249] font-mono text-[11px] uppercase tracking-wider border-b border-[#cfcfc7]">
+                  <tr className="bg-[#eaeae5] text-[#6b2a33] font-mono text-[11px] uppercase tracking-wider border-b border-[#cfcfc7]">
                     <th className="p-4 font-bold">{s.colPackage}</th>
                     <th className="p-4 font-bold">{s.colCategory}</th>
                     <th className="p-4 font-bold">{s.colPrice}</th>
@@ -357,13 +357,13 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                         <div className="flex items-center gap-2">
                           <span>{tier.name}</span>
                           {tier.popular && (
-                            <span className="px-2 py-0.5 text-[9px] font-bold rounded-md bg-[#325249] text-white">{s.popular}</span>
+                            <span className="px-2 py-0.5 text-[9px] font-bold rounded-md bg-[#6b2a33] text-white">{s.popular}</span>
                           )}
                         </div>
                         <div className="text-[11px] text-[#555555] font-normal mt-0.5 line-clamp-1">{tier.tagline}</div>
                       </td>
                       <td className="p-4">
-                        <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded-md bg-[#d8e6e1] text-[#325249] font-semibold whitespace-nowrap">
+                        <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded-md bg-[#f0e3e4] text-[#6b2a33] font-semibold whitespace-nowrap">
                           {s.categories[tier.target].label}
                         </span>
                       </td>
@@ -377,7 +377,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                         <ul className="space-y-1">
                           {(tier.deliverables || []).slice(0, 2).map((del, i) => (
                             <li key={i} className="flex items-center gap-1.5 text-[11px]">
-                              <Check className="w-3 h-3 text-[#325249] shrink-0" />
+                              <Check className="w-3 h-3 text-[#6b2a33] shrink-0" />
                               <span className="line-clamp-1">{del}</span>
                             </li>
                           ))}
@@ -386,7 +386,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                       <td className="p-4 text-right">
                         <button
                           onClick={() => onSelectService(tier)}
-                          className="px-3 py-1.5 rounded-lg bg-[#325249] hover:bg-[#243c35] text-white font-bold text-xs transition-colors shadow-xs cursor-pointer inline-flex items-center gap-1"
+                          className="px-3 py-1.5 rounded-lg bg-[#6b2a33] hover:bg-[#4e1e25] text-white font-bold text-xs transition-colors shadow-xs cursor-pointer inline-flex items-center gap-1"
                         >
                           <span>{s.select}</span>
                           <ArrowRight className="w-3 h-3" />
@@ -404,7 +404,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
         {filteredOptions.length > 0 && (
           <div className="mt-12 bg-white rounded-2xl border border-[#cfcfc7] shadow-xs overflow-hidden">
             <div className="p-4 sm:p-6 bg-[#eaeae5] border-b border-[#cfcfc7] flex items-center gap-2">
-              <PlusCircle className="w-4 h-4 text-[#325249]" />
+              <PlusCircle className="w-4 h-4 text-[#6b2a33]" />
               <div>
                 <h4 className="text-base font-bold text-[#333333] font-display">{s.optionsTitle}</h4>
                 <p className="text-xs text-[#555555]">{s.optionsSubtitle}</p>
@@ -414,7 +414,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
               {filteredOptions.map((opt, idx) => (
                 <div key={idx} className="flex items-center justify-between gap-4 px-5 py-3 border-b border-[#eaeae5] text-xs">
                   <span className="text-[#333333]">{opt.name}</span>
-                  <span className="font-bold text-[#325249] whitespace-nowrap font-mono">{opt.price}</span>
+                  <span className="font-bold text-[#6b2a33] whitespace-nowrap font-mono">{opt.price}</span>
                 </div>
               ))}
             </div>
@@ -422,11 +422,11 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
         )}
 
         {/* Banner */}
-        <div className="mt-14 bg-white border border-[#b8cec7] rounded-2xl p-6 sm:p-7 shadow-xs">
+        <div className="mt-14 bg-white border border-[#dcc2c5] rounded-2xl p-6 sm:p-7 shadow-xs">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
             <div className="lg:col-span-2 flex items-start gap-4">
-              <div className="w-11 h-11 rounded-xl bg-[#d8e6e1] border border-[#b8cec7] flex items-center justify-center text-[#325249] shrink-0 mt-1">
-                <ShieldCheck className="w-6 h-6 text-[#325249]" />
+              <div className="w-11 h-11 rounded-xl bg-[#f0e3e4] border border-[#dcc2c5] flex items-center justify-center text-[#6b2a33] shrink-0 mt-1">
+                <ShieldCheck className="w-6 h-6 text-[#6b2a33]" />
               </div>
               <div className="space-y-1">
                 <h4 className="text-base sm:text-lg font-bold text-[#333333] font-display">{s.bannerTitle}</h4>
@@ -438,16 +438,16 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                 href={COMPANY_INFO.whatsappUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="w-full sm:w-auto px-4 py-3 rounded-xl bg-[#325249] hover:bg-[#243c35] text-white font-bold text-xs transition-colors flex items-center justify-center gap-2 shadow-xs"
+                className="w-full sm:w-auto px-4 py-3 rounded-xl bg-[#6b2a33] hover:bg-[#4e1e25] text-white font-bold text-xs transition-colors flex items-center justify-center gap-2 shadow-xs"
               >
                 <MessageCircle className="w-4 h-4 text-[#e0e0db]" />
                 <span>{s.bannerWhatsapp}</span>
               </a>
               <a
                 href="#simulateur"
-                className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-[#eaeae5] hover:bg-[#cfcfc7] text-[#325249] font-semibold text-xs transition-colors flex items-center justify-center gap-1.5 border border-[#cfcfc7]"
+                className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-[#eaeae5] hover:bg-[#cfcfc7] text-[#6b2a33] font-semibold text-xs transition-colors flex items-center justify-center gap-1.5 border border-[#cfcfc7]"
               >
-                <HelpCircle className="w-3.5 h-3.5 text-[#325249]" />
+                <HelpCircle className="w-3.5 h-3.5 text-[#6b2a33]" />
                 <span>{s.bannerSimulator}</span>
               </a>
             </div>
